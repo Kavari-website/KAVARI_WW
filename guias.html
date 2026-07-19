@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAVARI — Guías Turísticos Profesionales</title>
+<meta name="description" content="Conecta con guías turísticos certificados en toda Latinoamérica, Europa y Asia. Regístrate como guía KAVARI y recibe solicitudes de viajeros de todo el mundo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/guias.css">
+<link rel="stylesheet" href="css/chatbot-widget.css">
+<link rel="stylesheet" href="css/ui-system.css">
+<link rel="stylesheet" href="css/nav-glass.css">
+<link rel="stylesheet" href="css/nav-unified.css">
+<link rel="stylesheet" href="css/site-polish.css">
+<link rel="stylesheet" href="css/tutorial.css">
+<script src="js/idioma.js?v=3"></script>
+<script src="js/theme.js?v=3"></script>
+</head>
+<body>
+  <script src="js/guias.js"></script>
+
+<!-- Notification Stack -->
+<div id="notification-stack"></div>
+
+<!-- Contact Modal -->
+<div class="modal-overlay hidden" id="contactModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-header-icon sky">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
+      <div>
+        <div class="modal-title" id="modalGuideName" data-i18n="contratarGuia">Contratar Guía</div>
+        <div class="modal-subtitle" id="modalGuideRank" data-i18n="seleccionaFechas">Selecciona tus fechas y detalles</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label data-i18n="tuNombre">Nombre completo</label>
+        <input type="text" id="clientName" placeholder="Tu nombre" data-i18n-placeholder="tuNombrePlaceholder">
+      </div>
+      <div class="field">
+        <label data-i18n="tuCorreo">Correo electrónico</label>
+        <input type="email" id="clientEmail" placeholder="correo@ejemplo.com">
+      </div>
+      <div class="field">
+        <label data-i18n="fechaTour">Fecha del tour</label>
+        <input type="date" id="tourDate">
+      </div>
+      <div class="field">
+        <label data-i18n="mensajeOpcional">Mensaje (opcional)</label>
+        <textarea rows="3" id="clientMsg" placeholder="Describe brevemente qué tipo de tour buscas..." data-i18n-placeholder="mensajePlaceholder"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal()" data-i18n="cancelar">Cancelar</button>
+      <button class="btn btn-primary btn-sm" onclick="submitContact()" data-i18n="enviarSolicitud">Enviar solicitud</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<nav class="topbar nav-glass" id="topbar">
+  <a class="logo" href="index.html">
+    <div class="logo-mark">
+      <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+    </div>
+    <span class="logo-text">Ka<span>vari</span></span>
+  </a>
+  <div class="topbar-nav" id="topbarNav">
+    <a class="nav-pill ghost" href="index.html" data-i18n="navInicio">Inicio</a>
+    <a class="nav-pill ghost" href="paises.html" data-i18n="navDestinos">Destinos</a>
+    <a class="nav-pill ghost" href="ayuda.html" data-i18n="ayuda">Ayuda</a>
+    <a class="nav-pill ghost" href="contacto.html" data-i18n="contacto">Contacto</a>
+    <button class="nav-pill ghost" onclick="showPage('tourist')" data-i18n="explorarGuias">Explorar guías</button>
+    <button class="nav-pill solid" onclick="showPage('guide')" data-i18n="unirmeGuia">Unirme como guía</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial">Tutorial</button>
+    <button class="btn-lang-nav" data-i18n="tutorial" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma"><span id="langLabel">ES</span></button>
+    <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro">Oscuro</button>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-label">Red certificada de profesionales</div>
+    <h1>Guías <em>excepcionales</em> para viajes que perduran</h1>
+    <p>Conectamos viajeros exigentes con guías locales certificados en toda Latinoamérica.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="showPage('tourist')">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        Explorar guías
+      </button>
+      <button class="btn btn-outline" onclick="showPage('guide')">Registrarme como guía</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="role-grid">
+      <div class="role-card" onclick="showPage('tourist')">
+        <div class="role-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3>Soy viajero</h3>
+        <p>Explora nuestra red de guías certificados, filtra por especialidad y nivel, y contrata directamente desde la plataforma.</p>
+        <div class="arrow">
+          Ver guías disponibles
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
+      </div>
+      <div class="role-card" onclick="showPage('guide')">
+        <div class="role-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3>Soy guía profesional</h3>
+        <p>Regístrate, selecciona tu nivel de suscripción y comienza a recibir solicitudes de viajeros de todo el mundo.</p>
+        <div class="arrow">
+          Crear mi perfil
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-item"><span class="stat-num">240+</span><div class="stat-label">Guías activos</div></div>
+      <div class="stat-item"><span class="stat-num">18</span><div class="stat-label">Países cubiertos</div></div>
+      <div class="stat-item"><span class="stat-num">4,800+</span><div class="stat-label">Tours completados</div></div>
+      <div class="stat-item"><span class="stat-num">4.9</span><div class="stat-label">Valoración promedio</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOURIST PAGE -->
+<div class="page" id="page-tourist">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Guías disponibles</div>
+        <p style="color:var(--ink-light);font-size:0.88rem;margin-top:4px;">Ordenados por nivel de certificación</p>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="goHome()">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Inicio
+      </button>
+    </div>
+    <div class="filters" id="filterBar"></div>
+    <div id="guidesContainer"></div>
+  </div>
+</div>
+
+<!-- GUIDE REGISTRATION PAGE -->
+<div class="page" id="page-guide">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Registro de guía profesional</div>
+        <p style="color:var(--ink-light);font-size:0.88rem;margin-top:4px;">Completa tu perfil y activa tu suscripción</p>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="goHome()">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Cancelar
+      </button>
+    </div>
+
+    <div class="form-layout">
+      <!-- Form fields -->
+      <div>
+        <div class="form-section" style="margin-bottom:20px;">
+          <div class="form-section-title" data-i18n="infoPersonal">Información personal</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div class="field" id="field-firstName">
+              <label data-i18n="nombre">Nombre</label>
+              <input type="text" id="firstName" placeholder="Ej. Sofía" data-i18n-placeholder="nombrePlaceholder">
+              <div class="field-error" id="err-firstName" data-i18n="errNombre">El nombre es obligatorio.</div>
+            </div>
+            <div class="field" id="field-lastName">
+              <label data-i18n="apellido">Apellido</label>
+              <input type="text" id="lastName" placeholder="Ej. Ríos Morales" data-i18n-placeholder="apellidoPlaceholder">
+              <div class="field-error" id="err-lastName" data-i18n="errApellido">El apellido es obligatorio.</div>
+            </div>
+          </div>
+          <div class="field" id="field-email">
+            <label data-i18n="correo">Correo electrónico</label>
+            <input type="email" id="email" placeholder="guia@ejemplo.com">
+            <div class="field-error" id="err-email" data-i18n="errCorreo">Ingresa un correo válido.</div>
+          </div>
+          <div class="field" id="field-password">
+            <label data-i18n="contrasena">Contraseña</label>
+            <input type="password" id="password" placeholder="Mínimo 8 caracteres">
+            <div class="field-error" id="err-password" data-i18n="errContrasena">Mínimo 8 caracteres.</div>
+          </div>
+          <div class="field" id="field-phone">
+            <label data-i18n="telefono">Teléfono</label>
+            <input type="tel" id="phone" placeholder="+507 6000-0000">
+          </div>
+          <div class="field" id="field-fullName">
+            <label data-i18n="descripcionPro">Descripción profesional</label>
+            <textarea id="bio" rows="3" placeholder="Especialista en turismo ecológico y naturaleza..." data-i18n-placeholder="bioPlaceholder"></textarea>
+            <div class="field-error" id="err-bio" data-i18n="errBio">Ingresa una descripción de al menos 20 caracteres.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div class="field" id="field-languages">
+              <label data-i18n="idiomasDominas">Idiomas que dominas</label>
+              <input type="text" id="languages" placeholder="Español, Inglés, Italiano" data-i18n-placeholder="idiomasPlaceholder">
+              <div class="field-error" id="err-languages" data-i18n="errIdiomas">Indica al menos un idioma.</div>
+            </div>
+            <div class="field" id="field-experience">
+              <label data-i18n="anosExperiencia">Años de experiencia</label>
+              <input type="number" id="experience" min="0" max="50" placeholder="5">
+            </div>
+          </div>
+          <div class="field" id="field-specialties">
+            <label data-i18n="especialidades">Especialidades (separadas por comas)</label>
+            <input type="text" id="specialties" placeholder="Historia, Ecoturismo, Gastronomía, Aventura" data-i18n-placeholder="especialidadesPlaceholder">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div class="field" id="field-location">
+              <label data-i18n="ciudad">Ciudad</label>
+              <input type="text" id="location" placeholder="Ej. David, Bocas del Toro" data-i18n-placeholder="ciudadPlaceholder">
+              <div class="field-error" id="err-location" data-i18n="errUbicacion">Indica tu ciudad principal.</div>
+            </div>
+            <div class="field" id="field-country">
+              <label data-i18n="paisOperas">País donde operas</label>
+              <select id="guideCountrySelect">
+                <option value="" disabled selected data-i18n="seleccionaPais">Selecciona un país</option>
+                <option value="panama">Panamá</option>
+                <option value="colombia">Colombia</option>
+                <option value="mexico">México</option>
+                <option value="costa-rica">Costa Rica</option>
+                <option value="peru">Perú</option>
+                <option value="republica-dominicana">República Dominicana</option>
+                <option value="argentina">Argentina</option>
+                <option value="brasil">Brasil</option>
+                <option value="chile">Chile</option>
+                <option value="ecuador">Ecuador</option>
+                <option value="cuba">Cuba</option>
+                <option value="guatemala">Guatemala</option>
+                <option value="bolivia">Bolivia</option>
+                <option value="venezuela">Venezuela</option>
+                <option value="uruguay">Uruguay</option>
+                <option value="paraguay">Paraguay</option>
+                <option value="honduras">Honduras</option>
+                <option value="nicaragua">Nicaragua</option>
+                <option value="el-salvador">El Salvador</option>
+                <option value="belice">Belice</option>
+                <option value="guyana">Guyana</option>
+                <option value="trinidad-y-tobago">Trinidad y Tobago</option>
+                <option value="jamaica">Jamaica</option>
+                <option value="puerto-rico">Puerto Rico</option>
+                <option value="bahamas">Bahamas</option>
+                <option value="haiti">Haíti</option>
+                <option value="espana">España</option>
+                <option value="portugal">Portugal</option>
+                <option value="italia">Italia</option>
+                <option value="francia">Francia</option>
+                <option value="japon">Japón</option>
+                <option value="tailandia">Tailandia</option>
+                <option value="marruecos">Marruecos</option>
+                <option value="turquia">Turquía</option>
+                <option value="grecia">Grecia</option>
+                <option value="sudafrica">Sudáfrica</option>
+              </select>
+              <div class="field-error" id="err-country" data-i18n="errPais">Selecciona el país donde operas.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label data-i18n="fotoPerfil">Foto de perfil</label>
+            <input type="file" id="photoFile" accept="image/*">
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment sidebar -->
+      <div>
+        <div class="payment-section">
+          <div class="payment-title">Plan de suscripción</div>
+
+          <div class="rank-selector">
+            <div class="rank-option rank-silver selected" data-rank="silver" onclick="selectRank('silver')">
+              <div class="rank-option-dot dot-silver"></div>
+              <div class="rank-option-text">
+                <div class="rank-option-name">Plata</div>
+                <div class="rank-option-sub">Visibilidad estándar</div>
+              </div>
+              <div class="rank-option-price">$20/mes</div>
+            </div>
+            <div class="rank-option rank-gold" data-rank="gold" onclick="selectRank('gold')">
+              <div class="rank-option-dot dot-gold"></div>
+              <div class="rank-option-text">
+                <div class="rank-option-name">Oro</div>
+                <div class="rank-option-sub">Mayor posicionamiento</div>
+              </div>
+              <div class="rank-option-price">$35/mes</div>
+            </div>
+            <div class="rank-option rank-diamond" data-rank="diamond" onclick="selectRank('diamond')">
+              <div class="rank-option-dot dot-diamond"></div>
+              <div class="rank-option-text">
+                <div class="rank-option-name">Diamante</div>
+                <div class="rank-option-sub">Prioridad máxima</div>
+              </div>
+              <div class="rank-option-price">$50/mes</div>
+            </div>
+          </div>
+
+          <div class="amount-display">
+            <div class="amount-label">Total a pagar</div>
+            <div class="amount-value" id="amountDisplay">$20</div>
+            <div class="amount-period">USD / mes</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div style="font-size:0.82rem;font-weight:600;color:var(--ink-mid);margin-bottom:10px;">Método de pago</div>
+
+          <div class="payment-methods">
+            <div class="payment-method" data-method="yappy" onclick="selectPayment('yappy')">
+              <div class="pm-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="pm-info">
+                <div class="pm-name">Yappy</div>
+                <div class="pm-sub">Banca Panamá</div>
+              </div>
+              <div class="pm-check"></div>
+            </div>
+            <div class="payment-method" data-method="banco" onclick="selectPayment('banco')">
+              <div class="pm-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              </div>
+              <div class="pm-info">
+                <div class="pm-name">Transferencia bancaria</div>
+                <div class="pm-sub">Banco General / BAC</div>
+              </div>
+              <div class="pm-check"></div>
+            </div>
+            <div class="payment-method" data-method="card" onclick="selectPayment('card')">
+              <div class="pm-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              </div>
+              <div class="pm-info">
+                <div class="pm-name">Tarjeta débito / crédito</div>
+                <div class="pm-sub">Visa · Mastercard · Amex</div>
+              </div>
+              <div class="pm-check"></div>
+            </div>
+          </div>
+
+          <!-- Bank fields -->
+          <div class="bank-fields" id="bankFields">
+            <div class="field" id="field-accountNum">
+              <label>Número de cuenta bancaria</label>
+              <input type="text" id="accountNum" placeholder="0000-0000-0000-0000" maxlength="22" oninput="formatAccount(this)">
+              <div class="field-error" id="err-accountNum">Ingresa un número de cuenta válido.</div>
+            </div>
+            <div class="field" id="field-accountHolder">
+              <label>Titular de la cuenta</label>
+              <input type="text" id="accountHolder" placeholder="Nombre completo del titular">
+              <div class="field-error" id="err-accountHolder">Ingresa el nombre del titular.</div>
+            </div>
+            <div class="field">
+              <label>Banco</label>
+              <select id="bankName">
+                <option value="">Selecciona tu banco</option>
+                <option>Banco General</option>
+                <option>BAC Credomatic</option>
+                <option>Banistmo</option>
+                <option>Global Bank</option>
+                <option>Multibank</option>
+                <option>Caja de Ahorros</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Card fields -->
+          <div class="bank-fields" id="cardFields">
+            <div class="field" id="field-cardNum">
+              <label>Número de tarjeta</label>
+              <input type="text" id="cardNum" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCard(this)">
+              <div class="field-error" id="err-cardNum">Ingresa un número de tarjeta válido.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div class="field">
+                <label>Vencimiento</label>
+                <input type="text" id="cardExp" placeholder="MM/AA" maxlength="5" oninput="formatExp(this)">
+              </div>
+              <div class="field">
+                <label>CVV</label>
+                <input type="text" id="cardCvv" placeholder="000" maxlength="4">
+              </div>
+            </div>
+            <div class="field">
+              <label>Nombre en la tarjeta</label>
+              <input type="text" id="cardHolder" placeholder="Como aparece en la tarjeta">
+            </div>
+          </div>
+
+          <div class="secure-badge">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Pago seguro con cifrado SSL
+          </div>
+
+          <div class="trust-strip">
+            <div class="trust-item">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Sin contratos a largo plazo
+            </div>
+            <div class="trust-item">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Cancela cuando quieras
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="submitGuideRegistration()">
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Activar perfil y pagar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/chatbot-engine.js"></script>
+<script src="js/chatbot-widget.js"></script>
+<script src="js/account.js"></script>
+<script src="js/guias.js"></script>
+<script src="js/tutorial.js"></script>
+<script>
+// Auto-navegar al formulario si URL tiene ?mode=register
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('mode') === 'register') {
+    showPage('guide');
+  }
+});
+</script>
+</body>
+</html>

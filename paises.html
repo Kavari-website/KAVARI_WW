@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KAVARI – Explora 36 Destinos del Mundo</title>
+  <meta name="description" content="Explora 36 destinos turísticos con KAVARI: Latinoamérica, Europa, Asia y África. Información completa de cultura, gastronomía, hospedajes y guías certificados."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/paises.css"/>
+  <link rel="stylesheet" href="css/chatbot-widget.css"/>
+  <link rel="stylesheet" href="css/ui-system.css"/>
+  <link rel="stylesheet" href="css/nav-unified.css"/>
+  <link rel="stylesheet" href="css/site-polish.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <script src="js/idioma.js?v=3"></script>
+  <script src="js/theme.js?v=3"></script>
+  <link rel="stylesheet" href="css/tutorial.css"/>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="logo-globe">✈</span> KAVARI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
+      <li><a href="paises.html" class="active" data-i18n="navDestinos">Destinos</a></li>
+      <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
+      <li><a href="ayuda.html" data-i18n="ayuda">Ayuda</a></li>
+      <li><a href="contacto.html" data-i18n="contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-btn-tutorial" data-i18n="tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
+      <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma"><span id="langLabel">ES</span></button>
+      <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro">Oscuro</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Cabecera principal -->
+<header class="page-hero">
+  <div class="page-hero-bg"> <img src="img/Bannnerpaises.jpeg" alt=""></div>
+  <div class="page-hero-content">
+    <p class="hero-eyebrow" data-i18n="paisesEyebrow">Tu Próxima Aventura Te Espera</p>
+    <h1 data-i18n="paisesTitulo">Explora Nuestros Destinos</h1>
+    <p class="hero-sub" data-i18n="paisesSub">36 países a tu disposición</p>
+  </div>
+</header>
+
+<!-- Buscador y contador de destinos -->
+<div class="controls-wrap">
+  <div class="controls-inner">
+    <!-- Cuadro de búsqueda -->
+    <div class="search-wrap">
+      <svg class="search-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Busca tu destino con Kavari…" data-i18n-placeholder="paisesBuscar" oninput="buscar()"/>
+    </div>
+    <!-- Muestra cuántos destinos se ven después de buscar -->
+    <div class="stats-row">
+      <div class="stat-pill"> <span id="countVisible">36</span> <span data-i18n="paisesDestinos">destinos</span></div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Todos los países -->
+<main class="page-body">
+  <div class="destinos-grid" id="destinosGrid">
+
+    <!-- Latinoamérica & Caribe -->
+    <div class="region-label" data-i18n="paisesRegionLatam">Latinoamérica & Caribe</div>
+
+    <!-- Panamá -->
+    <div class="dest-card" data-name="panamá panama canal casco viejo">
+      <div class="dest-thumb">
+        <img src="img/Panama.webp" alt="Canal de Panamá" loading="lazy" decoding="async"/>
+        <div class="thumb-badge">Guía disponible</div>
+      </div>
+      <div class="dest-info">
+        <h3>Panamá</h3>
+        <p>Casco Viejo, Canal de Panamá, BioMuseo, Islas Taboga y comunidades Guna en San Blas.</p>
+        <button class="dest-btn" onclick="irAPais('panama')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Colombia -->
+    <div class="dest-card" data-name="colombia cartagena medellin bogota">
+      <div class="dest-thumb">
+        <img src="img/Colombia.webp" alt="Cartagena Colombia" loading="lazy" decoding="async"/>
+        <div class="thumb-badge">Popular</div>
+      </div>
+      <div class="dest-info">
+        <h3>Colombia</h3>
+        <p>Cartagena amurallada, Islas del Rosario, Valle del Cauca y comunidades Wayuu en La Guajira.</p>
+        <button class="dest-btn" onclick="irAPais('colombia')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- México -->
+    <div class="dest-card" data-name="méxico mexico teotihuacan cancun oaxaca">
+      <div class="dest-thumb">
+        <img src="img/Mexico.jpg" alt="Teotihuacán México" loading="lazy" decoding="async"/>
+        <div class="thumb-badge"> Trending</div>
+      </div>
+      <div class="dest-info">
+        <h3>México</h3>
+        <p>Ciudad de México, Teotihuacán, Oaxaca, Cancún y comunidades zapotecas del sur.</p>
+        <button class="dest-btn" onclick="irAPais('mexico')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Costa Rica -->
+    <div class="dest-card" data-name="costa rica arenal tortuguero ecoturismo">
+      <div class="dest-thumb">
+        <img src="img/Costa_Rica.jpg" alt="Costa Rica selva" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Costa Rica</h3>
+        <p>Volcán Arenal, Manuel Antonio, tortugas en Tortuguero y ecoturismo en la selva.</p>
+        <button class="dest-btn" onclick="irAPais('costa-rica')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Perú -->
+    <div class="dest-card" data-name="perú peru machu picchu cusco inca">
+      <div class="dest-thumb">
+        <img src="img/Peru.webp" alt="Machu Picchu Perú" loading="lazy" decoding="async"/>
+        <div class="thumb-badge">Patrimonio UNESCO</div>
+      </div>
+      <div class="dest-info">
+        <h3>Perú</h3>
+        <p>Machu Picchu, Valle Sagrado, Cusco y rituales andinos con comunidades quechuas.</p>
+        <button class="dest-btn" onclick="irAPais('peru')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- República Dominicana -->
+    <div class="dest-card" data-name="república dominicana punta cana santo domingo samaná">
+      <div class="dest-thumb">
+        <img src="img/República_Dominicana.jpg" alt="Punta Cana playas" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>República Dominicana</h3>
+        <p>Punta Cana, Santo Domingo colonial, Samaná y experiencias afrocaribeñas.</p>
+        <button class="dest-btn" onclick="irAPais('republica-dominicana')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Argentina -->
+    <div class="dest-card" data-name="argentina buenos aires patagonia iguazú mendoza">
+      <div class="dest-thumb">
+        <img src="img/Argentina.jpg" alt="Cataratas del Iguazú Argentina" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Argentina</h3>
+        <p>Buenos Aires, Patagonia, Cataratas del Iguazú, Mendoza y los glaciares patagónicos.</p>
+        <button class="dest-btn" onclick="irAPais('argentina')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Brasil -->
+    <div class="dest-card" data-name="brasil brazil río rio de janeiro amazonia cristo redentor">
+      <div class="dest-thumb">
+        <img src="img/Brasil.jpg" alt="Río de Janeiro Brasil" loading="lazy" decoding="async"/>
+        <div class="thumb-badge"> Trending</div>
+      </div>
+      <div class="dest-info">
+        <h3>Brasil</h3>
+        <p>Río de Janeiro, São Paulo, Amazonas, Pantanal y las playas de Florianópolis.</p>
+        <button class="dest-btn" onclick="irAPais('brasil')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Chile -->
+    <div class="dest-card" data-name="chile santiago patagonia atacama torres del paine isla de pascua">
+      <div class="dest-thumb">
+        <img src="img/Chile.webp" alt="Torres del Paine Chile" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Chile</h3>
+        <p>Santiago, Atacama, Torres del Paine, Isla de Pascua y los viñedos del Valle Central.</p>
+        <button class="dest-btn" onclick="irAPais('chile')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Ecuador -->
+    <div class="dest-card" data-name="ecuador galápagos quito amazon">
+      <div class="dest-thumb">
+        <img src="img/Ecuador.webp" alt="Galápagos Ecuador" loading="lazy" decoding="async"/>
+        <div class="thumb-badge">Patrimonio UNESCO</div>
+      </div>
+      <div class="dest-info">
+        <h3>Ecuador</h3>
+        <p>Islas Galápagos, Quito colonial, selva amazónica y comunidades Kichwa en el Oriente.</p>
+        <button class="dest-btn" onclick="irAPais('ecuador')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Cuba -->
+    <div class="dest-card" data-name="cuba habana la habana varadero trinidad">
+      <div class="dest-thumb">
+        <img src="img/Cuba.webp" alt="La Habana Cuba" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Cuba</h3>
+        <p>La Habana Vieja, Varadero, Trinidad colonial, música son y cultura afrocubana.</p>
+        <button class="dest-btn" onclick="irAPais('cuba')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Guatemala -->
+    <div class="dest-card" data-name="guatemala tikal antigua atitlán mayas">
+      <div class="dest-thumb">
+        <img src="img/Guatemala.webp" alt="Tikal Guatemala" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Guatemala</h3>
+        <p>Tikal, Antigua Guatemala, Lago Atitlán y comunidades mayas del altiplano occidental.</p>
+        <button class="dest-btn" onclick="irAPais('guatemala')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Bolivia -->
+    <div class="dest-card" data-name="bolivia uyuni titicaca la paz aymara">
+      <div class="dest-thumb">
+        <img src="img/Bolivia.jpeg" alt="Salar de Uyuni Bolivia" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Bolivia</h3>
+        <p>Salar de Uyuni, Lago Titicaca, La Paz y comunidades aymaras en el altiplano.</p>
+        <button class="dest-btn" onclick="irAPais('bolivia')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Venezuela -->
+    <div class="dest-card" data-name="venezuela los roques angel salto gran sabana">
+      <div class="dest-thumb">
+        <img src="img/Venezuela.webp" alt="Salto Ángel Venezuela" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Venezuela</h3>
+        <p>Los Roques, Salto Ángel, Gran Sabana y tepuyes únicos en el mundo.</p>
+        <button class="dest-btn" onclick="irAPais('venezuela')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Uruguay -->
+    <div class="dest-card" data-name="uruguay montevideo punta del este colonia">
+      <div class="dest-thumb">
+        <img src="img/Uruguay.webp" alt="Punta del Este Uruguay" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Uruguay</h3>
+        <p>Montevideo, Punta del Este, Colonia del Sacramento y playas del Río de la Plata.</p>
+        <button class="dest-btn" onclick="irAPais('uruguay')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Paraguay -->
+    <div class="dest-card" data-name="paraguay asunción jesuitas guaraní pantanal">
+      <div class="dest-thumb">
+        <img src="img/Paraguay.jpg" alt="Misiones jesuíticas Paraguay" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Paraguay</h3>
+        <p>Asunción, misiones jesuíticas, Pantanal paraguayo e historia guaraní.</p>
+        <button class="dest-btn" onclick="irAPais('paraguay')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Honduras -->
+    <div class="dest-card" data-name="honduras copán roatán bahía coral">
+      <div class="dest-thumb">
+        <img src="img/Honduras.webp" alt="Roatán Honduras" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Honduras</h3>
+        <p>Copán Ruinas, Roatán y la Bahía de las Islas, arrecifes de coral y selva tropical.</p>
+        <button class="dest-btn" onclick="irAPais('honduras')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Nicaragua -->
+    <div class="dest-card" data-name="nicaragua granada ometepe lago pacífico">
+      <div class="dest-thumb">
+        <img src="img/Nicaragua.webp" alt="Granada Nicaragua" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Nicaragua</h3>
+        <p>Granada colonial, Isla de Ometepe, Lago Nicaragua y playas vírgenes del Pacífico.</p>
+        <button class="dest-btn" onclick="irAPais('nicaragua')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- El Salvador -->
+    <div class="dest-card" data-name="el salvador coatepeque ruta flores surf tazumal">
+      <div class="dest-thumb">
+        <img src="img/El Salvadorpais.webp" alt="El Salvador playa" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>El Salvador</h3>
+        <p>Ruta de las Flores, Lago Coatepeque, surf en El Tunco y ruinas de Tazumal.</p>
+        <button class="dest-btn" onclick="irAPais('el-salvador')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Belice -->
+    <div class="dest-card" data-name="belize belice caye caulker barrera coral maya">
+      <div class="dest-thumb">
+        <img src="img/Belice.jpg" alt="Gran Barrera Coral Belice" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Belice</h3>
+        <p>Gran Barrera de Coral, Caye Caulker, ruinas mayas de Caracol y selva tropical.</p>
+        <button class="dest-btn" onclick="irAPais('belice')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Guyana -->
+    <div class="dest-card" data-name="guyana kaieteur selva amazónica aves">
+      <div class="dest-thumb">
+        <img src="img/Guyana.jpg" alt="Kaieteur Falls Guyana" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Guyana</h3>
+        <p>Kaieteur Falls, selva amazónica virgen, comunidades indígenas y aves exóticas.</p>
+        <button class="dest-btn" onclick="irAPais('guyana')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Trinidad y Tobago -->
+    <div class="dest-card" data-name="trinidad tobago carnaval calipso port of spain">
+      <div class="dest-thumb">
+        <img src="img/Trinidad_Tobago.webp" alt="Trinidad y Tobago playa" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Trinidad y Tobago</h3>
+        <p>Carnaval de Port of Spain, playas de Tobago, selva tropical y cultura calipso.</p>
+        <button class="dest-btn" onclick="irAPais('trinidad-y-tobago')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Jamaica -->
+    <div class="dest-card" data-name="jamaica kingston reggae bob marley montego bay">
+      <div class="dest-thumb">
+        <img src="img/Jamaica.webp" alt="Jamaica playa caribeña" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Jamaica</h3>
+        <p>Montego Bay, Dunn's River Falls, Blue Mountains y la cultura reggae de Bob Marley.</p>
+        <button class="dest-btn" onclick="irAPais('jamaica')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Puerto Rico -->
+    <div class="dest-card" data-name="puerto rico san juan yunque vieques caribe">
+      <div class="dest-thumb">
+        <img src="img/Puerto_Rico.webp" alt="San Juan Puerto Rico" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Puerto Rico</h3>
+        <p>San Juan colonial, El Yunque, Vieques bioluminiscente y playas del Caribe.</p>
+        <button class="dest-btn" onclick="irAPais('puerto-rico')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Bahamas -->
+    <div class="dest-card" data-name="bahamas nassau exumas cerdos nadadores coral">
+      <div class="dest-thumb">
+        <img src="img/Bahamas.webp" alt="Bahamas aguas turquesas" loading="lazy" decoding="async"/>
+        <div class="thumb-badge">Paraíso</div>
+      </div>
+      <div class="dest-info">
+        <h3>Bahamas</h3>
+        <p>Nassau, Exumas, aguas turquesas, cerdos nadadores y arrecifes de coral.</p>
+        <button class="dest-btn" onclick="irAPais('bahamas')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Haití -->
+    <div class="dest-card" data-name="haití haiti citadelle jacmel vodou">
+      <div class="dest-thumb">
+        <img src="img/Haití.jpg" alt="Haití citadelle" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Haití</h3>
+        <p>Citadelle Laferrière, Jacmel colonial, cultura vodou y playas del norte caribeño.</p>
+        <button class="dest-btn" onclick="irAPais('haiti')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Europa -->
+    <div class="region-label" data-i18n="paisesRegionEuropa">Europa</div>
+
+    <!-- España -->
+    <div class="dest-card" data-name="españa madrid barcelona sagrada familia alhambra canarias">
+      <div class="dest-thumb">
+        <img src="img/España.webp" alt="Sagrada Familia Barcelona" loading="lazy" decoding="async"/>
+        <div class="thumb-badge"> Trending</div>
+      </div>
+      <div class="dest-info">
+        <h3>España</h3>
+        <p>Madrid, Barcelona, Sagrada Familia, Alhambra de Granada y las Islas Canarias.</p>
+        <button class="dest-btn" onclick="irAPais('espana')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Portugal -->
+    <div class="dest-card" data-name="portugal lisboa oporto sintra algarve fado">
+      <div class="dest-thumb">
+        <img src="img/Portugal.jpg" alt="Lisboa Portugal" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Portugal</h3>
+        <p>Lisboa, Oporto, Sintra, Algarve y la cultura del fado Patrimonio de la Humanidad.</p>
+        <button class="dest-btn" onclick="irAPais('portugal')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Italia -->
+    <div class="dest-card" data-name="italia roma venecia florencia coliseo pompeya cinque terre">
+      <div class="dest-thumb">
+        <img src="img/Italia.jpg" alt="Coliseo Romano Italia" loading="lazy" decoding="async"/>
+        <div class="thumb-badge"> Más visitado</div>
+      </div>
+      <div class="dest-info">
+        <h3>Italia</h3>
+        <p>Roma, Venecia, Florencia, Cinque Terre, Pompeya y la gastronomía mediterránea.</p>
+        <button class="dest-btn" onclick="irAPais('italia')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Francia -->
+    <div class="dest-card" data-name="francia paris eiffel côte azur burdeos normandía">
+      <div class="dest-thumb">
+        <img src="img/Francia.webp" alt="Torre Eiffel París Francia" loading="lazy" decoding="async"/>
+        <div class="thumb-badge">Icónico</div>
+      </div>
+      <div class="dest-info">
+        <h3>Francia</h3>
+        <p>París, Torre Eiffel, Côte d'Azur, Mont Saint-Michel y los viñedos de Burdeos.</p>
+        <button class="dest-btn" onclick="irAPais('francia')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Asia & África -->
+    <div class="region-label" data-i18n="paisesRegionAsia">Asia & África</div>
+
+    <!-- Japón -->
+    <div class="dest-card" data-name="japón japon tokio kyoto fuji samurái geisha">
+      <div class="dest-thumb">
+        <img src="img/Japon.webp" alt="Monte Fuji Japón" loading="lazy" decoding="async"/>
+        <div class="thumb-badge"> Trending</div>
+      </div>
+      <div class="dest-info">
+        <h3>Japón</h3>
+        <p>Tokio, Kioto, Monte Fuji, templos de Nara y la cultura samurái e ikebana.</p>
+        <button class="dest-btn" onclick="irAPais('japon')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Tailandia -->
+    <div class="dest-card" data-name="tailandia thailand bangkok chiang mai phuket buda">
+      <div class="dest-thumb">
+        <img src="img/Tailandia.webp" alt="Templos Tailandia Bangkok" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Tailandia</h3>
+        <p>Bangkok, Chiang Mai, Phuket, templos budistas y rituales del Año Nuevo Songkran.</p>
+        <button class="dest-btn" onclick="irAPais('tailandia')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Marruecos -->
+    <div class="dest-card" data-name="marruecos marrakech sahara fez medina bereber">
+      <div class="dest-thumb">
+        <img src="img/Marruecos.jpg" alt="Marrakech Marruecos" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Marruecos</h3>
+        <p>Marrakech, Fez, desierto del Sahara, medinas históricas y la cultura bereber.</p>
+        <button class="dest-btn" onclick="irAPais('marruecos')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Turquía -->
+    <div class="dest-card" data-name="turquía turquia estambul cappadocia capadocia pamukkale éfeso">
+      <div class="dest-thumb">
+        <img src="img/Turquía.jpg" alt="Capadocia globos Turquía" loading="lazy" decoding="async"/>
+        <div class="thumb-badge">Espectacular</div>
+      </div>
+      <div class="dest-info">
+        <h3>Turquía</h3>
+        <p>Estambul, Capadocia en globo, Pamukkale, Éfeso y el Bósforo entre dos continentes.</p>
+        <button class="dest-btn" onclick="irAPais('turquia')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Grecia -->
+    <div class="dest-card" data-name="grecia atenas santorini mykonos creta acrópolis">
+      <div class="dest-thumb">
+        <img src="img/Grecia.webp" alt="Santorini Grecia" loading="lazy" decoding="async"/>
+        <div class="thumb-badge"> Más visitado</div>
+      </div>
+      <div class="dest-info">
+        <h3>Grecia</h3>
+        <p>Atenas, Santorini, Mykonos, Creta y las ruinas del mundo antiguo clásico.</p>
+        <button class="dest-btn" onclick="irAPais('grecia')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+    <!-- Sudáfrica -->
+    <div class="dest-card" data-name="sudáfrica sudafrica cape town safari kruger ciudad del cabo">
+      <div class="dest-thumb">
+        <img src="img/Sudafrica.webp" alt="Ciudad del Cabo Sudáfrica" loading="lazy" decoding="async"/>
+      </div>
+      <div class="dest-info">
+        <h3>Sudáfrica</h3>
+        <p>Ciudad del Cabo, safari en Kruger, Ruta Jardín y la costa de KwaZulu-Natal.</p>
+        <button class="dest-btn" onclick="irAPais('sudafrica')" data-i18n="paisesVerDestino">Ver destino</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mensaje que aparece cuando no se encuentran resultados -->
+  <p class="no-results" id="noResults">
+    <span data-i18n="paisesNoResultados">No se encontraron destinos para</span> "<span id="noTerm"></span>".
+  </p>
+
+</main>
+
+<!-- Pie de página -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-globe"></span> KAVARI
+    </div>
+    <p class="footer-copy" data-i18n="footerTexto">© 2025 Kavari — Fundación Emanuel González-Revilla · Supérate Promo 2027</p>
+  </div>
+</footer>
+
+<script src="js/idioma.js?v=3"></script>
+<script src="js/theme.js?v=3"></script>
+<script src="js/tutorial.js"></script>
+<script src="js/chatbot-engine.js"></script>
+<script src="js/chatbot-widget.js"></script>
+<script src="js/account.js"></script>
+<script src="js/paises.js"></script>
+</body>
+</html>
+

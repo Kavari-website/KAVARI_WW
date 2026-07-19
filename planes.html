@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Planes · KAVARI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/planes.css">
+  <link rel="stylesheet" href="css/ui-system.css">
+  <link rel="stylesheet" href="css/pricing.css">
+  <link rel="stylesheet" href="css/nav-glass.css">
+  <link rel="stylesheet" href="css/nav-unified.css">
+  <link rel="stylesheet" href="css/portal-nav.css">
+  <link rel="stylesheet" href="css/site-polish.css">
+  <link rel="stylesheet" href="css/tutorial.css">
+  <script src="js/idioma.js"></script>
+  <script src="js/theme.js"></script>
+</head>
+<body class="pricing-page">
+  <nav class="portal-nav" aria-label="Navegación de planes">
+    <div class="portal-nav-start">
+      <button class="portal-back" type="button" onclick="history.length > 1 ? history.back() : location.href='index.html'">← Volver</button>
+      <a href="index.html" class="portal-brand">KAVARI</a>
+    </div>
+    <div class="portal-nav-actions">
+      <a href="cuenta.html">Mi cuenta</a>
+      <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)">Tutorial</button>
+      <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()"><span id="langLabel">ES</span></button>
+      <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()">Oscuro</button>
+    </div>
+  </nav>
+  <main class="pricing-section" id="pricing">
+    <header class="pricing-header">
+      <div><span class="pricing-kicker"><i></i> Planes</span><h1>Elige cómo quieres<br>viajar con KAVARI.</h1></div>
+      <p>Empieza gratis o desbloquea herramientas de planificación y experiencias exclusivas.</p>
+    </header>
+    <section class="pricing-grid" aria-label="Planes disponibles">
+      <div class="pricing-spotlight"><article class="pricing-card">
+        <div class="pricing-name">Viajero</div><hr class="pricing-rule">
+        <div class="pricing-price"><strong>Gratis</strong><span>para siempre</span></div>
+        <p class="pricing-desc">La forma sencilla de descubrir el mundo con KAVARI.</p>
+        <button class="pricing-cta" data-plan="viajero">Continuar gratis</button>
+        <ul class="pricing-features"><li><span class="feature-icon">✓</span>36 destinos</li><li><span class="feature-icon">✓</span>Guías, cultura y gastronomía</li><li><span class="feature-icon">✓</span>Asistente KAVARI</li><li class="excluded"><span class="feature-icon">×</span>Favoritos avanzados</li></ul>
+      </article></div>
+      <div class="pricing-spotlight"><article class="pricing-card featured">
+        <span class="pricing-badge">Más elegido</span><div class="pricing-name">Premium</div><hr class="pricing-rule">
+        <div class="pricing-price"><strong>US$9.99</strong><span>/ mes</span></div>
+        <p class="pricing-desc">Para quienes quieren preparar cada detalle de su próximo viaje.</p>
+        <button class="pricing-cta" data-plan="premium">Elegir Premium</button>
+        <ul class="pricing-features"><li><span class="feature-icon">✓</span>Todo lo de Viajero</li><li><span class="feature-icon">✓</span>Rutas y favoritos ilimitados</li><li><span class="feature-icon">✓</span>Preferencias de viaje guardadas</li><li><span class="feature-icon">✓</span>Recomendaciones personalizadas</li></ul>
+      </article></div>
+      <div class="pricing-spotlight"><article class="pricing-card op-plan">
+        <div class="pricing-name">OP</div><hr class="pricing-rule">
+        <div class="pricing-price"><strong>US$19.99</strong><span>/ mes</span></div>
+        <p class="pricing-desc">La experiencia completa para viajeros que quieren ir un paso más allá.</p>
+        <button class="pricing-cta" data-plan="op">Elegir OP</button>
+        <ul class="pricing-features"><li><span class="feature-icon">✓</span>Todo lo de Premium</li><li><span class="feature-icon">✓</span>Itinerarios prioritarios</li><li><span class="feature-icon">✓</span>Acceso anticipado a novedades</li><li><span class="feature-icon">✓</span>Soporte prioritario</li></ul>
+      </article></div>
+    </section>
+    <p class="pricing-note">Los planes Premium y OP se pueden seleccionar desde ahora; el cobro se activa al conectar la pasarela de pago.</p>
+    <p class="pricing-status" id="planStatus" aria-live="polite"></p>
+  </main>
+  <script src="js/account.js"></script>
+  <script src="js/tutorial.js"></script>
+  <script>
+    document.querySelectorAll('.pricing-spotlight').forEach(card => card.addEventListener('pointermove', event => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--x', event.clientX - rect.left + 'px');
+      card.style.setProperty('--y', event.clientY - rect.top + 'px');
+    }));
+    document.querySelectorAll('[data-plan]').forEach(button => button.onclick = () => {
+      KavariAccount.setPlan(button.dataset.plan);
+      document.getElementById('planStatus').textContent = `Plan ${button.textContent.replace('Elegir ', '').replace('Continuar ', '')} guardado. Puedes verlo en Mi cuenta.`;
+    });
+  </script>
+</body>
+</html>

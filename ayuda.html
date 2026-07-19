@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="tituloAyuda">Ayuda — KAVARI Travel</title>
+  <meta name="description" content="Centro de ayuda KAVARI: preguntas frecuentes, guías de uso, soporte para viajeros y guías turísticos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/chatbot-widget.css">
+  <link rel="stylesheet" href="css/ui-system.css">
+  <link rel="stylesheet" href="css/nav-glass.css">
+  <link rel="stylesheet" href="css/nav-unified.css">
+  <link rel="stylesheet" href="css/site-polish.css">
+  <link rel="stylesheet" href="css/traveler-registration.css">
+  <link rel="stylesheet" href="css/ayuda.css">
+  <link rel="stylesheet" href="css/tutorial.css">
+  <script src="js/idioma.js?v=3"></script>
+  <script src="js/theme.js?v=3"></script>
+</head>
+<body>
+
+<nav class="navbar nav-glass" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      KAVARI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
+      <li><a href="paises.html" data-i18n="navDestinos">Destinos</a></li>
+      <li><a href="#registro-viajero" class="nav-register">Registrarme</a></li>
+      <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
+      <li><a href="ayuda.html" class="active" data-i18n="ayuda">Ayuda</a></li>
+      <li><a href="contacto.html" data-i18n="contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
+      <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma">
+        <span id="langLabel">ES</span>
+      </button>
+      <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro" data-i18n="modoOscuro">Oscuro</button>
+      <a class="nav-btn-plans" href="planes.html" data-i18n="planes">Planes</a>
+      <a class="nav-btn-auth" href="cuenta.html" data-i18n="ingresarUnirme">Ingresar / Unirme</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="help-hero">
+  <h1 data-i18n="ayudaTitulo">Centro de Ayuda</h1>
+  <p data-i18n="ayudaSubtitulo">Encuentra respuestas rápidas sobre cómo usar KAVARI y planificar tu próximo viaje.</p>
+  <div class="help-search">
+    <input type="text" id="helpSearch" placeholder="Buscar en el centro de ayuda..." data-i18n-placeholder="ayudaBuscar" oninput="filtrarFAQ()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  </div>
+</div>
+
+<main class="help-main">
+
+  <!-- Categorías -->
+  <div class="help-categories">
+    <a class="help-cat-card" href="#faq-viajeros">
+      <div class="help-cat-icon" style="background:#eff6ff" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z"/>
+        </svg>
+      </div>
+      <h3 data-i18n="catViajeros">Para viajeros</h3>
+      <p data-i18n="catViajerosDesc">Cómo buscar destinos, reservar paquetes y usar la plataforma.</p>
+      <span class="cat-arrow">Ver más ›</span>
+    </a>
+    <a class="help-cat-card" href="#faq-guias">
+      <div class="help-cat-icon" style="background:#f0fdf4" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M15 9 L9 12 L15 15 L12 12 Z"/>
+        </svg>
+      </div>
+      <h3 data-i18n="catGuias">Para guías</h3>
+      <p data-i18n="catGuiasDesc">Registro, membresías, pagos y gestión de tu perfil profesional.</p>
+      <span class="cat-arrow">Ver más ›</span>
+    </a>
+    <a class="help-cat-card" href="#faq-plataforma">
+      <div class="help-cat-icon" style="background:#fff7ed" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </div>
+      <h3 data-i18n="catPlataforma">La plataforma</h3>
+      <p data-i18n="catPlataformaDesc">Idiomas, modo oscuro, tutorial y configuración general.</p>
+      <span class="cat-arrow">Ver más ›</span>
+    </a>
+    <a class="help-cat-card" href="#faq-paquetes">
+      <div class="help-cat-icon" style="background:#fdf4ff" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21 V10 L12 4 L21 10 V21 Z"/>
+          <path d="M9 21 V14 H15 V21"/>
+        </svg>
+      </div>
+      <h3 data-i18n="catPaquetes">Paquetes de viaje</h3>
+      <p data-i18n="catPaquetesDesc">Qué incluyen los paquetes, precios, reservas y cancelaciones.</p>
+      <span class="cat-arrow">Ver más ›</span>
+    </a>
+  </div>
+
+  <!-- FAQ Viajeros -->
+  <div class="faq-section" id="faq-viajeros">
+    <h2 data-i18n="faqViajerosTitulo">Preguntas frecuentes — Viajeros</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq1a">
+        <span data-i18n="faq1q">¿Cómo busco un destino turístico en KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq1a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq1a">En la página de Destinos encontrarás los 36 países disponibles en KAVARI. Puedes usar el buscador en la parte superior para filtrar por nombre de país o ciudad. Haz clic en "Ver destino" para acceder a toda la información turística de ese país: cultura, gastronomía, aventura, aerolíneas, hospedajes y más.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq2a">
+        <span data-i18n="faq2q">¿Puedo contratar a un guía turístico desde KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq2a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq2a">Sí. Dentro de cada página de país encontrarás la sección "Guías Turísticos" donde se listan los guías certificados disponibles para ese destino. Filtra por nivel (Diamante, Oro, Plata) y haz clic en "Contratar" para enviar tu solicitud directamente al guía.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq3a">
+        <span data-i18n="faq3q">¿Los precios que aparecen son definitivos?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq3a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq3a">Los precios de aerolíneas y hospedajes son precios de referencia en temporada media. Los precios finales pueden variar según fechas, disponibilidad y origen del vuelo. Al hacer clic en "Reservar vuelo" o "Reservar estadía" serás redirigido directamente a la aerolínea u hospedaje para confirmar el precio final.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq4a">
+        <span data-i18n="faq4q">¿Qué información práctica puedo encontrar sobre cada país?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq4a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq4a">En la sección "Info práctica" de cada país encontrarás: moneda local, idioma oficial, visas y documentos necesarios, transporte, conectividad Wi-Fi, mejores temporadas para viajar e itinerario sugerido. También puedes usar el Asistente IA para hacer preguntas específicas sobre el destino.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq5a">
+        <span data-i18n="faq5q">¿Cómo funciona el Asistente IA de KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq5a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq5a">Cada página de país tiene un chatbot especializado en ese destino. Puedes preguntarle sobre clima, visas, seguridad, gastronomía, costos, transporte, emergencias y más. El asistente responde con información específica del país seleccionado. Usa las sugerencias predefinidas para empezar o escribe tu propia pregunta.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Guías -->
+  <div class="faq-section" id="faq-guias">
+    <h2 data-i18n="faqGuiasTitulo">Preguntas frecuentes — Guías turísticos</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq6a">
+        <span data-i18n="faq6q">¿Cómo me registro como guía turístico en KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq6a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq6a">Haz clic en el botón "Soy Guía" en la página principal o visita la sección de Guías y selecciona "Unirme como guía". Completa tu perfil con nombre, descripción, idiomas, especialidades, ciudad y país donde ejerces. Selecciona tu nivel de membresía (Plata, Oro o Diamante) y realiza el pago para activar tu perfil.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq7a">
+        <span data-i18n="faq7q">¿Cuáles son las diferencias entre los niveles Plata, Oro y Diamante?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq7a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq7a"><strong>Plata ($20/mes):</strong> Visibilidad estándar en los listados de guías. <br><strong>Oro ($35/mes):</strong> Mayor posicionamiento en resultados de búsqueda, perfil destacado. <br><strong>Diamante ($50/mes):</strong> Prioridad máxima en listados, distintivo especial, aparece primero ante viajeros. Los guías Diamante y Oro aparecen ordenados antes que los de Plata.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq8a">
+        <span data-i18n="faq8q">¿En qué países puedo registrarme como guía?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq8a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq8a">Puedes registrarte como guía para cualquiera de los 36 destinos disponibles en KAVARI. Al seleccionar tu país durante el registro, tu perfil aparecerá automáticamente en la sección "Guías Turísticos" de ese país. Si operas en múltiples países, puedes crear perfiles separados para cada uno.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq9a">
+        <span data-i18n="faq9q">¿Qué métodos de pago acepta KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq9a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq9a">Para el pago de membresías de guía aceptamos: Yappy (banca móvil de Panamá), Transferencia bancaria (Banco General, BAC, Banistmo) y Tarjeta de crédito/débito (Visa, Mastercard, American Express). Todos los pagos están protegidos con cifrado SSL.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Plataforma -->
+  <div class="faq-section" id="faq-plataforma">
+    <h2 data-i18n="faqPlataformaTitulo">Preguntas frecuentes — La plataforma</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq10a">
+        <span data-i18n="faq10q">¿En qué idiomas está disponible KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq10a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq10a">KAVARI está disponible en Español e Inglés. Puedes cambiar el idioma en cualquier momento usando el selector de idioma (símbolo ⊕) disponible en la barra de navegación de todas las páginas. Tu preferencia se guarda automáticamente para tu próxima visita.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq11a">
+        <span data-i18n="faq11q">¿Cómo activo el modo oscuro?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq11a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq11a">Haz clic en el botón "Oscuro" (símbolo ☼) en cualquier barra de navegación de KAVARI para activar el modo oscuro. El mismo botón cambia a símbolo ☾ para volver al modo claro. Tu preferencia se guarda automáticamente y se aplica en todas las páginas de la plataforma.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq12a">
+        <span data-i18n="faq12q">¿Cómo funciona el tutorial de la plataforma?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq12a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq12a">El tutorial interactivo aparece automáticamente la primera vez que visitas KAVARI. Guía paso a paso por todas las funcionalidades de la plataforma con mensajes emergentes, flechas y ejemplos. Si quieres volver a verlo, haz clic en el botón "Tutorial" en el menú principal del inicio.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Paquetes -->
+  <div class="faq-section" id="faq-paquetes">
+    <h2 data-i18n="faqPaquetesTitulo">Preguntas frecuentes — Paquetes de viaje</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq13a">
+        <span data-i18n="faq13q">¿Qué incluye un paquete de viaje KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq13a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq13a">Cada paquete es diferente, pero generalmente incluyen: vuelo internacional (en los paquetes internacionales), hotel de 3 o 4 estrellas, traslados aeropuerto-hotel, guía turístico certificado, desayuno diario y entradas a las principales atracciones. Haz clic en "Ver detalles" en cualquier paquete para ver exactamente qué incluye ese itinerario.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq14a">
+        <span data-i18n="faq14q">¿Puedo reservar directamente desde KAVARI?</span>
+        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" id="faq14a" role="region">
+        <div class="faq-answer-inner" data-i18n="faq14a">Actualmente KAVARI funciona como plataforma de información y directorio turístico. Al hacer clic en "Reservar ahora" serás dirigido a ver el destino completo para coordinar con guías locales. Para reservas de vuelos y hoteles, los enlaces te redirigen directamente a las aerolíneas y a Airbnb. Para paquetes completos, contáctanos a través del formulario de Contacto.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje de "no resultados" -->
+  <p class="no-results-faq" id="noResultsFAQ" style="display:none;" data-i18n="ayudaNoResultados">No se encontraron preguntas que coincidan con tu búsqueda.</p>
+
+  <!-- CTA -->
+  <div class="help-cta">
+    <h2 data-i18n="ayudaCTATitulo">¿No encontraste lo que buscabas?</h2>
+    <p data-i18n="ayudaCTADesc">Nuestro equipo está listo para ayudarte con cualquier consulta sobre destinos, guías o la plataforma.</p>
+    <div class="cta-btns">
+      <a href="contacto.html" class="btn-cta-white" data-i18n="ayudaCTAContacto">Contactar soporte</a>
+      <a href="guias.html" class="btn-cta-outline" data-i18n="ayudaCTAGuias">Ver guías turísticos</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="textfooter" data-i18n="footerTexto">© 2025 Kavari — Fundación Emanuel González-Revilla · Supérate Promo 2027</p>
+  </div>
+</footer>
+
+<script src="js/chatbot-engine.js"></script>
+<script src="js/chatbot-widget.js"></script>
+<script src="js/account.js"></script>
+<script src="js/traveler-registration.js"></script>
+<script src="js/tutorial.js"></script>
+<script src="js/ayuda.js"></script>
+</body>
+</html>

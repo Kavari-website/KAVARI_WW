@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVARI Travel — Descubre el Mundo</title>
+    <meta name="description" content="Descubre los mejores destinos del mundo con KAVARI. Guías turísticos certificados, paquetes de viaje, aerolíneas y hospedajes en una sola plataforma.">
+    <meta name="keywords" content="turismo, viajes, guías turísticos, destinos, Panamá, Colombia, América Latina">
+    <meta property="og:title" content="KAVARI Travel">
+    <meta property="og:description" content="Descubre los mejores destinos del mundo con guías certificados.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutorial.css">
+    <link rel="stylesheet" href="css/chatbot-widget.css">
+    <link rel="stylesheet" href="css/ui-system.css">
+ 
+    <link rel="stylesheet" href="css/site-polish.css">
+    <link rel="stylesheet" href="css/traveler-registration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CARGAR IDIOMA.JS PRIMERO -->
+    <script src="js/idioma.js?v=3"></script>
+    <script src="js/theme.js?v=3"></script>
+</head>
+<body>
+
+<header class="hero">
+    <!-- Video de fondo -->
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="fondo.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar nav-glass home-nav" id="navbar">
+        <div class="logo">
+            <a href="index.html" style="color: inherit; text-decoration: none;">KAVARI</a>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
+            <li><a href="paises.html" data-i18n="navDestinos">Destinos</a></li>
+            <li><a href="#registro-viajero" class="nav-register">Registrarme</a></li>
+            <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
+            <li><a href="ayuda.html" data-i18n="ayuda">Ayuda</a></li>
+            <li><a href="contacto.html" data-i18n="contacto">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
+            <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma">
+                <span id="langLabel">ES</span>
+            </button>
+            <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro" data-i18n="modoOscuro">Oscuro</button>
+        </div>
+        <button class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ===== HERO CONTENT ===== -->
+    <div class="hero-content">
+        <h1 data-i18n="heroTitulo">Descubre <br> Nuevos Destinos</h1>
+        <p data-i18n="heroDescripcion">Vive experiencias inolvidables alrededor del mundo.</p>
+    </div>
+</header>
+
+<!-- ===== SEARCH BOX ===== -->
+<section class="search-box">
+    <div class="search-content">
+        <div>
+            <h2 data-i18n="searchTitulo">¿Listo para tu próxima aventura?</h2>
+            <p data-i18n="searchDescripcion">Encuentra el destino perfecto y comienza a viajar.</p>
+        </div>
+        <a href="paises.html">
+            <button data-i18n="searchBoton">Comenzar ahora</button>
+        </a>
+    </div>
+</section>
+
+<!-- ===== TOP 10 ===== -->
+<section class="featured-section">
+    <h2 data-i18n="top10Titulo">Top 10 Lugares Más Visitados</h2>
+    <div class="cards-container">
+
+        <!-- Tarjeta 1 -->
+        <div class="card reveal">
+            <img src="img/Obelisco.jpg" alt="Obelisco" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloObelisco">Obelisco y Teatro Colón</h3>
+                <p data-i18n="topObelisco">Admira el icónico Obelisco de Buenos Aires y disfruta de la cultura del Teatro Colón.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('obelisco')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="card reveal">
+            <img src="img/torre_efiel.webp" alt="Torre Eiffel" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloTorreEiffel">Torre Eiffel</h3>
+                <p data-i18n="topTorreEiffel">El símbolo más famoso de Francia y uno de los monumentos más fotografiados del planeta.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('torre-eiffel')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="card reveal">
+            <img src="img/CristoRedentor.webp" alt="Cristo Redentor" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloCristo">Cristo Redentor</h3>
+                <p data-i18n="topCristo">Vive una experiencia inolvidable visitando una de las estatuas más famosas del mundo.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('cristo-redentor')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="card reveal">
+            <img src="img/Torres.webp" alt="Torres del Paine" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloTorresPaine">Torres del Paine</h3>
+                <p data-i18n="topTorresPaine">Descubre montañas y paisajes impresionantes en el sur de Chile.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('torres-del-paine')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 5 -->
+        <div class="card reveal">
+            <img src="img/catedral.webp" alt="Cartagena" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloCartagena">Cartagena</h3>
+                <p data-i18n="topCartagena">Pasea por calles llenas de historia y arquitectura colonial.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('cartagena')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 6 -->
+        <div class="card reveal">
+            <img src="img/shuibuya.webp" alt="Japón" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloJapon">Fuji / Sensoji / Shibuya</h3>
+                <p data-i18n="topJapon">Explora la cultura japonesa entre templos y ciudades modernas.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('japon')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 7 -->
+        <div class="card reveal">
+            <img src="img/Machipichu.webp" alt="Machu Picchu" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloMachuPicchu">Machu Picchu</h3>
+                <p data-i18n="topMachuPicchu">Descubre la majestuosidad de la antigua ciudad inca rodeada de montañas y paisajes impresionantes. Vive una experiencia única llena de historia y cultura.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('machu-picchu')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 8 -->
+        <div class="card reveal">
+            <img src="img/Petra.webp" alt="Petra" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloPetra">Petra</h3>
+                <p data-i18n="topPetra">Contempla el majestuoso monumento excavado en roca, joya arquitectónica de Jordania.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('petra')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 9 -->
+        <div class="card reveal">
+            <img src="img/ChichénItzá.webp" alt="Chichén Itzá" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloChichen">Chichén Itzá</h3>
+                <p data-i18n="topChichen">Admira una de las ciudades mayas más impresionantes, famosa por su pirámide y su increíble legado arqueológico.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('chichen-itza')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta 10 -->
+        <div class="card reveal">
+            <img src="img/newyork.jpg" alt="Times Square" loading="lazy" decoding="async">
+            <div class="card-content">
+                <h3 data-i18n="topTituloTimesSquare">Times Square</h3>
+                <p data-i18n="topTimesSquare">El corazón iluminado de Nueva York y uno de los lugares urbanos más concurridos del mundo.</p>
+                <button class="btn-sabemas" onclick="abrirModalTop10('times-square')" data-i18n="saberMas">Saber más</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== PAQUETES DE VIAJE ===== -->
+<section class="places-section">
+    <div class="featured-section">
+        <h2 data-i18n="paquetesTitulo">Paquetes De Viaje</h2>
+    </div>
+
+    <!-- Paquete Francia -->
+    <div class="paquete-card reveal">
+        <div class="paquete-img-wrap">
+            <img src="img/paquete francia.png" alt="Paris Francia" loading="lazy" decoding="async">
+            <span class="paquete-badge" data-i18n="tagPopular">Más popular</span>
+        </div>
+        <div class="paquete-info">
+            <div class="paquete-region" data-i18n="regionEuropa">Europa</div>
+            <h3 data-i18n="paqueteFranciaTitulo">Francia</h3>
+            <p data-i18n="paqueteFranciaDesc">Un paquete completo con tours guiados, hoteles céntricos y costos claros para disfrutar Francia sin preocupaciones. Desde la Torre Eiffel hasta los viñedos de Burdeos.</p>
+            <div class="paquete-features">
+                <span class="paquete-feature" data-i18n="featureVuelo">Vuelo incluido</span>
+                <span class="paquete-feature" data-i18n="featureHotel4">Hotel 4 estrellas</span>
+                <span class="paquete-feature" data-i18n="featureDias8">8 días / 7 noches</span>
+                <span class="paquete-feature" data-i18n="featureGuia">Guía certificado</span>
+            </div>
+            <div class="paquete-bottom">
+                <div class="paquete-precio-wrap">
+                    <div class="paquete-desde" data-i18n="desde">Desde</div>
+                    <div class="paquete-precio">$1,850</div>
+                    <div class="paquete-pp" data-i18n="porPersona">por persona</div>
+                </div>
+                <div class="paquete-btns">
+                    <button class="btn-paquete-info" onclick="abrirModalPaquete('francia')" data-i18n="verDetalles">Ver detalles</button>
+                    <a href="paises.html" class="btn-paquete-reservar" onclick="seleccionarPais('francia')" data-i18n="reservarAhora">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paquete China -->
+    <div class="paquete-card reveal">
+        <div class="paquete-img-wrap">
+            <img src="img/paquete china.png" alt="China" loading="lazy" decoding="async">
+            <span class="paquete-badge" data-i18n="tagAventura">Aventura</span>
+        </div>
+        <div class="paquete-info">
+            <div class="paquete-region" data-i18n="regionAsia">Asia</div>
+            <h3 data-i18n="paqueteChinaTitulo">China</h3>
+            <p data-i18n="paqueteChinaDesc">Explora China con guías profesionales, transporte organizado, hoteles confortables y tarifas transparentes. Visita la Gran Muralla, el Palacio Imperial y mucho más.</p>
+            <div class="paquete-features">
+                <span class="paquete-feature" data-i18n="featureVuelo">Vuelo incluido</span>
+                <span class="paquete-feature" data-i18n="featureHotel4">Hotel 4 estrellas</span>
+                <span class="paquete-feature" data-i18n="featureDias10">10 días / 9 noches</span>
+                <span class="paquete-feature" data-i18n="featureTransporte">Transporte local</span>
+            </div>
+            <div class="paquete-bottom">
+                <div class="paquete-precio-wrap">
+                    <div class="paquete-desde" data-i18n="desde">Desde</div>
+                    <div class="paquete-precio">$2,200</div>
+                    <div class="paquete-pp" data-i18n="porPersona">por persona</div>
+                </div>
+                <div class="paquete-btns">
+                    <button class="btn-paquete-info" onclick="abrirModalPaquete('china')" data-i18n="verDetalles">Ver detalles</button>
+                    <a href="paises.html" class="btn-paquete-reservar" data-i18n="reservarAhora">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paquete India -->
+    <div class="paquete-card reveal">
+        <div class="paquete-img-wrap">
+            <img src="img/paquete india.png" alt="India" loading="lazy" decoding="async">
+            <span class="paquete-badge" data-i18n="tagCultural">Cultural</span>
+        </div>
+        <div class="paquete-info">
+            <div class="paquete-region" data-i18n="regionAsia">Asia</div>
+            <h3 data-i18n="paqueteIndiaTitulo">India</h3>
+            <p data-i18n="paqueteIndiaDesc">Un combo que ofrece vuelos, traslados, guías turísticos y alojamiento económico para vivir la magia de India. El Taj Mahal, Rajastán y Goa te esperan.</p>
+            <div class="paquete-features">
+                <span class="paquete-feature" data-i18n="featureVuelo">Vuelo incluido</span>
+                <span class="paquete-feature" data-i18n="featureHotel3">Hotel 3 estrellas</span>
+                <span class="paquete-feature" data-i18n="featureDias9">9 días / 8 noches</span>
+                <span class="paquete-feature" data-i18n="featureGuia">Guía certificado</span>
+            </div>
+            <div class="paquete-bottom">
+                <div class="paquete-precio-wrap">
+                    <div class="paquete-desde" data-i18n="desde">Desde</div>
+                    <div class="paquete-precio">$1,650</div>
+                    <div class="paquete-pp" data-i18n="porPersona">por persona</div>
+                </div>
+                <div class="paquete-btns">
+                    <button class="btn-paquete-info" onclick="abrirModalPaquete('india')" data-i18n="verDetalles">Ver detalles</button>
+                    <a href="paises.html" class="btn-paquete-reservar" data-i18n="reservarAhora">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paquete Italia -->
+    <div class="paquete-card reveal">
+        <div class="paquete-img-wrap">
+            <img src="img/paquete roma.png" alt="Italia" loading="lazy" decoding="async">
+            <span class="paquete-badge" data-i18n="tagClasico">Clásico</span>
+        </div>
+        <div class="paquete-info">
+            <div class="paquete-region" data-i18n="regionEuropa">Europa</div>
+            <h3 data-i18n="paqueteItaliaTitulo">Italia</h3>
+            <p data-i18n="paqueteItaliaDesc">Disfruta Italia con transporte, guías expertos, hospedaje encantador y precios justos en un solo paquete. Roma, Venecia, Florencia y la gastronomía italiana te esperan.</p>
+            <div class="paquete-features">
+                <span class="paquete-feature" data-i18n="featureVuelo">Vuelo incluido</span>
+                <span class="paquete-feature" data-i18n="featureHotel4">Hotel 4 estrellas</span>
+                <span class="paquete-feature" data-i18n="featureDias9">9 días / 8 noches</span>
+                <span class="paquete-feature" data-i18n="featureTours">Tours diarios</span>
+            </div>
+            <div class="paquete-bottom">
+                <div class="paquete-precio-wrap">
+                    <div class="paquete-desde" data-i18n="desde">Desde</div>
+                    <div class="paquete-precio">$1,950</div>
+                    <div class="paquete-pp" data-i18n="porPersona">por persona</div>
+                </div>
+                <div class="paquete-btns">
+                    <button class="btn-paquete-info" onclick="abrirModalPaquete('italia')" data-i18n="verDetalles">Ver detalles</button>
+                    <a href="paises.html" class="btn-paquete-reservar" data-i18n="reservarAhora">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paquete Panamá -->
+    <div class="paquete-card reveal">
+        <div class="paquete-img-wrap">
+            <img src="img/paquete panama.png" alt="Panama" loading="lazy" decoding="async">
+            <span class="paquete-badge" data-i18n="tagLocal">Local</span>
+        </div>
+        <div class="paquete-info">
+            <div class="paquete-region" data-i18n="regionCentroamerica">Centroamérica</div>
+            <h3 data-i18n="paquetePanamaTitulo">Panamá</h3>
+            <p data-i18n="paquetePanamaDesc">Disfruta Panamá con transporte, guías expertos, hospedaje frente al mar y precios justos en un solo paquete. Canal de Panamá, Casco Viejo y San Blas incluidos.</p>
+            <div class="paquete-features">
+                <span class="paquete-feature" data-i18n="featureTransporte">Transporte local</span>
+                <span class="paquete-feature" data-i18n="featureHotel4">Hotel 4 estrellas</span>
+                <span class="paquete-feature" data-i18n="featureDias5">5 días / 4 noches</span>
+                <span class="paquete-feature" data-i18n="featureGuia">Guía certificado</span>
+            </div>
+            <div class="paquete-bottom">
+                <div class="paquete-precio-wrap">
+                    <div class="paquete-desde" data-i18n="desde">Desde</div>
+                    <div class="paquete-precio">$680</div>
+                    <div class="paquete-pp" data-i18n="porPersona">por persona</div>
+                </div>
+                <div class="paquete-btns">
+                    <button class="btn-paquete-info" onclick="abrirModalPaquete('panama')" data-i18n="verDetalles">Ver detalles</button>
+                    <a href="paises.html" class="btn-paquete-reservar" onclick="localStorage.setItem('paisSeleccionado','panama'); return true;" data-i18n="reservarAhora">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paquete El Salvador -->
+    <div class="paquete-card reveal">
+        <div class="paquete-img-wrap">
+            <img src="img/paquetelsalvador.png" alt="El Salvador" loading="lazy" decoding="async">
+            <span class="paquete-badge" data-i18n="tagOferta">Oferta</span>
+        </div>
+        <div class="paquete-info">
+            <div class="paquete-region" data-i18n="regionCentroamerica">Centroamérica</div>
+            <h3 data-i18n="paqueteElSalvadorTitulo">El Salvador</h3>
+            <p data-i18n="paqueteElSalvadorDesc">Descubre El Salvador con traslados cómodos, actividades auténticas, hospedaje seleccionado y todo organizado en un solo paquete. Surf, volcanes y cultura local.</p>
+            <div class="paquete-features">
+                <span class="paquete-feature" data-i18n="featureTraslados">Traslados incluidos</span>
+                <span class="paquete-feature" data-i18n="featureHotel3">Hotel 3 estrellas</span>
+                <span class="paquete-feature" data-i18n="featureDias4">4 días / 3 noches</span>
+                <span class="paquete-feature" data-i18n="featureActividades">Actividades incluidas</span>
+            </div>
+            <div class="paquete-bottom">
+                <div class="paquete-precio-wrap">
+                    <div class="paquete-desde" data-i18n="desde">Desde</div>
+                    <div class="paquete-precio">$490</div>
+                    <div class="paquete-pp" data-i18n="porPersona">por persona</div>
+                </div>
+                <div class="paquete-btns">
+                    <button class="btn-paquete-info" onclick="abrirModalPaquete('el-salvador')" data-i18n="verDetalles">Ver detalles</button>
+                    <a href="paises.html" class="btn-paquete-reservar" onclick="localStorage.setItem('paisSeleccionado','el-salvador'); return true;" data-i18n="reservarAhora">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <p class="textfooter" data-i18n="footerTexto">© 2025 Kavari — Fundación Emanuel González-Revilla · Supérate Promo 2027</p>
+    </div>
+</footer>
+
+<!-- ===== MODALES ===== -->
+
+<!-- Modal registro de guías -->
+<div class="modal-overlay" id="guiasModalOverlay" style="display:none;">
+    <div class="modal-content">
+        <button class="modal-close" id="closeGuiasModalBtn" data-i18n="modalGuiasCerrar">Cerrar</button>
+        <h3 data-i18n="modalGuiasTitulo">Regístrate como Guía Turístico</h3>
+        <form id="guideRegisterFormIndex">
+            <div class="field">
+                <label for="guideName" data-i18n="modalGuiasNombre">Nombre Completo</label>
+                <input type="text" id="guideName" required placeholder="Ej: Juan Pérez" data-i18n-placeholder="modalGuiasNombre">
+            </div>
+            <div class="field">
+                <label for="guideDescription" data-i18n="modalGuiasDescripcion">Descripción de tus servicios</label>
+                <textarea id="guideDescription" required placeholder="Ej: Especialista en tours ecológicos..." rows="3" data-i18n-placeholder="modalGuiasDescripcion"></textarea>
+            </div>
+            <div class="field">
+                <label for="guideLanguages" data-i18n="modalGuiasIdiomas">Idiomas que hablas</label>
+                <input type="text" id="guideLanguages" required placeholder="Ej: Español, Inglés" data-i18n-placeholder="modalGuiasIdiomas">
+            </div>
+            <div class="field">
+                <label for="guideLocation" data-i18n="modalGuiasUbicacion">Ubicación / Ciudad</label>
+                <input type="text" id="guideLocation" required placeholder="Ej: Ciudad de Panamá" data-i18n-placeholder="modalGuiasUbicacion">
+            </div>
+            <div class="field">
+                <label for="guideSpecialties" data-i18n="modalGuiasEspecialidades">Especialidades (separadas por comas)</label>
+                <input type="text" id="guideSpecialties" required placeholder="Ej: Historia, Senderismo, Aventura" data-i18n-placeholder="modalGuiasEspecialidades">
+            </div>
+            <div class="field">
+                <label for="guideCountry" data-i18n="modalGuiasPais">País donde operas</label>
+                <select id="guideCountry" required data-i18n-options="seleccionaPais">
+                    <option value="" disabled selected data-i18n="seleccionaPais">Selecciona un país</option>
+                </select>
+            </div>
+            <div class="field">
+                <label data-i18n="modalGuiasMembresia">Nivel de Membresía</label>
+                <div class="rank-selector">
+                    <label><input type="radio" name="guideRank" value="silver" checked> <span data-i18n="modalGuiasPlata">Plata ($20/mes)</span></label>
+                    <label><input type="radio" name="guideRank" value="gold"> <span data-i18n="modalGuiasOro">Oro ($35/mes)</span></label>
+                    <label><input type="radio" name="guideRank" value="diamond"> <span data-i18n="modalGuiasDiamante">Diamante ($50/mes)</span></label>
+                </div>
+            </div>
+            <div class="field">
+                <label for="guidePayment" data-i18n="modalGuiasPago">Método de Pago</label>
+                <select id="guidePayment" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="yappy" data-i18n="modalGuiasYappy">Yappy</option>
+                    <option value="banco" data-i18n="modalGuiasBanco">Transferencia Bancaria</option>
+                    <option value="card" data-i18n="modalGuiasTarjeta">Tarjeta de Crédito/Débito</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit" data-i18n="modalGuiasBoton">Activar Perfil de Guía</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Top 10 -->
+<div class="top10-modal-overlay" id="top10ModalOverlay">
+    <div class="top10-modal" id="top10Modal">
+        <button class="top10-modal-close" id="top10ModalClose" data-i18n="volverAtras">Cerrar</button>
+        <img class="top10-modal-img" id="top10ModalImg" src="" alt="">
+        <div class="top10-modal-body">
+            <div class="top10-modal-tag" id="top10ModalTag"></div>
+            <div class="top10-modal-title" id="top10ModalTitle"></div>
+            <div class="top10-modal-desc" id="top10ModalDesc"></div>
+            <div class="top10-modal-facts" id="top10ModalFacts"></div>
+            <div class="top10-modal-actions">
+                <button class="btn-modal-info" onclick="cerrarModalTop10()" data-i18n="volverAtras">Volver atrás</button>
+                <a class="btn-modal-go" id="top10ModalGoBtn" href="paises.html" data-i18n="quieroIr">Quiero ir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Paquetes de viaje -->
+<div class="paquete-modal-overlay" id="paqueteModalOverlay">
+    <div class="paquete-modal" id="paqueteModal">
+        <button class="paquete-modal-close" id="paqueteModalClose" data-i18n="volverAtras">Cerrar</button>
+        <img class="paquete-modal-img" id="paqueteModalImg" src="" alt="">
+        <div class="paquete-modal-body">
+            <div class="paquete-modal-header">
+                <h2 id="paqueteModalTitle"></h2>
+                <div class="paquete-modal-precio" id="paqueteModalPrecio"></div>
+            </div>
+            <div class="paquete-modal-desc" id="paqueteModalDesc"></div>
+            <div class="paquete-modal-section-title" data-i18n="featureVuelo">¿Qué incluye el paquete?</div>
+            <div class="paquete-modal-includes" id="paqueteModalIncludes"></div>
+            <div class="paquete-modal-section-title">Itinerario sugerido</div>
+            <div class="paquete-modal-itinerary" id="paqueteModalItinerary"></div>
+            <div class="paquete-modal-cta">
+                <button class="btn-modal-cerrar" onclick="cerrarModalPaquete()" data-i18n="volverAtras">Volver atrás</button>
+                <a class="btn-modal-destino" id="paqueteModalDestBtn" href="paises.html" data-i18n="verDestinoCompleto">Ver destino completo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="js/chatbot-engine.js"></script>
+<script src="js/chatbot-widget.js"></script>
+<script src="js/account.js"></script>
+<script src="js/traveler-registration.js"></script>
+<script src="js/index.js"></script>
+<script src="js/principal.js"></script>
+<script src="js/tutorial.js"></script>
+
+</body>
+</html>

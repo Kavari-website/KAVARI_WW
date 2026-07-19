@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destino — KAVARI Travel</title>
+  <meta name="description" content="Descubre destinos turísticos con KAVARI: cultura, gastronomía, aventura, aerolíneas, hospedajes y guías certificados para cada país.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/destino.css">
+  <link rel="stylesheet" href="css/ui-system.css">
+  <link rel="stylesheet" href="css/nav-unified.css">
+  <link rel="stylesheet" href="css/site-polish.css">
+  <link rel="stylesheet" href="css/traveler-registration.css">
+  <link rel="stylesheet" href="css/tutorial.css">
+  <link rel="stylesheet" href="css/chatbot-widget.css">
+  <script src="js/idioma.js?v=4"></script>
+  <script src="js/theme.js?v=3"></script>
+</head>
+<body class="page-destino">
+
+<header class="navbar" id="navbar">
+  <a class="logo" href="paises.html">KAVARI</a>
+  <nav class="nav-scroll-wrap">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="paises.html" class="nav-ext" data-i18n="navPaises"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>Países</a></li>
+      <li><a data-sec="inicio" class="active" onclick="showSection('inicio')" data-i18n="navInicio"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Inicio</a></li>
+      <li><a data-sec="cultura" onclick="showSection('cultura')" data-i18n="navCultura"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg>Cultura</a></li>
+      <li><a data-sec="lugares" onclick="showSection('lugares')" data-i18n="navDestinos2"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Destinos</a></li>
+      <li><a data-sec="gastronomia" onclick="showSection('gastronomia')" data-i18n="navGastronomia"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>Gastronomía</a></li>
+      <li><a data-sec="aventura" onclick="showSection('aventura')" data-i18n="navAventura"><svg viewBox="0 0 24 24"><path d="M12 2l9 18H3L12 2z"/></svg>Aventura</a></li>
+      <li><a data-sec="practica" onclick="showSection('practica')" data-i18n="navPractica"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Info práctica</a></li>
+      <li><a data-sec="aerolineas" onclick="showSection('aerolineas')" data-i18n="navAerolineas"><svg viewBox="0 0 24 24"><path d="M2.5 19l19-7-19-7 4 7-4 7z"/></svg>Aerolíneas</a></li>
+      <li><a data-sec="hospedajes" onclick="showSection('hospedajes')" data-i18n="navHospedajes"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg>Hospedajes</a></li>
+      <li><a data-sec="souvenires" onclick="showSection('souvenires')" data-i18n="navSouvenirs"><svg viewBox="0 0 24 24"><path d="M20 7h-3.5a3.5 3.5 0 1 0-7 0H6a2 2 0 0 0-2 2v11h16V9a2 2 0 0 0-2-2z"/></svg>Souvenirs</a></li>
+      <li><a data-sec="guias" onclick="showSection('guias')" data-i18n="navGuias"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>Guías Turísticos</a></li>
+    </ul>
+  </nav>
+
+  <!-- Selector de país: glass + panel animado -->
+  <div class="country-switcher" id="countrySwitcher">
+    <button type="button" class="country-trigger" id="countryTrigger" aria-haspopup="listbox" aria-expanded="false">
+      <span class="country-flag" id="countryTriggerFlag">🌎</span>
+      <span class="country-trigger-name" id="countryTriggerName">País</span>
+      <span class="country-trigger-caret"></span>
+    </button>
+    <div class="country-panel" id="countryPanel" role="listbox">
+      <div class="country-search-wrap">
+        <input type="text" class="country-search" id="countrySearch" placeholder="Buscar país…" autocomplete="off">
+      </div>
+      <div id="countryOptionsList"></div>
+    </div>
+    <!-- Select nativo oculto -->
+    <select id="paisSelector" onchange="cambiarPais(this.value)" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+      <!-- Se llena dinámicamente -->
+    </select>
+  </div>
+
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileDrawer()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Drawer móvil -->
+<div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="if(event.target===this) toggleMobileDrawer(false)">
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">KAVARI</span>
+      <button class="mobile-drawer-close" onclick="toggleMobileDrawer(false)" aria-label="Cerrar menú">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-drawer-links" id="mobileDrawerLinks">
+      <li style="animation-delay:.02s"><a href="paises.html" data-i18n="navPaises"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>Países</a></li>
+      <li style="animation-delay:.05s"><a data-sec="inicio" class="active" onclick="showSection('inicio');toggleMobileDrawer(false)" data-i18n="navInicio"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Inicio</a></li>
+      <li style="animation-delay:.08s"><a data-sec="cultura" onclick="showSection('cultura');toggleMobileDrawer(false)" data-i18n="navCultura"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg>Cultura</a></li>
+      <li style="animation-delay:.11s"><a data-sec="lugares" onclick="showSection('lugares');toggleMobileDrawer(false)" data-i18n="navDestinos2"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Destinos</a></li>
+      <li style="animation-delay:.14s"><a data-sec="gastronomia" onclick="showSection('gastronomia');toggleMobileDrawer(false)" data-i18n="navGastronomia"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>Gastronomía</a></li>
+      <li style="animation-delay:.17s"><a data-sec="aventura" onclick="showSection('aventura');toggleMobileDrawer(false)" data-i18n="navAventura"><svg viewBox="0 0 24 24"><path d="M12 2l9 18H3L12 2z"/></svg>Aventura</a></li>
+      <li style="animation-delay:.20s"><a data-sec="practica" onclick="showSection('practica');toggleMobileDrawer(false)" data-i18n="navPractica"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Info práctica</a></li>
+      <li style="animation-delay:.23s"><a data-sec="aerolineas" onclick="showSection('aerolineas');toggleMobileDrawer(false)" data-i18n="navAerolineas"><svg viewBox="0 0 24 24"><path d="M2.5 19l19-7-19-7 4 7-4 7z"/></svg>Aerolíneas</a></li>
+      <li style="animation-delay:.26s"><a data-sec="hospedajes" onclick="showSection('hospedajes');toggleMobileDrawer(false)" data-i18n="navHospedajes"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg>Hospedajes</a></li>
+      <li style="animation-delay:.29s"><a data-sec="souvenires" onclick="showSection('souvenires');toggleMobileDrawer(false)" data-i18n="navSouvenirs"><svg viewBox="0 0 24 24"><path d="M20 7h-3.5a3.5 3.5 0 1 0-7 0H6a2 2 0 0 0-2 2v11h16V9a2 2 0 0 0-2-2z"/></svg>Souvenirs</a></li>
+      <li style="animation-delay:.32s"><a data-sec="guias" onclick="showSection('guias');toggleMobileDrawer(false)" data-i18n="navGuias"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>Guías Turísticos</a></li>
+    </ul>
+    <div class="mobile-drawer-divider"></div>
+    <div class="mobile-drawer-foot">
+      <button class="btn-lang-nav" onclick="toggleLang()" style="flex:1;"><span id="langLabelMobile">ES</span></button>
+      <button class="btn-theme-nav" onclick="toggleTheme()" style="flex:1;">Oscuro</button>
+    </div>
+  </aside>
+</div>
+
+<div class="page-utilities" aria-label="Preferencias">
+  <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial">Tutorial</button>
+  <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma"><span id="langLabel">ES</span></button>
+  <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro">Oscuro</button>
+</div>
+
+<!-- BANNER SLOT -->
+<div class="banner-slot" id="bannerSlot"></div>
+
+<!-- SECCIÓN INICIO -->
+<div class="section active fly-in" id="section-inicio">
+  <section class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-deco"><span></span><span></span><span></span><span></span></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span id="heroContinente">América Central</span> · Destino 2025
+      </div>
+      <h1 id="heroTitulo">Panamá<span id="heroSubtitulo">Infinita</span></h1>
+      <p class="hero-desc" id="heroDesc">Donde el Pacífico abraza al Atlántico.</p>
+      <div class="hero-stats" id="heroStats"></div>
+      <div class="hero-actions">
+        <button class="btn-hero" onclick="showSection('lugares')"><span data-i18n="heroExplorarDestinos">Explorar destinos</span></button>
+        <button class="btn-hero-outline" onclick="showSection('aerolineas')" data-i18n="heroVerVuelosDisponibles">Ver vuelos disponibles</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-track"><div class="scroll-dot"></div></div>
+      <span data-i18n="scrollDesplazar">Desplazar</span>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="ticker-inner" id="tickerInner"></div></div>
+  <div class="stats-bar reveal" id="statsBar"></div>
+
+  <div class="cards-section reveal">
+    <h4 id="destinosTitulo" data-i18n="destinosDestacadosTitulo">Destinos destacados</h4>
+    <div class="cards-grid" id="destinosInicio"></div>
+  </div>
+
+  <div class="feature-band reveal" id="featureBand"></div>
+  <div class="quick-facts reveal" id="quickFacts"></div>
+
+  <div class="quote-bar reveal">
+    <blockquote id="quoteInicio">Panamá no es solo un destino — es una experiencia que transforma.</blockquote>
+    <cite id="citeInicio">KAVARI · Guía 2025</cite>
+  </div>
+</div>
+
+<!-- CULTURA -->
+<div class="section" id="section-cultura">
+  <div class="page-header">
+    <div class="page-header-bg" id="culturaHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="culturaTag">Identidad · Tradición · Historia</div>
+      <h2 id="culturaTitulo" data-i18n="culturaTitulo">Cultura</h2>
+      <p id="culturaDesc" data-i18n="culturaDesc">Una mezcla vibrante que produce una identidad única.</p>
+    </div>
+  </div>
+  <div class="stats-bar reveal" id="culturaStats"></div>
+  <div class="cards-section reveal">
+    <h4 data-i18n="iconosCultura">Íconos de la cultura</h4>
+    <div class="cards-grid" id="culturaItems"></div>
+  </div>
+  <div class="dark-band reveal" id="culturaDarkBand"></div>
+</div>
+
+<!-- LUGARES -->
+<div class="section" id="section-lugares">
+  <div class="page-header">
+    <div class="page-header-bg" id="lugaresHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="lugaresTag">Destinos · Maravillas</div>
+      <h2 id="lugaresTitulo" data-i18n="lugaresTitulo">Destinos Imprescindibles</h2>
+      <p id="lugaresDesc" data-i18n="lugaresDesc">Una diversidad de paisajes única.</p>
+    </div>
+  </div>
+  <div class="cards-section reveal">
+    <h4 id="lugaresSubTitulo" data-i18n="losDestinosQueDefinen">Los destinos que definen el país</h4>
+    <div class="cards-grid" id="todosDestinos"></div>
+  </div>
+  <div class="two-col-itin reveal" id="twoColItin"></div>
+</div>
+
+<!-- GASTRONOMÍA -->
+<div class="section" id="section-gastronomia">
+  <div class="page-header">
+    <div class="page-header-bg" id="gastronomiaHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="gastronomiaTag">Sabores · Tradición</div>
+      <h2 id="gastronomiaTitulo" data-i18n="gastronomiaTitulo">Gastronomía</h2>
+      <p id="gastronomiaDesc" data-i18n="gastronomiaDesc">Ingredientes nativos y técnicas ancestrales.</p>
+    </div>
+  </div>
+  <div class="food-grid reveal" id="foodGrid"></div>
+  <div class="feature-band rev reveal" id="gastronomiaFeature"></div>
+</div>
+
+<!-- AVENTURA -->
+<div class="section" id="section-aventura">
+  <div class="page-header">
+    <div class="page-header-bg" id="aventuraHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="aventuraTag">Naturaleza · Adrenalina</div>
+      <h2 id="aventuraTitulo" data-i18n="aventuraTitulo">Aventura &amp; Naturaleza</h2>
+      <p id="aventuraDesc" data-i18n="aventuraDesc">Experiencias únicas en entornos privilegiados.</p>
+    </div>
+  </div>
+  <div class="stats-bar reveal" id="aventuraStats"></div>
+  <div class="sec-title reveal">
+    <div class="sec-tag-line" data-i18n="seleccionEditorial">Selección editorial</div>
+    <h3 data-i18n="experienciasAventura">Experiencias que definen la aventura</h3>
+    <p data-i18n="descAventura">De buceo en arrecifes a expediciones de selva.</p>
+  </div>
+  <div class="act-list reveal" id="actList"></div>
+  <div class="dark-band reveal" id="aventuraDarkBand"></div>
+</div>
+
+<!-- INFO PRÁCTICA -->
+<div class="section" id="section-practica">
+  <div class="page-header">
+    <div class="page-header-bg" id="practicaHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="practicaTag">Viaje inteligente</div>
+      <h2 id="practicaTitulo" data-i18n="practicaTitulo">Información Práctica</h2>
+      <p id="practicaDesc" data-i18n="practicaDesc">Todo lo que necesitas antes de viajar.</p>
+    </div>
+  </div>
+  <div class="info-grid reveal" id="infoGrid"></div>
+  <div class="two-col reveal" id="practicaTwoCol"></div>
+  <div class="quote-bar reveal">
+    <blockquote id="quotePractica">Viajar es descubrir que los mejores destinos no siempre son los más conocidos.</blockquote>
+    <cite id="citePractica">KAVARI · Guía 2025</cite>
+  </div>
+</div>
+
+<!-- AEROLÍNEAS -->
+<div class="section" id="section-aerolineas">
+  <div class="page-header">
+    <div class="page-header-bg" id="aerolineasHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="aerolineasTag">Vuelos · Conexiones internacionales</div>
+      <h2 id="aerolineasTitulo" data-i18n="aerolineasTitulo">Aerolíneas disponibles</h2>
+      <p id="aerolineasDesc" data-i18n="aerolineasDesc">Las mejores opciones de vuelo hacia este destino.</p>
+    </div>
+  </div>
+  <div class="airline-section reveal">
+    <div class="sec-intro">
+      <p id="aerolineasIntro" data-i18n="aerolineasIntro">Precios de referencia en clase económica. Los precios finales varían según fecha, disponibilidad y origen. Haz clic en "Reservar vuelo" para ir directamente a la aerolínea.</p>
+    </div>
+    <div class="airline-grid" id="airlineGrid"></div>
+  </div>
+</div>
+
+<!-- HOSPEDAJES -->
+<div class="section" id="section-hospedajes">
+  <div class="page-header">
+    <div class="page-header-bg" id="hospedajesHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="hospedajesTag">Alojamiento · Airbnb</div>
+      <h2 id="hospedajesTitulo" data-i18n="hospedajesTitulo">Hospedajes recomendados</h2>
+      <p id="hospedajesDesc" data-i18n="hospedajesDesc">Opciones seleccionadas en los mejores barrios del destino.</p>
+    </div>
+  </div>
+  <div class="hospedajes-section reveal">
+    <div class="sec-intro">
+      <p id="hospedajesIntro" data-i18n="hospedajesIntro">Selección de hospedajes en Airbnb. Precios por noche en temporada media. Haz clic en "Reservar estadía" para ir directamente a la oferta en Airbnb.</p>
+    </div>
+    <div class="hospedajes-grid" id="hospedajesGrid"></div>
+  </div>
+</div>
+
+<!-- SOUVENIRS -->
+<div class="section" id="section-souvenires">
+  <div class="page-header">
+    <div class="page-header-bg" id="souvenirsHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="souvenirsTag">Artesanías · Cultura local</div>
+      <h2 id="souvenirsTitulo" data-i18n="souvenirsTitulo">Tiendas de artesanías</h2>
+      <p id="souvenirsDesc" data-i18n="souvenirsDesc">Souvenirs auténticos elaborados por artesanos locales.</p>
+    </div>
+  </div>
+  <div class="souvenirs-section reveal">
+    <div class="souvenirs-grid-3" id="souvenirsGrid"></div>
+  </div>
+</div>
+
+<!-- GUÍAS TURÍSTICOS -->
+<div class="section" id="section-guias">
+  <div class="page-header">
+    <div class="page-header-bg" id="guiasHeaderBg"></div>
+    <div class="page-header-ov"></div>
+    <div class="page-header-content">
+      <div class="ph-tag" data-i18n="guiasTag">Expertos locales · Certificados</div>
+      <h2 id="guiasTituloHeader" data-i18n="guiasTituloHeader">Guías Turísticos</h2>
+      <p id="guiasDescHeader" data-i18n="guiasDescHeader">Conecta con expertos locales certificados que conocen cada rincón del destino.</p>
+    </div>
+  </div>
+  <div class="guides-section">
+    <h2 class="section-title" id="guiasSectionTitle" data-i18n="guiasSectionTitle">Guías turísticos</h2>
+    <div id="guidesListContainer"></div>
+  </div>
+</div>
+
+<!-- MODAL DESTINOS -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <span data-i18n="modalCerrar">Cerrar</span>
+    </button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- MODAL SOUVENIRS -->
+<div id="souvenirModal" class="modal-overlay-souvenirs">
+  <div class="modal-content-souvenirs">
+    <button class="modal-close-sm" onclick="closeSouvenirModal()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h3 id="modalShopName"></h3>
+    <div id="modalProducts"></div>
+    <a id="modalMapLink" href="#" target="_blank" class="map-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span data-i18n="verEnGoogleMaps">Ver en Google Maps</span>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">KAVARI</div>
+    <div class="footer-copy" id="footerCopy">© 2025 KAVARI</div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/chatbot-engine.js"></script>
+<script src="js/chatbot-widget.js"></script>
+<script src="js/account.js"></script>
+<script src="js/traveler-registration.js"></script>
+<script src="js/destino.js"></script>
+<script src="js/tutorial.js"></script>
+</body>
+</html>
