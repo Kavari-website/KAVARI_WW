@@ -16,7 +16,7 @@ let allCountries = [];
 let countryOptionsInitialized = false;
 
 // ============================================================
-// 2. FUNCIÓN AUXILIAR DE TRADUCCIÓN
+// 2. FUNCIÓN AUXILIAR DE TRADUCCIÓN (MEJORADA)
 // ============================================================
 function _t(valor) {
     if (typeof valor === 'string') {
@@ -27,7 +27,7 @@ function _t(valor) {
 }
 
 // ============================================================
-// 3. FUNCIONES AUXILIARES DE DATOS
+// 3. FUNCIONES AUXILIARES DE DATOS (sin cambios)
 // ============================================================
 function getDefaultGuides() {
     return [
@@ -102,7 +102,7 @@ function enrichCountryData(codigo, d) {
 }
 
 // ============================================================
-// 4. RENDERIZADO DE GUÍAS (con traducción)
+// 4. RENDERIZADO DE GUÍAS (con traducción) - SIN CAMBIOS
 // ============================================================
 function renderGuideFilters() {
     const container = document.getElementById('guidesListContainer');
@@ -174,7 +174,7 @@ function renderGuidesList() {
 }
 
 // ============================================================
-// 5. RENDERIZADO DE AEROLÍNEAS, HOSPEDAJES, SOUVENIRS
+// 5. RENDERIZADO DE AEROLÍNEAS, HOSPEDAJES, SOUVENIRS (CORREGIDO)
 // ============================================================
 function renderAerolineas(d) {
     const grid = document.getElementById('airlineGrid');
@@ -207,10 +207,19 @@ function renderAerolineas(d) {
     `).join('');
     const headerBg = document.getElementById('aerolineasHeaderBg');
     if (headerBg && d) headerBg.style.backgroundImage = `url('${d.page_header_img}')`;
+    
+    // ✅ CORRECCIÓN: Usar claves existentes del diccionario
     const titulo = document.getElementById('aerolineasTitulo');
-    if (titulo && d) titulo.textContent = `${_t('vuelosA')} ${_t(d.nombre)}`;
+    if (titulo && d) {
+        // Usa la clave 'aerolineasTitulo' que SÍ existe en el diccionario
+        titulo.textContent = `${_t('aerolineasTitulo')} — ${_t(d.nombre)}`;
+        // O también podrías usar: titulo.textContent = _t('aerolineasTitulo');
+    }
     const desc = document.getElementById('aerolineasDesc');
-    if (desc && d) desc.textContent = `${_t('mejoresAerolíneas')} ${_t(d.nombre)}.`;
+    if (desc && d) {
+        // Usa la clave 'aerolineasDesc' que SÍ existe en el diccionario
+        desc.textContent = `${_t('aerolineasDesc')} ${_t(d.nombre)}.`;
+    }
 }
 
 function renderHospedajes(d) {
@@ -258,10 +267,16 @@ function renderHospedajes(d) {
     }).join('');
     const headerBg = document.getElementById('hospedajesHeaderBg');
     if (headerBg && d) headerBg.style.backgroundImage = `url('${d.page_header_img}')`;
+    
+    // ✅ CORRECCIÓN: Usar claves existentes del diccionario
     const titulo = document.getElementById('hospedajesTitulo');
-    if (titulo && d) titulo.textContent = `${_t('hospedajesEn')} ${_t(d.nombre)}`;
+    if (titulo && d) {
+        titulo.textContent = `${_t('hospedajesTitulo')} — ${_t(d.nombre)}`;
+    }
     const desc = document.getElementById('hospedajesDesc');
-    if (desc && d) desc.textContent = `${_t('alojamientosSeleccionados')} ${_t(d.nombre)}.`;
+    if (desc && d) {
+        desc.textContent = `${_t('hospedajesDesc')} ${_t(d.nombre)}.`;
+    }
 }
 
 function renderSouvenirs(d) {
@@ -307,10 +322,16 @@ function renderSouvenirs(d) {
     `).join('');
     const headerBg = document.getElementById('souvenirsHeaderBg');
     if (headerBg && d) headerBg.style.backgroundImage = `url('${d.page_header_img}')`;
+    
+    // ✅ CORRECCIÓN: Usar claves existentes del diccionario
     const titulo = document.getElementById('souvenirsTitulo');
-    if (titulo && d) titulo.textContent = `${_t('souvenirsTitulo')} ${_t(d.nombre)}`;
+    if (titulo && d) {
+        titulo.textContent = `${_t('souvenirsTitulo')} — ${_t(d.nombre)}`;
+    }
     const desc = document.getElementById('souvenirsDesc');
-    if (desc && d) desc.textContent = `${_t('souvenirsDesc')} ${_t(d.nombre)}.`;
+    if (desc && d) {
+        desc.textContent = `${_t('souvenirsDesc')} ${_t(d.nombre)}.`;
+    }
 }
 
 function openSouvenirModal(shopId) {
@@ -337,7 +358,7 @@ function openSouvenirModal(shopId) {
 function closeSouvenirModal() { document.getElementById('souvenirModal').classList.remove('active'); }
 
 // ============================================================
-// 6. COUNTRY SELECTOR CUSTOM (para tu HTML)
+// 6. COUNTRY SELECTOR CUSTOM (sin cambios)
 // ============================================================
 function initCountrySelector() {
     const trigger = document.getElementById('countryTrigger');
@@ -350,7 +371,6 @@ function initCountrySelector() {
 
     if (!trigger || !panel || !list || !select) return;
 
-    // Llenar el select oculto (para mantener la lógica original)
     if (datosGlobales && !countryOptionsInitialized) {
         const paises = Object.keys(datosGlobales).sort();
         select.innerHTML = paises.map(key => {
@@ -361,7 +381,6 @@ function initCountrySelector() {
         countryOptionsInitialized = true;
     }
 
-    // Función para renderizar opciones en el panel custom
     function renderOptions(filter = '') {
         const paises = Object.keys(datosGlobales || {}).sort();
         const filtered = paises.filter(key => {
@@ -379,7 +398,6 @@ function initCountrySelector() {
             </div>`;
         }).join('');
 
-        // Evento click en cada opción
         list.querySelectorAll('.country-option').forEach(el => {
             el.addEventListener('click', function() {
                 const value = this.dataset.value;
@@ -390,7 +408,6 @@ function initCountrySelector() {
         });
     }
 
-    // Obtener bandera por país
     function getCountryFlag(key) {
         const flags = {
             'panama': '🇵🇦', 'costa-rica': '🇨🇷', 'colombia': '🇨🇴', 'mexico': '🇲🇽',
@@ -406,7 +423,6 @@ function initCountrySelector() {
         return flags[key] || '🌍';
     }
 
-    // Actualizar el trigger con el país seleccionado
     function updateTrigger() {
         if (datosGlobales && datosGlobales[currentCountryCode]) {
             const nombre = _t(datosGlobales[currentCountryCode]?.nombre) || currentCountryCode;
@@ -414,11 +430,9 @@ function initCountrySelector() {
             triggerName.textContent = nombre;
             triggerFlag.textContent = flag;
         }
-        // Actualizar también el select oculto
         Array.from(select.options).forEach(opt => {
             opt.selected = opt.value === currentCountryCode;
         });
-        // Actualizar el estado de la lista
         if (list) {
             list.querySelectorAll('.country-option').forEach(el => {
                 const isSelected = el.dataset.value === currentCountryCode;
@@ -429,7 +443,6 @@ function initCountrySelector() {
         }
     }
 
-    // Abrir/cerrar panel
     function openCountryPanel() {
         panel.classList.add('open');
         trigger.setAttribute('aria-expanded', 'true');
@@ -450,7 +463,6 @@ function initCountrySelector() {
         }
     }
 
-    // Eventos
     trigger.addEventListener('click', toggleCountryPanel);
 
     document.addEventListener('click', function(e) {
@@ -463,18 +475,15 @@ function initCountrySelector() {
         renderOptions(this.value);
     });
 
-    // Tecla Escape para cerrar
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && panel.classList.contains('open')) {
             closeCountryPanel();
         }
     });
 
-    // Guardar referencia para actualizar desde cargarPais
     window.__updateCountrySelector = updateTrigger;
     window.__renderCountryOptions = renderOptions;
 
-    // Inicializar
     setTimeout(() => {
         if (datosGlobales) {
             renderOptions();
@@ -523,12 +532,10 @@ async function cargarPais(codigoPais) {
         renderAerolineas(enriched);
         renderHospedajes(enriched);
 
-        // Actualizar el selector de país custom
         if (window.__updateCountrySelector) {
             window.__updateCountrySelector();
         }
 
-        // Llenar el select oculto
         llenarSelectorPaises(datosGlobales);
         if (window.__renderCountryOptions) window.__renderCountryOptions('');
         if (window.KavariChatbot) window.KavariChatbot.setContext({ country: enriched, guias: guiasPanama, aerolineas: aerolineasData, hospedajes: hospedajesData });
@@ -542,7 +549,6 @@ async function cargarPais(codigoPais) {
 function llenarSelectorPaises(todos) {
     const select = document.getElementById('paisSelector');
     if (!select) return;
-    // Ya se llena en initCountrySelector, pero lo mantenemos por si acaso
 }
 
 function cambiarPais(codigo) {
@@ -825,7 +831,7 @@ function renderAllSections(d) {
 }
 
 // ============================================================
-// 9. MODAL DE DESTINOS
+// 9. MODAL DE DESTINOS (sin cambios)
 // ============================================================
 function openModal(id) {
     let item = countryData.destinos?.find(d => d.id === id) || countryData.cultura?.items?.find(i => i.id === id);
@@ -845,7 +851,7 @@ function closeModal() { document.getElementById('modalOverlay').classList.remove
 document.getElementById('modalOverlay')?.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 
 // ============================================================
-// 10. NAVEGACIÓN POR SECCIONES
+// 10. NAVEGACIÓN POR SECCIONES (sin cambios)
 // ============================================================
 function showSection(id) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active', 'fly-in'));
@@ -872,7 +878,6 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     }
 });
 
-// Función para el menú móvil (toggleMobileDrawer)
 function toggleMobileDrawer(forceClose) {
     const overlay = document.getElementById('mobileDrawerOverlay');
     const drawer = document.getElementById('mobileDrawer');
@@ -903,7 +908,6 @@ function toggleMobileDrawer(forceClose) {
     }
 }
 
-// Evento para el hamburger
 document.getElementById('navHamburger')?.addEventListener('click', function(e) {
     e.stopPropagation();
     toggleMobileDrawer();
@@ -914,7 +918,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ============================================================
-// 11. SCROLL REVEAL
+// 11. SCROLL REVEAL (sin cambios)
 // ============================================================
 function observeReveals() {
     const observer = new IntersectionObserver((entries) => {
@@ -933,7 +937,6 @@ document.addEventListener('DOMContentLoaded', function() {
     cargarPais(paisGuardado);
 });
 
-// Escuchar cambios de idioma para recargar el contenido
 window.addEventListener('kavari:langchange', () => {
     if (currentCountryCode) {
         cargarPais(currentCountryCode);
