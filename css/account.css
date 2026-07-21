@@ -1,1 +1,466 @@
-.auth-page{min-height:100vh;margin:0;background:radial-gradient(circle at 20% 0,#173b72,transparent 38%),#081120;color:#f8fafc;font-family:Inter,Poppins,sans-serif}.auth-nav{height:72px;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(8,17,32,.6);backdrop-filter:blur(20px)}.auth-nav a{color:#fff;text-decoration:none;font-size:1.2rem;font-weight:700;letter-spacing:.16em}.auth-main{min-height:calc(100vh - 72px);display:grid;place-items:center;padding:42px 20px}.auth-shell{width:min(920px,100%);display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(255,255,255,.15);border-radius:28px;overflow:hidden;background:rgba(255,255,255,.07);box-shadow:0 30px 80px rgba(0,0,0,.35);backdrop-filter:blur(24px)}.auth-copy{padding:42px;background:linear-gradient(145deg,rgba(46,110,220,.36),rgba(13,31,60,.4))}.auth-copy span{font-size:.75rem;letter-spacing:.14em;color:#c9dcff}.auth-copy h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;margin:18px 0}.auth-copy p{color:rgba(255,255,255,.72);line-height:1.6}.auth-points{list-style:none;margin:32px 0 0;padding:0}.auth-points li{padding:10px 0;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.84)}.auth-panel{padding:38px}.auth-panel h2{margin:0;font-size:1.65rem}.auth-panel>p{color:rgba(255,255,255,.6);font-size:.9rem}.auth-tabs{display:flex;gap:6px;padding:4px;margin:24px 0;background:rgba(255,255,255,.08);border-radius:999px}.auth-tabs button{flex:1;border:0;border-radius:999px;padding:9px;background:transparent;color:rgba(255,255,255,.65);cursor:pointer}.auth-tabs button.active{background:rgba(255,255,255,.92);color:#0b1425}.auth-panel label{display:block;margin:14px 0;font-size:.82rem;color:rgba(255,255,255,.8)}.auth-panel input{box-sizing:border-box;width:100%;margin-top:7px;padding:12px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.08);color:#fff;font:inherit}.auth-submit{width:100%;margin-top:12px;padding:12px;border:1px solid rgba(255,255,255,.7);border-radius:999px;background:rgba(255,255,255,.92);color:#07101f;font-weight:700;cursor:pointer}.auth-user{padding:14px;border-radius:14px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.78)}.auth-user strong{color:#fff}.auth-user button{width:100%;margin-top:18px;padding:11px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer}@media(max-width:720px){.auth-shell{grid-template-columns:1fr}.auth-copy{padding:28px}.auth-copy h1{font-size:2rem}.auth-points{display:none}.auth-panel{padding:28px}}
+/* ==========================================================================
+   KAVARI · Cuenta — "tarjeta de embarque" glass design
+   Paleta:  --kv-bg #081120 · --kv-navy #10284d · --kv-blue #3d7bef
+            --kv-blue-light #8ab4ff · --kv-amber #f2b872 · --kv-ink #f8fafc
+   Tipos:   Manrope (display) · Inter (texto) · IBM Plex Mono (datos/ticket)
+   ========================================================================== */
+
+.auth-page {
+  --kv-bg: #081120;
+  --kv-navy: #10284d;
+  --kv-blue: #3d7bef;
+  --kv-blue-light: #8ab4ff;
+  --kv-amber: #f2b872;
+  --kv-ink: #f8fafc;
+  --kv-mist: rgba(248, 250, 252, 0.68);
+  --kv-mist-dim: rgba(248, 250, 252, 0.46);
+  --kv-line: rgba(248, 250, 252, 0.14);
+  --kv-glass: rgba(255, 255, 255, 0.06);
+  --kv-glass-strong: rgba(255, 255, 255, 0.1);
+
+  min-height: 100vh;
+  margin: 0;
+  color: var(--kv-ink);
+  font-family: "Inter", "Poppins", sans-serif;
+  background:
+    radial-gradient(circle at 18% -10%, rgba(61, 123, 239, 0.32), transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(242, 184, 114, 0.14), transparent 38%),
+    radial-gradient(circle at 50% 120%, rgba(61, 123, 239, 0.18), transparent 55%),
+    var(--kv-bg);
+  background-attachment: fixed;
+}
+
+.auth-page h1,
+.auth-page h2 {
+  font-family: "Manrope", "Inter", sans-serif;
+}
+
+.auth-main {
+  min-height: calc(100vh - 72px);
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+}
+
+/* --------------------------------------------------------------------- */
+/* Shell / boarding-pass card                                             */
+/* --------------------------------------------------------------------- */
+
+.auth-shell {
+  position: relative;
+  width: min(960px, 100%);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--kv-line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow:
+    0 40px 90px rgba(2, 6, 16, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  animation: kv-rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes kv-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* perforated divider between the "stub" and the form, like a ticket tear line */
+.ticket-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 51.2%;
+  width: 0;
+  border-left: 2px dashed rgba(248, 250, 252, 0.22);
+  z-index: 2;
+  pointer-events: none;
+}
+.ticket-divider::before,
+.ticket-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--kv-bg);
+  box-shadow: 0 0 0 1px var(--kv-line) inset;
+  transform: translateX(-50%);
+}
+.ticket-divider::before { top: -13px; }
+.ticket-divider::after { bottom: -13px; }
+
+.auth-copy {
+  position: relative;
+  padding: 46px 42px;
+  background:
+    linear-gradient(155deg, rgba(61, 123, 239, 0.32), rgba(16, 40, 77, 0.5) 60%, rgba(8, 17, 32, 0.55));
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--kv-amber);
+  padding: 6px 12px;
+  border: 1px solid rgba(242, 184, 114, 0.35);
+  border-radius: 999px;
+  background: rgba(242, 184, 114, 0.08);
+}
+
+.auth-route {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--kv-mist);
+}
+.auth-route .route-line {
+  flex: 1;
+  height: 1px;
+  min-width: 40px;
+  background-image: linear-gradient(90deg, rgba(248, 250, 252, 0.45) 0 6px, transparent 6px 12px);
+  background-size: 12px 1px;
+  background-repeat: repeat-x;
+  position: relative;
+}
+.auth-route .route-line::after {
+  content: "✈";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 0.95rem;
+  color: var(--kv-blue-light);
+}
+
+.auth-copy h1 {
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 20px 0 12px;
+}
+
+.auth-copy > p {
+  color: var(--kv-mist);
+  line-height: 1.6;
+  font-size: 0.98rem;
+  max-width: 40ch;
+}
+
+.auth-points {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+.auth-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(248, 250, 252, 0.1);
+  color: rgba(248, 250, 252, 0.86);
+  font-size: 0.92rem;
+}
+.auth-points .point-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 50%;
+  background: rgba(61, 123, 239, 0.25);
+  color: var(--kv-blue-light);
+  font-size: 0.72rem;
+}
+
+.auth-barcode {
+  margin-top: auto;
+  padding-top: 30px;
+  height: 34px;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(248, 250, 252, 0.9) 0 2px,
+    transparent 2px 5px,
+    rgba(248, 250, 252, 0.9) 5px 6px,
+    transparent 6px 11px,
+    rgba(248, 250, 252, 0.9) 11px 14px,
+    transparent 14px 17px
+  );
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 34px;
+  mask-image: linear-gradient(180deg, transparent, black 60%);
+}
+
+/* --------------------------------------------------------------------- */
+/* Panel / form                                                           */
+/* --------------------------------------------------------------------- */
+
+.auth-panel {
+  position: relative;
+  padding: 46px 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-panel h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.auth-panel > p {
+  color: var(--kv-mist-dim);
+  font-size: 0.9rem;
+  margin: 8px 0 0;
+}
+
+.auth-tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  margin: 26px 0 6px;
+  background: var(--kv-glass);
+  border: 1px solid var(--kv-line);
+  border-radius: 999px;
+}
+.auth-tabs button {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px;
+  background: transparent;
+  color: rgba(248, 250, 252, 0.65);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.auth-tabs button.active {
+  color: #07101f;
+}
+.auth-tabs .tab-indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 6px);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff, #e7edf9);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.auth-tabs[data-mode="login"] .tab-indicator {
+  transform: translateX(100%);
+}
+
+.auth-field {
+  margin: 16px 0;
+}
+.auth-field label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(248, 250, 252, 0.78);
+}
+.auth-input-wrap {
+  position: relative;
+}
+.auth-field input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--kv-line);
+  border-radius: 12px;
+  background: var(--kv-glass);
+  color: var(--kv-ink);
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.auth-field input::placeholder { color: rgba(248, 250, 252, 0.32); }
+.auth-field input:focus {
+  outline: none;
+  border-color: var(--kv-blue);
+  background: rgba(61, 123, 239, 0.08);
+  box-shadow: 0 0 0 4px rgba(61, 123, 239, 0.2);
+}
+.auth-field input:user-invalid {
+  border-color: #ef7c7c;
+}
+
+.pw-toggle {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--kv-mist);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.pw-toggle:hover { color: var(--kv-ink); background: rgba(255, 255, 255, 0.08); }
+.pw-toggle:focus-visible { outline: 2px solid var(--kv-blue-light); outline-offset: 2px; }
+
+.auth-hint {
+  margin-top: 6px;
+  font-size: 0.76rem;
+  color: var(--kv-mist-dim);
+}
+.auth-error {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #ff9d9d;
+  min-height: 1em;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff, #e7edf9);
+  color: #07101f;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.auth-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32); }
+.auth-submit:active { transform: translateY(0); }
+.auth-submit:focus-visible { outline: 2px solid var(--kv-blue-light); outline-offset: 3px; }
+
+/* --------------------------------------------------------------------- */
+/* Logged-in state — the "confirmed" boarding pass                       */
+/* --------------------------------------------------------------------- */
+
+.auth-user {
+  margin-top: 22px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--kv-line);
+  background: var(--kv-glass-strong);
+}
+.auth-user .ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+  margin-bottom: 6px;
+}
+.auth-user .ticket-field span {
+  display: block;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--kv-mist-dim);
+  margin-bottom: 4px;
+}
+.auth-user .ticket-field strong {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--kv-ink);
+  word-break: break-word;
+}
+.auth-user .ticket-plan {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px dashed var(--kv-line);
+}
+.auth-user .plan-badge {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--kv-amber);
+  background: rgba(242, 184, 114, 0.12);
+  border: 1px solid rgba(242, 184, 114, 0.3);
+}
+.auth-user .manage-link {
+  color: var(--kv-blue-light);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+.auth-user .manage-link:hover { text-decoration: underline; }
+
+.auth-user button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 11px;
+  border: 1px solid var(--kv-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--kv-ink);
+  cursor: pointer;
+  font: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.auth-user button:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.3); }
+
+/* --------------------------------------------------------------------- */
+/* Responsive                                                             */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .auth-shell { grid-template-columns: 1fr; }
+  .ticket-divider {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 51%;
+    height: 0;
+    width: auto;
+    border-left: 0;
+    border-top: 2px dashed rgba(248, 250, 252, 0.22);
+  }
+  .ticket-divider::before,
+  .ticket-divider::after { top: 50%; left: auto; transform: translateY(-50%); }
+  .ticket-divider::before { left: -13px; }
+  .ticket-divider::after { right: -13px; left: auto; }
+  .auth-copy, .auth-panel { padding: 34px 26px; }
+  .auth-copy h1 { font-size: 1.9rem; }
+  .auth-barcode { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-shell { animation: none; }
+  .auth-submit, .tab-indicator, .auth-field input { transition: none; }
+}

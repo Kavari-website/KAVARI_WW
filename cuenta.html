@@ -6,7 +6,7 @@
   <title>Mi cuenta · KAVARI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/ui-system.css">
   <link rel="stylesheet" href="css/account.css">
   <link rel="stylesheet" href="css/nav-glass.css">
@@ -29,29 +29,34 @@
       <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()">Oscuro</button>
     </div>
   </nav>
-  <main class="auth-main"><section class="auth-shell">
-    <aside class="auth-copy"><span>CUENTA KAVARI</span><h1>Tu próxima aventura empieza aquí.</h1><p>Guarda tu plan y vuelve a explorar KAVARI desde el mismo dispositivo.</p><ul class="auth-points"><li>✓ Plan y preferencias locales</li><li>✓ Acceso directo a tus planes</li><li>✓ Sin pagos en esta demo</li></ul></aside>
-    <section class="auth-panel" id="accountCard"></section>
-  </section></main>
+
+  <main class="auth-main">
+    <section class="auth-shell">
+      <div class="ticket-divider" aria-hidden="true"></div>
+
+      <aside class="auth-copy">
+        <span class="auth-kicker">Cuenta KAVARI</span>
+        <div class="auth-route" aria-hidden="true">
+          <span>TÚ</span>
+          <span class="route-line"></span>
+          <span>KAVARI</span>
+        </div>
+        <h1>Tu próxima aventura empieza aquí.</h1>
+        <p>Guarda tu plan y vuelve a explorar KAVARI desde el mismo dispositivo.</p>
+        <ul class="auth-points">
+          <li><span class="point-icon">✓</span>Plan y preferencias locales</li>
+          <li><span class="point-icon">✓</span>Acceso directo a tus planes</li>
+          <li><span class="point-icon">✓</span>Sin pagos en esta demo</li>
+        </ul>
+        <div class="auth-barcode" aria-hidden="true"></div>
+      </aside>
+
+      <section class="auth-panel" id="accountCard" aria-live="polite"></section>
+    </section>
+  </main>
+
   <script src="js/account.js"></script>
   <script src="js/tutorial.js"></script>
-  <script>
-    (function () {
-      const root = document.getElementById('accountCard'); let mode = 'join';
-      function planName(plan) { return ({ viajero: 'Viajero Gratis', premium: 'Premium', op: 'OP' })[plan] || plan; }
-      function view() {
-        const user = KavariAccount.getUser();
-        if (user) {
-          root.innerHTML = `<h2>Hola, ${user.name}</h2><p>Tu cuenta está activa en este navegador.</p><div class="auth-user"><strong>${user.email}</strong><br>Plan actual: ${planName(KavariAccount.getPlan())}<br><a href="planes.html">Gestionar plan</a><button id="logout">Cerrar sesión</button></div>`;
-          document.getElementById('logout').onclick = () => { KavariAccount.logout(); view(); }; return;
-        }
-        root.innerHTML = `<h2>${mode === 'join' ? 'Únete a KAVARI' : 'Inicia sesión'}</h2><p>${mode === 'join' ? 'Crea una cuenta local para conservar tu plan.' : 'Accede con tu nombre y correo en este dispositivo.'}</p><div class="auth-tabs"><button class="${mode === 'join' ? 'active' : ''}" id="join">Crear cuenta</button><button class="${mode === 'login' ? 'active' : ''}" id="login">Ingresar</button></div><form id="form"><label>Nombre<input name="name" required autocomplete="name"></label><label>Correo electrónico<input name="email" type="email" required autocomplete="email"></label><label>Contraseña<input name="password" type="password" minlength="4" required autocomplete="current-password"></label><button class="auth-submit">${mode === 'join' ? 'Crear mi cuenta' : 'Ingresar'}</button></form>`;
-        document.getElementById('join').onclick = () => { mode = 'join'; view(); };
-        document.getElementById('login').onclick = () => { mode = 'login'; view(); };
-        document.getElementById('form').onsubmit = event => { event.preventDefault(); const form = new FormData(event.target); KavariAccount.save({ name: form.get('name'), email: form.get('email') }); view(); };
-      }
-      view();
-    })();
-  </script>
+  <script src="js/cuenta-view.js"></script>
 </body>
 </html>
