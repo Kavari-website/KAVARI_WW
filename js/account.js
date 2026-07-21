@@ -66,10 +66,11 @@
     wrap.id = 'kavari-nav-account';
     wrap.className = 'kavari-nav-account';
 
-    const planLabel = en ? 'Plans' : 'Planes';
+    const planLabel = window.t ? window.t('planesNavPlanes') : (en ? 'Plans' : 'Planes');
+    const loginLabel = window.t ? window.t('planesNavMiCuenta') : (en ? 'My account' : 'Mi cuenta');
     const accountLabel = user
       ? `👤 ${escapeHtml(user.name)}`
-      : (en ? 'Log in / Join' : 'Ingresar / Unirme');
+      : loginLabel;
 
     wrap.innerHTML =
       `<a href="planes.html" class="kavari-nav-plan">${planLabel}</a>` +
@@ -102,19 +103,20 @@
   const planName = plan => PLAN_NAMES[plan] || plan;
 
   function loggedInView(user) {
+    const t = window.t || (k => k);
     root.innerHTML = `
-      <h2>Hola, ${esc(user.name)}</h2>
-      <p>Tu cuenta está activa en este navegador.</p>
+      <h2>${t('cuentaHola').replace('{name}', esc(user.name))}</h2>
+      <p>${t('cuentaActiva')}</p>
       <div class="auth-user">
         <div class="ticket-grid">
-          <div class="ticket-field"><span>Pasajero</span><strong>${esc(user.name)}</strong></div>
-          <div class="ticket-field"><span>Correo</span><strong>${esc(user.email)}</strong></div>
+          <div class="ticket-field"><span>${t('cuentaPasajero')}</span><strong>${esc(user.name)}</strong></div>
+          <div class="ticket-field"><span>${t('cuentaCorreo')}</span><strong>${esc(user.email)}</strong></div>
           <div class="ticket-plan">
             <span class="plan-badge">PLAN · ${esc(planName(window.KavariAccount.getPlan()))}</span>
-            <a class="manage-link" href="planes.html">Gestionar plan →</a>
+            <a class="manage-link" href="planes.html">${t('cuentaGestionar')}</a>
           </div>
         </div>
-        <button type="button" id="logout">Cerrar sesión</button>
+        <button type="button" id="logout">${t('cuentaCerrarSesion')}</button>
       </div>`;
     document.getElementById('logout').onclick = () => {
       window.KavariAccount.logout();
@@ -123,47 +125,50 @@
   }
 
   function formView() {
+    const t = window.t || (k => k);
     const isJoin = mode === 'join';
     root.innerHTML = `
-      <h2>${isJoin ? 'Únete a KAVARI' : 'Inicia sesión'}</h2>
-      <p>${isJoin ? 'Crea una cuenta local para conservar tu plan.' : 'Accede con tu nombre y correo en este dispositivo.'}</p>
+      <h2>${isJoin ? t('cuentaUnete') : t('cuentaInicia')}</h2>
+      <p>${isJoin ? t('cuentaCreaDesc') : t('cuentaAccedeDesc')}</p>
 
       <div class="auth-tabs" role="tablist" aria-label="Modo de acceso" data-mode="${mode}">
         <span class="tab-indicator" aria-hidden="true"></span>
-        <button type="button" role="tab" id="tab-join" aria-selected="${isJoin}" aria-controls="form" class="${isJoin ? 'active' : ''}">Crear cuenta</button>
-        <button type="button" role="tab" id="tab-login" aria-selected="${!isJoin}" aria-controls="form" class="${!isJoin ? 'active' : ''}">Ingresar</button>
+        <button type="button" role="tab" id="tab-join" aria-selected="${isJoin}" aria-controls="form" class="${isJoin ? 'active' : ''}">${t('cuentaCrearTab')}</button>
+        <button type="button" role="tab" id="tab-login" aria-selected="${!isJoin}" aria-controls="form" class="${!isJoin ? 'active' : ''}">${t('cuentaIngresarTab')}</button>
       </div>
 
       <form id="form" novalidate>
         <div class="auth-field">
-          <label for="f-name">Nombre</label>
+          <label for="f-name">${t('cuentaNombreLabel')}</label>
           <div class="auth-input-wrap">
-            <input id="f-name" name="name" required autocomplete="name" placeholder="Como aparece en tu perfil">
+            <input id="f-name" name="name" required autocomplete="name" placeholder="${t('cuentaNombrePlaceholder')}">
           </div>
           <p class="auth-error" id="err-name" aria-live="polite"></p>
         </div>
 
         <div class="auth-field">
-          <label for="f-email">Correo electrónico</label>
+          <label for="f-email">${t('cuentaCorreoPlaceholder').split('@')[0] === 'tu' ? 'Correo electrónico' : 'Email'}</label>
           <div class="auth-input-wrap">
-            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="tu@correo.com">
+            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="${t('cuentaCorreoPlaceholder')}">
           </div>
           <p class="auth-error" id="err-email" aria-live="polite"></p>
         </div>
 
         <div class="auth-field">
-          <label for="f-password">Contraseña</label>
+          <label for="f-password">${t('cuentaPassLabel')}</label>
           <div class="auth-input-wrap">
             <input id="f-password" name="password" type="password" minlength="6" required
-                   autocomplete="${isJoin ? 'new-password' : 'current-password'}" placeholder="Mínimo 6 caracteres">
-            <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Mostrar contraseña">Ver</button>
+                   autocomplete="${isJoin ? 'new-password' : 'current-password'}" placeholder="${t('cuentaPassPlaceholder')}">
+            <button type="button" class="pw-toggle" id="pw-toggle" aria-label="${t('cuentaPassVer')}">${t('cuentaPassVer')}</button>
           </div>
-          <p class="auth-hint">Esta demo no procesa pagos ni guarda datos fuera de tu navegador.</p>
           <p class="auth-error" id="err-password" aria-live="polite"></p>
         </div>
 
-        <button class="auth-submit" type="submit">${isJoin ? 'Crear mi cuenta' : 'Ingresar'}</button>
-      </form>`;
+        ${isJoin ? `<div class="auth-check"><label><input type="checkbox" id="f-terms" required> <span>${t('cuentaTerminos')}</span></label><p class="auth-error" id="err-terms" aria-live="polite"></p></div>` : ''}
+
+        <button type="submit" class="auth-submit">${isJoin ? t('cuentaBtnCrear') : t('cuentaBtnIngresar')}</button>
+      </form>
+    `;
 
     document.getElementById('tab-join').onclick = () => { mode = 'join'; render(); };
     document.getElementById('tab-login').onclick = () => { mode = 'login'; render(); };

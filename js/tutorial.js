@@ -85,6 +85,29 @@ const tutorialStepsContacto = [
   { targetId: null, titleKey: 'tutorialContactoTitulo_11', descKey: 'tutorialContactoDesc_11', position: 'center', arrow: false, isLast: true }
 ];
 
+const tutorialStepsDestino = [
+  { targetId: null, titleKey: 'tutorialDestinoTitulo_0', descKey: 'tutorialDestinoDesc_0', position: 'center', arrow: false },
+  { targetId: 'navbar', titleKey: 'tutorialDestinoTitulo_1', descKey: 'tutorialDestinoDesc_1', position: 'bottom', arrow: true },
+  { targetId: 'navLinks', titleKey: 'tutorialDestinoTitulo_2', descKey: 'tutorialDestinoDesc_2', position: 'bottom', arrow: true },
+  { targetId: 'countrySwitcher', titleKey: 'tutorialDestinoTitulo_3', descKey: 'tutorialDestinoDesc_3', position: 'bottom', arrow: true },
+  { targetId: 'btnTutorial', titleKey: 'tutorialDestinoTitulo_4', descKey: 'tutorialDestinoDesc_4', position: 'bottom', arrow: true },
+  { targetId: 'btnLang', titleKey: 'tutorialDestinoTitulo_5', descKey: 'tutorialDestinoDesc_5', position: 'bottom', arrow: true },
+  { targetId: 'btnTheme', titleKey: 'tutorialDestinoTitulo_6', descKey: 'tutorialDestinoDesc_6', position: 'bottom', arrow: true },
+  { targetSelector: '.hero-content', titleKey: 'tutorialDestinoTitulo_7', descKey: 'tutorialDestinoDesc_7', position: 'top', arrow: true },
+  { targetId: 'destinosInicio', titleKey: 'tutorialDestinoTitulo_8', descKey: 'tutorialDestinoDesc_8', position: 'top', arrow: true },
+  { targetSelector: 'a[data-sec="cultura"]', titleKey: 'tutorialDestinoTitulo_9', descKey: 'tutorialDestinoDesc_9', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="lugares"]', titleKey: 'tutorialDestinoTitulo_10', descKey: 'tutorialDestinoDesc_10', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="gastronomia"]', titleKey: 'tutorialDestinoTitulo_11', descKey: 'tutorialDestinoDesc_11', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="aventura"]', titleKey: 'tutorialDestinoTitulo_12', descKey: 'tutorialDestinoDesc_12', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="practica"]', titleKey: 'tutorialDestinoTitulo_13', descKey: 'tutorialDestinoDesc_13', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="aerolineas"]', titleKey: 'tutorialDestinoTitulo_14', descKey: 'tutorialDestinoDesc_14', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="hospedajes"]', titleKey: 'tutorialDestinoTitulo_15', descKey: 'tutorialDestinoDesc_15', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="souvenires"]', titleKey: 'tutorialDestinoTitulo_16', descKey: 'tutorialDestinoDesc_16', position: 'bottom', arrow: true },
+  { targetSelector: 'a[data-sec="guias"]', titleKey: 'tutorialDestinoTitulo_17', descKey: 'tutorialDestinoDesc_17', position: 'bottom', arrow: true },
+  { targetId: 'kavari-chat-btn', titleKey: 'tutorialDestinoTitulo_18', descKey: 'tutorialDestinoDesc_18', position: 'center', arrow: true },
+  { targetId: null, titleKey: 'tutorialDestinoTitulo_19', descKey: 'tutorialDestinoDesc_19', position: 'center', arrow: false, isLast: true }
+];
+
 const tutorialStepsGeneral = [
   { title: 'Bienvenido a KAVARI', desc: 'Este recorrido te muestra los controles principales de esta página.', position: 'center', arrow: false },
   { targetSelector: '.portal-nav, .topbar, .page-destino .navbar', title: 'Navegación', desc: 'Aquí encuentras las opciones para moverte por KAVARI y ajustar tu experiencia.', position: 'bottom', arrow: true },
@@ -102,7 +125,9 @@ if (currentPage === 'paises.html') {
   tutorialSteps = tutorialStepsAyuda;
 } else if (currentPage === 'contacto.html') {
   tutorialSteps = tutorialStepsContacto;
-} else if (['guias.html', 'planes.html', 'cuenta.html', 'destino.html'].includes(currentPage)) {
+} else if (currentPage === 'destino.html') {
+  tutorialSteps = tutorialStepsDestino;
+} else if (['guias.html', 'planes.html', 'cuenta.html'].includes(currentPage)) {
   tutorialSteps = tutorialStepsGeneral;
 }
 
@@ -116,6 +141,7 @@ function startTutorial(force = false) {
   else if (currentPage === 'sobrenosotros.html' || currentPage === 'sobre-nosotros.html') tutorialKey = 'kavariTutorialSobrenosotrosVisto';
   else if (currentPage === 'ayuda.html') tutorialKey = 'kavariTutorialAyudaVisto';
   else if (currentPage === 'contacto.html') tutorialKey = 'kavariTutorialContactoVisto';
+  else if (currentPage === 'destino.html') tutorialKey = 'kavariTutorialDestinoVisto';
 
   const visto = localStorage.getItem(tutorialKey);
   if (visto && !force) return;

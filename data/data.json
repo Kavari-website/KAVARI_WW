@@ -193,7 +193,7 @@
   "poblacion": "paisPanama_poblacion",
   "zona_horaria": "paisPanama_zona_horaria",
   "codigo_telefonico": "paisPanama_codigo_telefonico",
-  "hero_img": "img/panama/bannerpanama2.jpeg",
+  "hero_img": "img/banners/bannerdepanama.jpeg",
   "page_header_img": "img/panama/header.jpg",
   "stats": [
     { "numero": "75,517", "label": "paisPanama_stats_0_label" },
@@ -959,7 +959,7 @@
   "poblacion": "paisCostaRica_poblacion",
   "zona_horaria": "paisCostaRica_zona_horaria",
   "codigo_telefonico": "paisCostaRica_codigo_telefonico",
-  "hero_img": "img/costa-rica/costa-rica.jpeg",
+  "hero_img": "img/banners/bannerdecostarica.jpeg",
   "page_header_img": "img/costa-rica/costa-rica.jpeg",
   "stats": [
     { "numero": "51,100", "label": "paisCostaRica_stats_0_label" },
@@ -1315,7 +1315,7 @@
   "poblacion": "paisColombia_poblacion",
   "zona_horaria": "paisColombia_zona_horaria",
   "codigo_telefonico": "paisColombia_codigo_telefonico",
-  "hero_img": "img/colombia/colombia.jpeg",
+  "hero_img": "img/banners/bannerdecolombia.jpeg",
   "page_header_img": "img/colombia/colombia.jpeg",
   "stats": [
     { "numero": "1,141,748", "label": "paisColombia_stats_0_label" },
@@ -2810,7 +2810,7 @@
   "poblacion": "paisPeru_poblacion",
   "zona_horaria": "paisPeru_zona_horaria",
   "codigo_telefonico": "paisPeru_codigo_telefonico",
-  "hero_img": "img/peru/peru.jpeg",
+  "hero_img": "img/banners/bannerdeperu.jpeg",
   "page_header_img": "img/peru/peru.jpeg",
   "stats": [
     { "numero": "1,285,215", "label": "paisPeru_stats_0_label" },
@@ -5816,7 +5816,7 @@
   "poblacion": "paisChile_poblacion",
   "zona_horaria": "paisChile_zona_horaria",
   "codigo_telefonico": "paisChile_codigo_telefonico",
-  "hero_img": "img/chile/bannerchile2.jpeg",
+  "hero_img": "img/banners/bannerdechile.jpeg",
   "page_header_img": "img/chile/header.jpg",
   "stats": [
     { "numero": "756,700", "label": "paisChile_stats_0_label" },
@@ -6571,7 +6571,7 @@
   "poblacion": "paisEcuador_poblacion",
   "zona_horaria": "paisEcuador_zona_horaria",
   "codigo_telefonico": "paisEcuador_codigo_telefonico",
-  "hero_img": "img/ecuador/bannerecuador2.jpeg",
+  "hero_img": "img/banners/bannerdeecuador.jpeg",
   "page_header_img": "img/ecuador/header.jpg",
   "stats": [
     { "numero": "283,561", "label": "paisEcuador_stats_0_label" },
@@ -7320,7 +7320,7 @@
   "poblacion": "paisCuba_poblacion",
   "zona_horaria": "paisCuba_zona_horaria",
   "codigo_telefonico": "paisCuba_codigo_telefonico",
-  "hero_img": "img/cuba/bannercuba2.jpeg",
+  "hero_img": "img/banners/bannerdecuba.jpeg",
   "page_header_img": "img/cuba/header.jpg",
   "stats": [
     { "numero": "109,880", "label": "paisCuba_stats_0_label" },
@@ -8068,7 +8068,7 @@
   "poblacion": "paisGuatemala_poblacion",
   "zona_horaria": "paisGuatemala_zona_horaria",
   "codigo_telefonico": "paisGuatemala_codigo_telefonico",
-  "hero_img": "img/guatemala/bannerguatemala2.jpeg",
+  "hero_img": "img/banners/bannerdeguatemala.jpeg",
   "page_header_img": "img/guatemala/header.jpg",
   "stats": [
     { "numero": "108,889", "label": "paisGuatemala_stats_0_label" },
@@ -8816,7 +8816,7 @@
   "poblacion": "paisBolivia_poblacion",
   "zona_horaria": "paisBolivia_zona_horaria",
   "codigo_telefonico": "paisBolivia_codigo_telefonico",
-  "hero_img": "img/bolivia/bannerbolivia2.jpeg",
+  "hero_img": "img/banners/bannerdebolivia.jpeg",
   "page_header_img": "img/bolivia/header.jpg",
   "stats": [
     { "numero": "1,098,581", "label": "paisBolivia_stats_0_label" },
@@ -10310,7 +10310,7 @@
   "poblacion": "paisUruguay_poblacion",
   "zona_horaria": "paisUruguay_zona_horaria",
   "codigo_telefonico": "paisUruguay_codigo_telefonico",
-  "hero_img": "img/uruguay/banneruruguay2.jpeg",
+  "hero_img": "img/banners/bannerdeuruguay.jpeg",
   "page_header_img": "img/uruguay/header.jpg",
   "stats": [
     { "numero": "176,215", "label": "paisUruguay_stats_0_label" },
@@ -11062,7 +11062,7 @@
   "poblacion": "paisParaguay_poblacion",
   "zona_horaria": "paisParaguay_zona_horaria",
   "codigo_telefonico": "paisParaguay_codigo_telefonico",
-  "hero_img": "img/paraguay/bannerparaguay2.jpeg",
+  "hero_img": "img/banners/bannerdeparaguay.jpeg",
   "page_header_img": "img/paraguay/header.jpg",
   "stats": [
     { "numero": "406,752", "label": "paisParaguay_stats_0_label" },
@@ -11815,7 +11815,7 @@
   "poblacion": "paisHonduras_poblacion",
   "zona_horaria": "paisHonduras_zona_horaria",
   "codigo_telefonico": "paisHonduras_codigo_telefonico",
-  "hero_img": "img/honduras/bannerhonduras2.jpeg",
+  "hero_img": "img/banners/bannerdehonduras.jpeg",
   "page_header_img": "img/honduras/header.jpg",
   "stats": [
     { "numero": "112,492", "label": "paisHonduras_stats_0_label" },
@@ -12567,7 +12567,7 @@
   "poblacion": "paisNicaragua_poblacion",
   "zona_horaria": "paisNicaragua_zona_horaria",
   "codigo_telefonico": "paisNicaragua_codigo_telefonico",
-  "hero_img": "img/nicaragua/bannernicaragua2.jpeg",
+  "hero_img": "img/banners/bannerdenicaragua.jpeg",
   "page_header_img": "img/nicaragua/header.jpg",
   "stats": [
     { "numero": "130,373", "label": "paisNicaragua_stats_0_label" },
@@ -13314,7 +13314,7 @@
   "poblacion": "paisElSalvador_poblacion",
   "zona_horaria": "paisElSalvador_zona_horaria",
   "codigo_telefonico": "paisElSalvador_codigo_telefonico",
-  "hero_img": "img/el-salvador/bannerelsalvador2.jpeg",
+  "hero_img": "img/banners/bannerdelsalvador.jpeg",
   "page_header_img": "img/el-salvador/header.jpg",
   "stats": [
     { "numero": "21,040", "label": "paisElSalvador_stats_0_label" },
@@ -14061,7 +14061,7 @@
   "poblacion": "paisBelice_poblacion",
   "zona_horaria": "paisBelice_zona_horaria",
   "codigo_telefonico": "paisBelice_codigo_telefonico",
-  "hero_img": "img/belice/bannerbelice2.jpeg",
+  "hero_img": "img/banners/bannerdebelice.jpeg",
   "page_header_img": "img/belice/header.jpg",
   "stats": [
     { "numero": "22,966", "label": "paisBelice_stats_0_label" },
@@ -14805,7 +14805,7 @@
   "poblacion": "paisGuyana_poblacion",
   "zona_horaria": "paisGuyana_zona_horaria",
   "codigo_telefonico": "paisGuyana_codigo_telefonico",
-  "hero_img": "img/guyana/bannerguyana2.jpeg",
+  "hero_img": "img/banners/bannerdeguyana.jpeg",
   "page_header_img": "img/guyana/header.jpg",
   "stats": [
     { "numero": "214,969", "label": "paisGuyana_stats_0_label" },
@@ -15557,7 +15557,7 @@
                               "poblacion":  "1,400,000",
                               "zona_horaria":  "UTC-4",
                               "codigo_telefonico":  "+1 868",
-                              "hero_img":  "img/trinidad-y-tobago/bannertt2.jpeg",
+                              "hero_img":  "img/banners/bannerdetrinidad.jpeg",
                               "page_header_img":  "img/trinidad-y-tobago/header.jpg",
                               "stats":  [
                                             {
@@ -16083,7 +16083,7 @@
                     "poblacion":  "2,800,000",
                     "zona_horaria":  "UTC-5",
                     "codigo_telefonico":  "+1 876",
-                    "hero_img":  "img/jamaica/bannerjamaica2.jpeg",
+                    "hero_img":  "img/banners/bannerdejamaica.jpeg",
                     "page_header_img":  "img/jamaica/header.jpg",
                     "stats":  [
                                   {
@@ -16609,7 +16609,7 @@
                         "poblacion":  "3,200,000",
                         "zona_horaria":  "UTC-4",
                         "codigo_telefonico":  "+1 787, +1 939",
-                        "hero_img":  "img/puerto-rico/bannerpr2.jpeg",
+                        "hero_img":  "img/banners/bannerdepuertorico.jpeg",
                         "page_header_img":  "img/puerto-rico/header.jpg",
                         "stats":  [
                                       {
@@ -17144,7 +17144,7 @@
                     "poblacion":  "400,000",
                     "zona_horaria":  "UTC-5",
                     "codigo_telefonico":  "+1 242",
-                    "hero_img":  "img/bahamas/bannerbahamas2.jpeg",
+                    "hero_img":  "img/banners/bannerdebahamas.jpeg",
                     "page_header_img":  "img/bahamas/header.jpg",
                     "stats":  [
                                   {
@@ -17670,7 +17670,7 @@
                   "poblacion":  "11,700,000",
                   "zona_horaria":  "UTC-5",
                   "codigo_telefonico":  "+509",
-                  "hero_img":  "img/haiti/bannerhaiti2.jpeg",
+                  "hero_img":  "img/banners/bannerdehaiti.jpeg",
                   "page_header_img":  "img/haiti/header.jpg",
                   "stats":  [
                                 {

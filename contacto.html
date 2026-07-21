@@ -11,26 +11,57 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/chatbot-widget.css">
-    <link rel="stylesheet" href="css/ui-system.css">
-    <link rel="stylesheet" href="css/nav-glass.css">
-    <link rel="stylesheet" href="css/nav-unified.css">
-    <link rel="stylesheet" href="css/site-polish.css">
-    <link rel="stylesheet" href="css/traveler-registration.css">
     <link rel="stylesheet" href="css/tutorial.css">
     <script src="js/idioma.js?v=3"></script>
     <script src="js/theme.js?v=3"></script>
 </head>
 <body>
 
-<!-- Hero con video de fondo -->
-<header class="hero" style="height: 55vh; min-height: 360px;">
+<!-- Hero con video de fondo + anillos orbitales animados -->
+<header class="hero contact-hero" id="contactHero" style="height: 74vh; min-height: 560px;">
     <video autoplay muted loop playsinline class="background-video">
         <source src="fondo.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 
+    <!-- Puntos flotantes decorativos -->
+    <div class="contact-hero-bg" aria-hidden="true">
+        <div class="contact-hero-dots">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- Elemento distintivo: canales orbitando alrededor de un radar de señal -->
+        <div class="contact-orbit">
+            <span class="orbit-ping ping-1"></span>
+            <span class="orbit-ping ping-2"></span>
+            <span class="orbit-ring ring-a"></span>
+            <span class="orbit-ring ring-b"></span>
+
+            <div class="orbit-item item-1">
+                <div class="orbit-icon" title="Instagram">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                </div>
+            </div>
+            <div class="orbit-item item-2">
+                <div class="orbit-icon" title="Correo">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+            </div>
+            <div class="orbit-item item-3">
+                <div class="orbit-icon" title="Ubicación">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+            </div>
+            <div class="orbit-item item-4">
+                <div class="orbit-icon" title="Mensaje">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.6 8.6 0 0 1-3.8-1L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
-    <nav class="navbar nav-glass" id="navbar">
+    <nav class="navbar" id="navbar">
         <div class="logo">
             <a href="index.html" style="color: inherit; text-decoration: none;">KAVARI</a>
         </div>
@@ -38,23 +69,24 @@
             <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
             <li><a href="paises.html" data-i18n="navDestinos">Destinos</a></li>
             <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
-            <li><a href="#registro-viajero" class="nav-register">Registrarme</a></li>
+           
             <li><a href="ayuda.html" data-i18n="ayuda">Ayuda</a></li>
             <li><a href="contacto.html" class="active" data-i18n="contacto">Contacto</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="nav-btn-tutorial" data-i18n="tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
+            <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
             <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma"><span id="langLabel">ES</span></button>
             <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro" data-i18n="modoOscuro">Oscuro</button>
         </div>
-        <button class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menú">
+        <button class="hamburger" id="hamburger" aria-label="Menú">
             <span></span><span></span><span></span>
         </button>
     </nav>
 
-    <div class="hero-content" style="margin-top: 80px;">
-        <h1 style="font-size: 58px;" data-i18n="contactoTitulo">Contacto</h1>
-        <p data-i18n="contactoSubtitulo">Encuéntranos en redes sociales o escríbenos directamente.</p>
+    <div class="hero-content contact-hero-content">
+        <span class="contact-eyebrow"><span class="dot"></span> <span data-i18n="contactoEyebrow">Hablemos</span></span>
+        <h1 class="contact-hero-title" data-i18n="contactoTitulo">Contacto</h1>
+        <p class="contact-hero-tagline" data-i18n="contactoSubtitulo">Encuéntranos en redes sociales o escríbenos directamente.</p>
     </div>
 </header>
 
@@ -62,229 +94,248 @@
 <main class="contact-main">
 
     <!-- Caja introductoria flotante -->
-    <div class="contact-float">
+    <div class="contact-float reveal">
+        <div class="contact-float-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.6 8.6 0 0 1-3.8-1L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         <h2 data-i18n="contactoFloatTitulo">Estamos aquí para ayudarte</h2>
         <p data-i18n="contactoFloatDesc">Conéctate con el equipo KAVARI a través de nuestras redes sociales o mediante correo electrónico.</p>
     </div>
 
-    <!-- Grid de secciones -->
-    <div class="contact-grid">
-
-        <!-- Instagram - sección amplia -->
-        <div class="contact-card contact-ig">
-            <div class="section-tag" data-i18n="contactoRedes">Redes sociales</div>
-            <h2 data-i18n="contactoInstagram">Instagram</h2>
-
-            <div class="ig-list">
-                <!-- Cuenta principal -->
-                <a class="ig-item" href="https://www.instagram.com/kavari.travel/" target="_blank" rel="noopener noreferrer" id="ig-principal">
-                    <div class="ig-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.8">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                        </svg>
-                    </div>
-                    <div class="ig-item-text">
-                        <span class="ig-handle">@kavari.travel</span>
-                        <span class="ig-label">KAVARI Travel</span>
-                    </div>
-                </a>
-
-                <!-- Destinos -->
-                <a class="ig-item" href="https://www.instagram.com/kavari.destinos/" target="_blank" rel="noopener noreferrer" id="ig-destinos">
-                    <div class="ig-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.8">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                        </svg>
-                    </div>
-                    <div class="ig-item-text">
-                        <span class="ig-handle">@kavari.destinos</span>
-                        <span class="ig-label" data-i18n="contactoDestinosLabel">Destinos y aventuras</span>
-                    </div>
-                </a>
-
-                <!-- Comunidad -->
-                <a class="ig-item" href="https://www.instagram.com/kavari.comunidad/" target="_blank" rel="noopener noreferrer" id="ig-comunidad">
-                    <div class="ig-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.8">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                        </svg>
-                    </div>
-                    <div class="ig-item-text">
-                        <span class="ig-handle">@kavari.comunidad</span>
-                        <span class="ig-label" data-i18n="contactoComunidad">Comunidad de viajeros</span>
-                    </div>
-                </a>
-
-                <!-- Guías -->
-                <a class="ig-item" href="https://www.instagram.com/kavari.guias/" target="_blank" rel="noopener noreferrer" id="ig-guias">
-                    <div class="ig-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.8">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                        </svg>
-                    </div>
-                    <div class="ig-item-text">
-                        <span class="ig-handle">@kavari.guias</span>
-                        <span class="ig-label" data-i18n="contactoGuiasCert">Guías turísticos certificados</span>
-                    </div>
-                </a>
-
-                <!-- Tips de viaje -->
-                <a class="ig-item" href="https://www.instagram.com/kavari.tips/" target="_blank" rel="noopener noreferrer" id="ig-tips">
-                    <div class="ig-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.8">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                        </svg>
-                    </div>
-                    <div class="ig-item-text">
-                        <span class="ig-handle">@kavari.tips</span>
-                        <span class="ig-label" data-i18n="contactoTips">Consejos y tips de viaje</span>
-                    </div>
-                </a>
-
-                <!-- Noticias -->
-                <a class="ig-item" href="https://www.instagram.com/kavari.noticias/" target="_blank" rel="noopener noreferrer" id="ig-noticias">
-                    <div class="ig-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.8">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                        </svg>
-                    </div>
-                    <div class="ig-item-text">
-                        <span class="ig-handle">@kavari.noticias</span>
-                        <span class="ig-label" data-i18n="contactoNoticias">Novedades y actualizaciones</span>
-                    </div>
-                </a>
+    <!-- Accesos rápidos -->
+    <div class="quick-links reveal">
+        <a href="#redes" class="quick-link">
+            <div class="quick-link-icon quick-ig">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </div>
-        </div>
-
-        <!-- Centro Supérate David -->
-        <div class="contact-card" id="seccion-superarte">
-            <div class="section-tag" data-i18n="contactoSede">Nuestra sede</div>
-            <h2 data-i18n="contactoSuperate">Centro Supérate David</h2>
-
-            <div class="superatebar">
-                <div class="superatebar-icon">S</div>
-                <div class="superatebar-text">
-                    <h3 data-i18n="contactoFundacion">Fundación Emanuel González-Revilla</h3>
-                    <p data-i18n="contactoPromo">Programa Supérate — Provincia de Chiriquí</p>
-                </div>
+            <div class="quick-link-text">
+                <span class="quick-link-title">Instagram</span>
+                <span class="quick-link-sub">6 cuentas activas</span>
             </div>
+            <svg class="quick-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
 
-            <div class="superate-details">
-                <div class="superate-detail-row">
-                    <div class="superate-detail-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <span class="superate-detail-label" data-i18n="contactoUbicacion">Ubicación</span>
-                        <span data-i18n="contactoUbicacionVal">Centro Supérate David, Chiriquí, Panamá</span>
-                    </div>
-                </div>
-
-                <div class="superate-detail-row">
-                    <div class="superate-detail-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <span class="superate-detail-label" data-i18n="contactoPromocion">Promoción</span>
-                        <span data-i18n="contactoPromocionVal">Supérate Promo 2027</span>
-                    </div>
-                </div>
-
-                <div class="superate-detail-row">
-                    <div class="superate-detail-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M2 12h20"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <span class="superate-detail-label" data-i18n="contactoProyecto">Proyecto</span>
-                        <span data-i18n="contactoProyectoVal">KAVARI fue creado como parte del programa de tecnología del Centro Supérate David, con el objetivo de aplicar habilidades digitales en un proyecto de impacto social.</span>
-                    </div>
-                </div>
+        <a href="#sede" class="quick-link">
+            <div class="quick-link-icon quick-sede">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-        </div>
+            <div class="quick-link-text">
+                <span class="quick-link-title" data-i18n="contactoSuperate">Centro Supérate David</span>
+                <span class="quick-link-sub">Chiriquí, Panamá</span>
+            </div>
+            <svg class="quick-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
 
-        <!-- Correos de contacto (reestructurado) -->
-        <div class="contact-card" id="seccion-correos">
-            <div class="section-tag" data-i18n="contactoCorreo">Correo electrónico</div>
-            <h2 data-i18n="contactoEscribenos">Escríbenos</h2>
+        <a href="#correos" class="quick-link">
+            <div class="quick-link-icon quick-mail">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="quick-link-text">
+                <span class="quick-link-title" data-i18n="contactoEscribenos">Escríbenos</span>
+                <span class="quick-link-sub">kavariwebsite@gmail.com</span>
+            </div>
+            <svg class="quick-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
 
-            <!-- Correo principal -->
-            <div class="email-main">
-                <div class="email-main-icon">
-                    <svg viewBox="0 0 24 24" stroke-width="1.8" width="32" height="32">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
+    <!-- Instagram -->
+    <div class="contact-card wide-card reveal" id="redes">
+        <div class="section-tag" data-i18n="contactoRedes">Redes sociales</div>
+        <h2 data-i18n="contactoInstagram">Instagram</h2>
+
+        <div class="ig-list">
+            <a class="ig-item" href="https://www.instagram.com/kavari.travel/" target="_blank" rel="noopener noreferrer" id="ig-principal">
+                <div class="ig-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
                     </svg>
                 </div>
-                <div class="email-main-text">
-                    <span class="email-main-address">kavariwebsite@gmail.com</span>
-                    <span class="email-main-purpose" data-i18n="contactoCorreoPrincipal">Correo principal – Consultas generales</span>
+                <div class="ig-item-text">
+                    <span class="ig-handle">@kavari.travel</span>
+                    <span class="ig-label">KAVARI Travel</span>
                 </div>
-                <a href="mailto:kavariwebsite@gmail.com" class="email-main-btn">Enviar correo</a>
-            </div>
+            </a>
 
-            <!-- Separador -->
-            <div class="email-divider"></div>
-
-            <!-- Correos del equipo -->
-            <div class="email-team">
-                <span class="email-team-label" data-i18n="contactoEquipoLabel">Equipo KAVARI</span>
-                <div class="email-team-grid">
-                    <div class="email-team-item">
-                        <span class="email-team-name">Rafael Camacho</span>
-                        <a href="mailto:rafael.camacho2027@fegrjdavid.superate.org" class="email-team-addr">rafael.camacho2027@fegrjdavid.superate.org</a>
-                    </div>
-                    <div class="email-team-item">
-                        <span class="email-team-name">John Diaz</span>
-                        <a href="mailto:john.diaz2027@fegrjdavid.superate.org" class="email-team-addr">john.diaz2027@fegrjdavid.superate.org</a>
-                    </div>
-                    <div class="email-team-item">
-                        <span class="email-team-name">Abdiel Villalva</span>
-                        <a href="mailto:abdiel.villalva2027@fegrjdavid.superate.org" class="email-team-addr">abdiel.villalva2027@fegrjdavid.superate.org</a>
-                    </div>
-                    <div class="email-team-item">
-                        <span class="email-team-name">Astrid Cubilla</span>
-                        <a href="mailto:astrid.cubilla2027@fegrjdavid.superate.org" class="email-team-addr">astrid.cubilla2027@fegrjdavid.superate.org</a>
-                    </div>
-                    <div class="email-team-item">
-                        <span class="email-team-name">Carlos Calvo</span>
-                        <a href="mailto:carlos.calvo2027@fegrjdavid.superate.org" class="email-team-addr">carlos.calvo2027@fegrjdavid.superate.org</a>
-                    </div>
-                    <div class="email-team-item">
-                        <span class="email-team-name">Lucia Arracera</span>
-                        <a href="mailto:lucia.arracera2027@fegrjdavid.superate.org" class="email-team-addr">lucia.arracera2027@fegrjdavid.superate.org</a>
-                    </div>
-                    <div class="email-team-item">
-                        <span class="email-team-name">Yasiris Moran</span>
-                        <a href="mailto:yasiris.moran2027@fegrjdavid.superate.org" class="email-team-addr">yasiris.moran2027@fegrjdavid.superate.org</a>
-                    </div>
+            <a class="ig-item" href="https://www.instagram.com/kavari.destinos/" target="_blank" rel="noopener noreferrer" id="ig-destinos">
+                <div class="ig-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                    </svg>
                 </div>
+                <div class="ig-item-text">
+                    <span class="ig-handle">@kavari.destinos</span>
+                    <span class="ig-label" data-i18n="contactoDestinosLabel">Destinos y aventuras</span>
+                </div>
+            </a>
+
+            <a class="ig-item" href="https://www.instagram.com/kavari.comunidad/" target="_blank" rel="noopener noreferrer" id="ig-comunidad">
+                <div class="ig-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                    </svg>
+                </div>
+                <div class="ig-item-text">
+                    <span class="ig-handle">@kavari.comunidad</span>
+                    <span class="ig-label" data-i18n="contactoComunidad">Comunidad de viajeros</span>
+                </div>
+            </a>
+
+            <a class="ig-item" href="https://www.instagram.com/kavari.guias/" target="_blank" rel="noopener noreferrer" id="ig-guias">
+                <div class="ig-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                    </svg>
+                </div>
+                <div class="ig-item-text">
+                    <span class="ig-handle">@kavari.guias</span>
+                    <span class="ig-label" data-i18n="contactoGuiasCert">Guías turísticos certificados</span>
+                </div>
+            </a>
+
+            <a class="ig-item" href="https://www.instagram.com/kavari.tips/" target="_blank" rel="noopener noreferrer" id="ig-tips">
+                <div class="ig-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                    </svg>
+                </div>
+                <div class="ig-item-text">
+                    <span class="ig-handle">@kavari.tips</span>
+                    <span class="ig-label" data-i18n="contactoTips">Consejos y tips de viaje</span>
+                </div>
+            </a>
+
+            <a class="ig-item" href="https://www.instagram.com/kavari.noticias/" target="_blank" rel="noopener noreferrer" id="ig-noticias">
+                <div class="ig-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="1.8">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                    </svg>
+                </div>
+                <div class="ig-item-text">
+                    <span class="ig-handle">@kavari.noticias</span>
+                    <span class="ig-label" data-i18n="contactoNoticias">Novedades y actualizaciones</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Centro Supérate David: barra horizontal de 3 columnas -->
+    <div class="contact-card wide-card reveal" id="sede">
+        <div class="section-tag" data-i18n="contactoSede">Nuestra sede</div>
+        <h2 data-i18n="contactoSuperate">Centro Supérate David</h2>
+
+        <div class="superatebar">
+            <div class="superatebar-icon">S</div>
+            <div class="superatebar-text">
+                <h3 data-i18n="contactoFundacion">Fundación Emanuel González-Revilla</h3>
+                <p data-i18n="contactoPromo">Programa Supérate — Provincia de Chiriquí</p>
             </div>
         </div>
 
+        <div class="superate-details-grid">
+            <div class="superate-col">
+                <div class="superate-col-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <span class="superate-col-label" data-i18n="contactoUbicacion">Ubicación</span>
+                <p data-i18n="contactoUbicacionVal">Centro Supérate David, Chiriquí, Panamá</p>
+            </div>
+
+            <div class="superate-col">
+                <div class="superate-col-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <span class="superate-col-label" data-i18n="contactoPromocion">Promoción</span>
+                <p data-i18n="contactoPromocionVal">Supérate Promo 2027</p>
+            </div>
+
+            <div class="superate-col">
+                <div class="superate-col-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M2 12h20"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                </div>
+                <span class="superate-col-label" data-i18n="contactoProyecto">Proyecto</span>
+                <p data-i18n="contactoProyectoVal">KAVARI fue creado como parte del programa de tecnología del Centro Supérate David, con el objetivo de aplicar habilidades digitales en un proyecto de impacto social.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Correos de contacto -->
+    <div class="contact-card wide-card reveal" id="correos">
+        <div class="section-tag" data-i18n="contactoCorreo">Correo electrónico</div>
+        <h2 data-i18n="contactoEscribenos">Escríbenos</h2>
+
+        <div class="email-main">
+            <div class="email-main-icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" width="32" height="32">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+            </div>
+            <div class="email-main-text">
+                <span class="email-main-address">kavariwebsite@gmail.com</span>
+                <span class="email-main-purpose" data-i18n="contactoCorreoPrincipal">Correo principal – Consultas generales</span>
+            </div>
+            <a href="mailto:kavariwebsite@gmail.com" class="email-main-btn">Enviar correo</a>
+        </div>
+
+        <div class="email-divider"></div>
+
+        <div class="email-team">
+            <span class="email-team-label" data-i18n="contactoEquipoLabel">Equipo KAVARI</span>
+            <div class="email-team-grid">
+                <div class="email-team-item member-gold">
+                    <span class="email-team-name">Rafael Camacho</span>
+                    <a href="mailto:rafael.camacho2027@fegrjdavid.superate.org" class="email-team-addr">rafael.camacho2027@fegrjdavid.superate.org</a>
+                </div>
+                <div class="email-team-item member-green">
+                    <span class="email-team-name">John Diaz</span>
+                    <a href="mailto:john.diaz2027@fegrjdavid.superate.org" class="email-team-addr">john.diaz2027@fegrjdavid.superate.org</a>
+                </div>
+                <div class="email-team-item member-celeste">
+                    <span class="email-team-name">Abdiel Villalva</span>
+                    <a href="mailto:abdiel.villalva2027@fegrjdavid.superate.org" class="email-team-addr">abdiel.villalva2027@fegrjdavid.superate.org</a>
+                </div>
+                <div class="email-team-item member-green">
+                    <span class="email-team-name">Astrid Cubilla</span>
+                    <a href="mailto:astrid.cubilla2027@fegrjdavid.superate.org" class="email-team-addr">astrid.cubilla2027@fegrjdavid.superate.org</a>
+                </div>
+                <div class="email-team-item member-celeste">
+                    <span class="email-team-name">Carlos Calvo</span>
+                    <a href="mailto:carlos.calvo2027@fegrjdavid.superate.org" class="email-team-addr">carlos.calvo2027@fegrjdavid.superate.org</a>
+                </div>
+                <div class="email-team-item member-rosado">
+                    <span class="email-team-name">Lucia Arracera</span>
+                    <a href="mailto:lucia.arracera2027@fegrjdavid.superate.org" class="email-team-addr">lucia.arracera2027@fegrjdavid.superate.org</a>
+                </div>
+                <div class="email-team-item member-rosado">
+                    <span class="email-team-name">Yasiris Moran</span>
+                    <a href="mailto:yasiris.moran2027@fegrjdavid.superate.org" class="email-team-addr">yasiris.moran2027@fegrjdavid.superate.org</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Botón volver al inicio -->
@@ -311,7 +362,5 @@
 <script src="js/tutorial.js"></script>
 <script src="js/chatbot-engine.js"></script>
 <script src="js/chatbot-widget.js"></script>
-<script src="js/account.js"></script>
-<script src="js/traveler-registration.js"></script>
 </body>
 </html>

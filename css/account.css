@@ -6,6 +6,31 @@
    ========================================================================== */
 
 .auth-page {
+  --kv-bg: #f8fafc;
+  --kv-navy: #e2e8f0;
+  --kv-blue: #2e6edc;
+  --kv-blue-light: #58a6ff;
+  --kv-amber: #e68000;
+  --kv-ink: #0f172a;
+  --kv-mist: rgba(15, 23, 42, 0.68);
+  --kv-mist-dim: rgba(15, 23, 42, 0.46);
+  --kv-line: rgba(15, 23, 42, 0.14);
+  --kv-glass: rgba(0, 0, 0, 0.04);
+  --kv-glass-strong: rgba(0, 0, 0, 0.08);
+
+  min-height: 100vh;
+  margin: 0;
+  color: var(--kv-ink);
+  font-family: "Inter", "Poppins", sans-serif;
+  background:
+    radial-gradient(circle at 18% -10%, rgba(61, 123, 239, 0.15), transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(242, 184, 114, 0.10), transparent 38%),
+    radial-gradient(circle at 50% 120%, rgba(61, 123, 239, 0.12), transparent 55%),
+    var(--kv-bg);
+  background-attachment: fixed;
+}
+
+[data-theme="dark"] .auth-page {
   --kv-bg: #081120;
   --kv-navy: #10284d;
   --kv-blue: #3d7bef;
@@ -17,11 +42,6 @@
   --kv-line: rgba(248, 250, 252, 0.14);
   --kv-glass: rgba(255, 255, 255, 0.06);
   --kv-glass-strong: rgba(255, 255, 255, 0.1);
-
-  min-height: 100vh;
-  margin: 0;
-  color: var(--kv-ink);
-  font-family: "Inter", "Poppins", sans-serif;
   background:
     radial-gradient(circle at 18% -10%, rgba(61, 123, 239, 0.32), transparent 42%),
     radial-gradient(circle at 88% 18%, rgba(242, 184, 114, 0.14), transparent 38%),
