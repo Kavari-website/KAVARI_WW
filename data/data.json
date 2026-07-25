@@ -2840,7 +2840,7 @@
       "nombre": "paisPeru_destinos_machupicchu_nombre",
       "tag": "paisPeru_destinos_machupicchu_tag",
       "descripcion": "paisPeru_destinos_machupicchu_descripcion",
-      "imagen": "img/peru/machupicchu.jpg",
+      "imagen": "img/peru/Machupicchu.jpg",
       "detalle": "paisPeru_destinos_machupicchu_detalle",
       "precio_entrada": "152 PEN (40 USD) aprox.",
       "horario": "6:00 AM - 5:30 PM",
@@ -2851,7 +2851,7 @@
       "nombre": "paisPeru_destinos_cusco_nombre",
       "tag": "paisPeru_destinos_cusco_tag",
       "descripcion": "paisPeru_destinos_cusco_descripcion",
-      "imagen": "img/peru/cusco.jpg",
+      "imagen": "img/peru/Cusco.jpg",
       "detalle": "paisPeru_destinos_cusco_detalle",
       "precio_entrada": "Boleto Turístico: 70-130 PEN",
       "horario": "7:00 AM - 6:00 PM",
@@ -2873,7 +2873,7 @@
       "nombre": "paisPeru_destinos_lima_nombre",
       "tag": "paisPeru_destinos_lima_tag",
       "descripcion": "paisPeru_destinos_lima_descripcion",
-      "imagen": "img/peru/lima.jpg",
+      "imagen": "img/peru/Limaperu.jpg",
       "detalle": "paisPeru_destinos_lima_detalle",
       "precio_entrada": "Museos desde 10 PEN",
       "horario": "9:00 AM - 5:00 PM",
@@ -2895,7 +2895,7 @@
       "nombre": "paisPeru_destinos_titicaca_nombre",
       "tag": "paisPeru_destinos_titicaca_tag",
       "descripcion": "paisPeru_destinos_titicaca_descripcion",
-      "imagen": "img/peru/titicaca.jpg",
+      "imagen": "img/peru/Lagotiticaca.jpg",
       "detalle": "paisPeru_destinos_titicaca_detalle",
       "precio_entrada": "Paseo en bote: 50-80 PEN",
       "horario": "7:00 AM - 5:00 PM",
@@ -2906,7 +2906,7 @@
       "nombre": "paisPeru_destinos_amazonas_nombre",
       "tag": "paisPeru_destinos_amazonas_tag",
       "descripcion": "paisPeru_destinos_amazonas_descripcion",
-      "imagen": "img/peru/amazonas.jpg",
+      "imagen": "img/peru/Amazoniaperuana.jpg",
       "detalle": "paisPeru_destinos_amazonas_detalle",
       "precio_entrada": "Desde 200 PEN por día (tour)",
       "horario": "Actividades al amanecer y atardecer",
@@ -2917,7 +2917,7 @@
       "nombre": "paisPeru_destinos_colca_nombre",
       "tag": "paisPeru_destinos_colca_tag",
       "descripcion": "paisPeru_destinos_colca_descripcion",
-      "imagen": "img/peru/colca.jpg",
+      "imagen": "img/peru/cañondelcolca.jpg",
       "detalle": "paisPeru_destinos_colca_detalle",
       "precio_entrada": "70 PEN (ingreso)",
       "horario": "6:00 AM - 5:00 PM",
@@ -2940,7 +2940,7 @@
         "nombre": "paisPeru_cultura_items_danzatijeras_nombre",
         "tag": "paisPeru_cultura_items_danzatijeras_tag",
         "descripcion": "paisPeru_cultura_items_danzatijeras_descripcion",
-        "imagen": "img/peru/danzatijeras.jpg",
+        "imagen": "img/peru/danzadetijeras.jpg",
         "detalle": "paisPeru_cultura_items_danzatijeras_detalle"
       },
       {
@@ -2948,7 +2948,7 @@
         "nombre": "paisPeru_cultura_items_intiraymi_nombre",
         "tag": "paisPeru_cultura_items_intiraymi_tag",
         "descripcion": "paisPeru_cultura_items_intiraymi_descripcion",
-        "imagen": "img/peru/intiraymi.jpg",
+        "imagen": "img/peru/intiramy.jpg",
         "detalle": "paisPeru_cultura_items_intiraymi_detalle"
       },
       {
@@ -2995,35 +2995,35 @@
         "nombre": "paisPeru_gastronomia_platos_1_nombre",
         "categoria": "paisPeru_gastronomia_platos_1_categoria",
         "descripcion": "paisPeru_gastronomia_platos_1_descripcion",
-        "imagen": "img/peru/lomosaltado.jpg",
+        "imagen": "img/peru/lomosalteado.webp",
         "nota": "paisPeru_gastronomia_platos_1_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_2_nombre",
         "categoria": "paisPeru_gastronomia_platos_2_categoria",
         "descripcion": "paisPeru_gastronomia_platos_2_descripcion",
-        "imagen": "img/peru/ajigallina.jpg",
+        "imagen": "img/peru/ajídegallina.jpg",
         "nota": "paisPeru_gastronomia_platos_2_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_3_nombre",
         "categoria": "paisPeru_gastronomia_platos_3_categoria",
         "descripcion": "paisPeru_gastronomia_platos_3_descripcion",
-        "imagen": "img/peru/anticuchos.jpg",
+        "imagen": "img/peru/antichucos.avif",
         "nota": "paisPeru_gastronomia_platos_3_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_4_nombre",
         "categoria": "paisPeru_gastronomia_platos_4_categoria",
         "descripcion": "paisPeru_gastronomia_platos_4_descripcion",
-        "imagen": "img/peru/pachamanca.jpg",
+        "imagen": "img/peru/Pachamanca.jpg",
         "nota": "paisPeru_gastronomia_platos_4_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_5_nombre",
         "categoria": "paisPeru_gastronomia_platos_5_categoria",
         "descripcion": "paisPeru_gastronomia_platos_5_descripcion",
-        "imagen": "img/peru/causa.jpg",
+        "imagen": "img/peru/causalimeña.jpg",
         "nota": "paisPeru_gastronomia_platos_5_nota"
       },
       {
@@ -3051,7 +3051,7 @@
         "nombre": "paisPeru_gastronomia_platos_9_nombre",
         "categoria": "paisPeru_gastronomia_platos_9_categoria",
         "descripcion": "paisPeru_gastronomia_platos_9_descripcion",
-        "imagen": "img/peru/suspiro.jpg",
+        "imagen": "img/peru/suspiroalalimeña.jpg",
         "nota": "paisPeru_gastronomia_platos_9_nota"
       }
     ]
@@ -3277,7 +3277,7 @@
           "nombre": "paisPeru_souvenirs_0_productos_0_nombre",
           "descripcion": "paisPeru_souvenirs_0_productos_0_descripcion",
           "precio": "15-40 USD",
-          "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400"
+          "img": "MercadoSanPedroCusco.png"
         },
         {
           "nombre": "paisPeru_souvenirs_0_productos_1_nombre",
