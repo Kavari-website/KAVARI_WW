@@ -2113,7 +2113,7 @@
       "nombre": "paisMexico_destinos_cancun_nombre",
       "tag": "paisMexico_destinos_cancun_tag",
       "descripcion": "paisMexico_destinos_cancun_descripcion",
-      "imagen": "img/mexico/cancun.jpg",
+      "imagen": "img/mexico/cancun.webp",
       "detalle": "paisMexico_destinos_cancun_detalle",
       "precio_entrada": "Gratuito (playas)",
       "horario": "24 horas",
@@ -2124,7 +2124,7 @@
       "nombre": "paisMexico_destinos_coyoacan_nombre",
       "tag": "paisMexico_destinos_coyoacan_tag",
       "descripcion": "paisMexico_destinos_coyoacan_descripcion",
-      "imagen": "img/mexico/coyoacan.jpg",
+      "imagen": "img/mexico/Coyoacan.jpg",
       "detalle": "paisMexico_destinos_coyoacan_detalle",
       "precio_entrada": "Museos desde 35 MXN",
       "horario": "10:00 AM - 6:00 PM",
@@ -2135,7 +2135,7 @@
       "nombre": "paisMexico_destinos_angel_nombre",
       "tag": "paisMexico_destinos_angel_tag",
       "descripcion": "paisMexico_destinos_angel_descripcion",
-      "imagen": "img/mexico/angelindependencia.jpg",
+      "imagen": "img/mexico/monumentoalaindependencia.webp",
       "detalle": "paisMexico_destinos_angel_detalle",
       "precio_entrada": "Gratuito (exterior)",
       "horario": "24 horas",
@@ -2146,7 +2146,7 @@
       "nombre": "paisMexico_destinos_sumidero_nombre",
       "tag": "paisMexico_destinos_sumidero_tag",
       "descripcion": "paisMexico_destinos_sumidero_descripcion",
-      "imagen": "img/mexico/sumidero.jpg",
+      "imagen": "img/mexico/parquenacionaldelsumidero.jpg",
       "detalle": "paisMexico_destinos_sumidero_detalle",
       "precio_entrada": "50 MXN + lancha 250-300 MXN",
       "horario": "8:00 AM - 5:00 PM",
@@ -2157,7 +2157,7 @@
       "nombre": "paisMexico_destinos_holbox_nombre",
       "tag": "paisMexico_destinos_holbox_tag",
       "descripcion": "paisMexico_destinos_holbox_descripcion",
-      "imagen": "img/mexico/holbox.jpg",
+      "imagen": "img/mexico/islaholbox.webp",
       "detalle": "paisMexico_destinos_holbox_detalle",
       "precio_entrada": "Transporte marítimo: 150-250 MXN",
       "horario": "24 horas",
@@ -2168,7 +2168,7 @@
       "nombre": "paisMexico_destinos_sierragorda_nombre",
       "tag": "paisMexico_destinos_sierragorda_tag",
       "descripcion": "paisMexico_destinos_sierragorda_descripcion",
-      "imagen": "img/mexico/sierragorda.jpg",
+      "imagen": "img/mexico/sierragordadequerétaro.jpg",
       "detalle": "paisMexico_destinos_sierragorda_detalle",
       "precio_entrada": "Gratuito",
       "horario": "24 horas",
@@ -2191,7 +2191,7 @@
         "nombre": "paisMexico_cultura_items_diademuertos_nombre",
         "tag": "paisMexico_cultura_items_diademuertos_tag",
         "descripcion": "paisMexico_cultura_items_diademuertos_descripcion",
-        "imagen": "img/mexico/diademuertos.jpg",
+        "imagen": "img/mexico/Diademuertos.jpg",
         "detalle": "paisMexico_cultura_items_diademuertos_detalle"
       },
       {
@@ -2199,7 +2199,7 @@
         "nombre": "paisMexico_cultura_items_barro_nombre",
         "tag": "paisMexico_cultura_items_barro_tag",
         "descripcion": "paisMexico_cultura_items_barro_descripcion",
-        "imagen": "img/mexico/barro-negro.jpg",
+        "imagen": "img/mexico/ArtePopularOaxaqueño.jpg",
         "detalle": "paisMexico_cultura_items_barro_detalle"
       },
       {
@@ -2207,7 +2207,7 @@
         "nombre": "paisMexico_cultura_items_chinela_nombre",
         "tag": "paisMexico_cultura_items_chinela_tag",
         "descripcion": "paisMexico_cultura_items_chinela_descripcion",
-        "imagen": "img/mexico/chinapoblana.jpg",
+        "imagen": "img/mexico/trajedechinapoblada.jpg",
         "detalle": "paisMexico_cultura_items_chinela_detalle"
       },
       {
@@ -2215,7 +2215,7 @@
         "nombre": "paisMexico_cultura_items_raramuri_nombre",
         "tag": "paisMexico_cultura_items_raramuri_tag",
         "descripcion": "paisMexico_cultura_items_raramuri_descripcion",
-        "imagen": "img/mexico/raramuri.jpg",
+        "imagen": "img/mexico/Pueblorarámuri.png",
         "detalle": "paisMexico_cultura_items_raramuri_detalle"
       }
     ],
@@ -2239,21 +2239,21 @@
         "nombre": "paisMexico_gastronomia_platos_0_nombre",
         "categoria": "paisMexico_gastronomia_platos_0_categoria",
         "descripcion": "paisMexico_gastronomia_platos_0_descripcion",
-        "imagen": "img/mexico/tacos-al-pastor.jpg",
+        "imagen": "img/mexico/tacosalpastor.jpg",
         "nota": "paisMexico_gastronomia_platos_0_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_1_nombre",
         "categoria": "paisMexico_gastronomia_platos_1_categoria",
         "descripcion": "paisMexico_gastronomia_platos_1_descripcion",
-        "imagen": "img/mexico/mole-negro.jpg",
+        "imagen": "img/mexico/molenegro.jpg",
         "nota": "paisMexico_gastronomia_platos_1_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_2_nombre",
         "categoria": "paisMexico_gastronomia_platos_2_categoria",
         "descripcion": "paisMexico_gastronomia_platos_2_descripcion",
-        "imagen": "img/mexico/chiles-nogada.jpg",
+        "imagen": "img/mexico/chilesennogada.jpg",
         "nota": "paisMexico_gastronomia_platos_2_nota"
       },
       {
@@ -2267,42 +2267,42 @@
         "nombre": "paisMexico_gastronomia_platos_4_nombre",
         "categoria": "paisMexico_gastronomia_platos_4_categoria",
         "descripcion": "paisMexico_gastronomia_platos_4_descripcion",
-        "imagen": "img/mexico/tacos-canasta.jpg",
+        "imagen": "img/mexico/tacosdecanasta.jpg",
         "nota": "paisMexico_gastronomia_platos_4_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_5_nombre",
         "categoria": "paisMexico_gastronomia_platos_5_categoria",
         "descripcion": "paisMexico_gastronomia_platos_5_descripcion",
-        "imagen": "img/mexico/tamales.jpg",
+        "imagen": "img/mexico/Tamales.jpg",
         "nota": "paisMexico_gastronomia_platos_5_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_6_nombre",
         "categoria": "paisMexico_gastronomia_platos_6_categoria",
         "descripcion": "paisMexico_gastronomia_platos_6_descripcion",
-        "imagen": "img/mexico/ceviche.jpg",
+        "imagen": "img/mexico/cevichemexicano.webp",
         "nota": "paisMexico_gastronomia_platos_6_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_7_nombre",
         "categoria": "paisMexico_gastronomia_platos_7_categoria",
         "descripcion": "paisMexico_gastronomia_platos_7_descripcion",
-        "imagen": "img/mexico/elotes.jpg",
+        "imagen": "img/mexico/Equitesyelotes.jpg",
         "nota": "paisMexico_gastronomia_platos_7_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_8_nombre",
         "categoria": "paisMexico_gastronomia_platos_8_categoria",
         "descripcion": "paisMexico_gastronomia_platos_8_descripcion",
-        "imagen": "img/mexico/tortas-chilaquil.jpg",
+        "imagen": "img/mexico/tortadechilaquiles.jpg",
         "nota": "paisMexico_gastronomia_platos_8_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_9_nombre",
         "categoria": "paisMexico_gastronomia_platos_9_categoria",
         "descripcion": "paisMexico_gastronomia_platos_9_descripcion",
-        "imagen": "img/mexico/churros.jpg",
+        "imagen": "img/mexico/Churros.jpg",
         "nota": "paisMexico_gastronomia_platos_9_nota"
       }
     ]
