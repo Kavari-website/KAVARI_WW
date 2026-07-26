@@ -4336,7 +4336,7 @@
       "nombre": "paisArgentina_destinos_buenosaires_nombre",
       "tag": "paisArgentina_destinos_buenosaires_tag",
       "descripcion": "paisArgentina_destinos_buenosaires_descripcion",
-      "imagen": "img/argentina/buenosaires.jpg",
+      "imagen": "img/argentina/BuenosAires.jpg",
       "detalle": "paisArgentina_destinos_buenosaires_detalle",
       "precio_entrada": "Museos: 500-2,000 ARS",
       "horario": "Siempre accesible",
@@ -4347,7 +4347,7 @@
       "nombre": "paisArgentina_destinos_iguazu_nombre",
       "tag": "paisArgentina_destinos_iguazu_tag",
       "descripcion": "paisArgentina_destinos_iguazu_descripcion",
-      "imagen": "img/argentina/iguazu.jpg",
+      "imagen": "img/argentina/CataratasDeIguazú.jpg",
       "detalle": "paisArgentina_destinos_iguazu_detalle",
       "precio_entrada": "8,000 ARS (extranjeros)",
       "horario": "8:00 AM - 6:00 PM",
@@ -4358,7 +4358,7 @@
       "nombre": "paisArgentina_destinos_patagonia_nombre",
       "tag": "paisArgentina_destinos_patagonia_tag",
       "descripcion": "paisArgentina_destinos_patagonia_descripcion",
-      "imagen": "img/argentina/patagonia.jpg",
+      "imagen": "img/argentina/Patagonia.jpg",
       "detalle": "paisArgentina_destinos_patagonia_detalle",
       "precio_entrada": "Parques: 1,500-5,000 ARS",
       "horario": "8:00 AM - 8:00 PM",
@@ -4369,7 +4369,7 @@
       "nombre": "paisArgentina_destinos_mendoza_nombre",
       "tag": "paisArgentina_destinos_mendoza_tag",
       "descripcion": "paisArgentina_destinos_mendoza_descripcion",
-      "imagen": "img/argentina/mendoza.jpg",
+      "imagen": "img/argentina/Mendoza.jpg",
       "detalle": "paisArgentina_destinos_mendoza_detalle",
       "precio_entrada": "Bodegas: 10,000-30,000 ARS",
       "horario": "10:00 AM - 5:00 PM",
@@ -4380,7 +4380,7 @@
       "nombre": "paisArgentina_destinos_bariloche_nombre",
       "tag": "paisArgentina_destinos_bariloche_tag",
       "descripcion": "paisArgentina_destinos_bariloche_descripcion",
-      "imagen": "img/argentina/bariloche.jpg",
+      "imagen": "img/argentina/Bariloche.avif",
       "detalle": "paisArgentina_destinos_bariloche_detalle",
       "precio_entrada": "Teleférico: 15,000 ARS",
       "horario": "9:00 AM - 6:00 PM",
@@ -4391,7 +4391,7 @@
       "nombre": "paisArgentina_destinos_saltajujuy_nombre",
       "tag": "paisArgentina_destinos_saltajujuy_tag",
       "descripcion": "paisArgentina_destinos_saltajujuy_descripcion",
-      "imagen": "img/argentina/saltajujuy.jpg",
+      "imagen": "img/argentina/SaltayJuyui.webp",
       "detalle": "paisArgentina_destinos_saltajujuy_detalle",
       "precio_entrada": "Sitios: 1,000-3,000 ARS",
       "horario": "8:00 AM - 7:00 PM",
@@ -4402,7 +4402,7 @@
       "nombre": "paisArgentina_destinos_elcalafate_nombre",
       "tag": "paisArgentina_destinos_elcalafate_tag",
       "descripcion": "paisArgentina_destinos_elcalafate_descripcion",
-      "imagen": "img/argentina/elcalafate.jpg",
+      "imagen": "img/argentina/ElCalafate.jpeg",
       "detalle": "paisArgentina_destinos_elcalafate_detalle",
       "precio_entrada": "Parque: 9,000 ARS extranjeros",
       "horario": "8:00 AM - 6:00 PM",
@@ -4413,7 +4413,7 @@
       "nombre": "paisArgentina_destinos_ushuaia_nombre",
       "tag": "paisArgentina_destinos_ushuaia_tag",
       "descripcion": "paisArgentina_destinos_ushuaia_descripcion",
-      "imagen": "img/argentina/ushuaia.jpg",
+      "imagen": "img/argentina/Ushuaia.jpg",
       "detalle": "paisArgentina_destinos_ushuaia_detalle",
       "precio_entrada": "Parque: 7,000 ARS",
       "horario": "9:00 AM - 6:00 PM",
@@ -4436,7 +4436,7 @@
         "nombre": "paisArgentina_cultura_items_tango_nombre",
         "tag": "paisArgentina_cultura_items_tango_tag",
         "descripcion": "paisArgentina_cultura_items_tango_descripcion",
-        "imagen": "img/argentina/tango.jpg",
+        "imagen": "img/argentina/Tango.webp",
         "detalle": "paisArgentina_cultura_items_tango_detalle"
       },
       {
@@ -4444,7 +4444,7 @@
         "nombre": "paisArgentina_cultura_items_literatura_nombre",
         "tag": "paisArgentina_cultura_items_literatura_tag",
         "descripcion": "paisArgentina_cultura_items_literatura_descripcion",
-        "imagen": "img/argentina/literatura.jpg",
+        "imagen": "img/argentina/Literatura.jpg",
         "detalle": "paisArgentina_cultura_items_literatura_detalle"
       },
       {
@@ -4452,7 +4452,7 @@
         "nombre": "paisArgentina_cultura_items_mate_nombre",
         "tag": "paisArgentina_cultura_items_mate_tag",
         "descripcion": "paisArgentina_cultura_items_mate_descripcion",
-        "imagen": "img/argentina/mate.jpg",
+        "imagen": "img/argentina/Elmate.png",
         "detalle": "paisArgentina_cultura_items_mate_detalle"
       },
       {
@@ -4460,7 +4460,7 @@
         "nombre": "paisArgentina_cultura_items_futbol_nombre",
         "tag": "paisArgentina_cultura_items_futbol_tag",
         "descripcion": "paisArgentina_cultura_items_futbol_descripcion",
-        "imagen": "img/argentina/futbol.jpg",
+        "imagen": "img/argentina/Equipodeargentina.webp",
         "detalle": "paisArgentina_cultura_items_futbol_detalle"
       }
     ],
@@ -4484,70 +4484,70 @@
         "nombre": "paisArgentina_gastronomia_platos_0_nombre",
         "categoria": "paisArgentina_gastronomia_platos_0_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_0_descripcion",
-        "imagen": "img/argentina/asado.jpg",
+        "imagen": "img/argentina/Asado.jpg",
         "nota": "paisArgentina_gastronomia_platos_0_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_1_nombre",
         "categoria": "paisArgentina_gastronomia_platos_1_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_1_descripcion",
-        "imagen": "img/argentina/empanadas.jpg",
+        "imagen": "img/argentina/Empanadas.jpg",
         "nota": "paisArgentina_gastronomia_platos_1_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_2_nombre",
         "categoria": "paisArgentina_gastronomia_platos_2_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_2_descripcion",
-        "imagen": "img/argentina/milanesa.jpg",
+        "imagen": "img/argentina/Milanesa.jpg",
         "nota": "paisArgentina_gastronomia_platos_2_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_3_nombre",
         "categoria": "paisArgentina_gastronomia_platos_3_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_3_descripcion",
-        "imagen": "img/argentina/locro.jpg",
+        "imagen": "img/argentina/Locro.webp",
         "nota": "paisArgentina_gastronomia_platos_3_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_4_nombre",
         "categoria": "paisArgentina_gastronomia_platos_4_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_4_descripcion",
-        "imagen": "img/argentina/dulcedeleche.jpg",
+        "imagen": "img/argentina/DulcedeLeche.jpg",
         "nota": "paisArgentina_gastronomia_platos_4_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_5_nombre",
         "categoria": "paisArgentina_gastronomia_platos_5_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_5_descripcion",
-        "imagen": "img/argentina/provoleta.jpg",
+        "imagen": "img/argentina/Provoleta.webp",
         "nota": "paisArgentina_gastronomia_platos_5_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_6_nombre",
         "categoria": "paisArgentina_gastronomia_platos_6_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_6_descripcion",
-        "imagen": "img/argentina/choripan.jpg",
+        "imagen": "img/argentina/Choripan.jpg",
         "nota": "paisArgentina_gastronomia_platos_6_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_7_nombre",
         "categoria": "paisArgentina_gastronomia_platos_7_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_7_descripcion",
-        "imagen": "img/argentina/humita.jpg",
+        "imagen": "img/argentina/Humita.webp",
         "nota": "paisArgentina_gastronomia_platos_7_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_8_nombre",
         "categoria": "paisArgentina_gastronomia_platos_8_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_8_descripcion",
-        "imagen": "img/argentina/pascualina.jpg",
+        "imagen": "img/argentina/TortaPascualina.webp",
         "nota": "paisArgentina_gastronomia_platos_8_nota"
       },
       {
         "nombre": "paisArgentina_gastronomia_platos_9_nombre",
         "categoria": "paisArgentina_gastronomia_platos_9_categoria",
         "descripcion": "paisArgentina_gastronomia_platos_9_descripcion",
-        "imagen": "img/argentina/alfajores.jpg",
+        "imagen": "img/argentina/Alfajores.jpg",
         "nota": "paisArgentina_gastronomia_platos_9_nota"
       }
     ]
