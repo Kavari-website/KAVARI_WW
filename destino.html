@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="css/chatbot-widget.css">
   <script src="js/idioma.js?v=4"></script>
   <script src="js/theme.js?v=3"></script>
+  <link rel="icon" type="image/png" sizes="3000x3000" href="img/favicon.png">
+
 </head>
 <body class="page-destino">
 
@@ -110,10 +112,10 @@
     <div class="hero-content">
       <div class="hero-eyebrow">
         <span class="hero-eyebrow-dot"></span>
-        <span id="heroContinente">América Central</span> · Destino 2025
+        <span id="heroContinente" data-i18n="heroContinente">Tu próximo destino</span>
       </div>
-      <h1 id="heroTitulo">Panamá<span id="heroSubtitulo">Infinita</span></h1>
-      <p class="hero-desc" id="heroDesc">Donde el Pacífico abraza al Atlántico.</p>
+      <h1 id="heroTitulo"><span data-i18n="heroTitulo">Descubre el Mundo</span><span id="heroSubtitulo" data-i18n="heroSubtitulo">con KAVARI</span></h1>
+      <p class="hero-desc" id="heroDesc" data-i18n="heroDesc">Viajes que transforman, experiencias que perduran.</p>
       <div class="hero-stats" id="heroStats"></div>
       <div class="hero-actions">
         <button class="btn-hero" onclick="showSection('lugares')"><span data-i18n="heroExplorarDestinos">Explorar destinos</span></button>
@@ -138,8 +140,8 @@
   <div class="quick-facts reveal" id="quickFacts"></div>
 
   <div class="quote-bar reveal">
-    <blockquote id="quoteInicio">Panamá no es solo un destino — es una experiencia que transforma.</blockquote>
-    <cite id="citeInicio">KAVARI · Guía 2025</cite>
+    <blockquote id="quoteInicio" data-i18n="quoteInicio">Viajar es la única inversión que te hace más rico.</blockquote>
+    <cite id="citeInicio" data-i18n="citeInicio">KAVARI · Guía 2025</cite>
   </div>
 </div>
 
@@ -151,7 +153,7 @@
     <div class="page-header-content">
       <div class="ph-tag" data-i18n="culturaTag">Identidad · Tradición · Historia</div>
       <h2 id="culturaTitulo" data-i18n="culturaTitulo">Cultura</h2>
-      <p id="culturaDesc" data-i18n="culturaDesc">Una mezcla vibrante que produce una identidad única.</p>
+      <p id="culturaDesc" data-i18n="culturaDesc">La riqueza cultural que define a cada destino.</p>
     </div>
   </div>
   <div class="stats-bar reveal" id="culturaStats"></div>
@@ -170,11 +172,11 @@
     <div class="page-header-content">
       <div class="ph-tag" data-i18n="lugaresTag">Destinos · Maravillas</div>
       <h2 id="lugaresTitulo" data-i18n="lugaresTitulo">Destinos Imprescindibles</h2>
-      <p id="lugaresDesc" data-i18n="lugaresDesc">Una diversidad de paisajes única.</p>
+      <p id="lugaresDesc" data-i18n="lugaresDesc">Descubre los lugares que definen cada rincón del mundo.</p>
     </div>
   </div>
   <div class="cards-section reveal">
-    <h4 id="lugaresSubTitulo" data-i18n="losDestinosQueDefinen">Los destinos que definen el país</h4>
+    <h4 id="lugaresSubTitulo" data-i18n="losDestinosQueDefinen">Los destinos que debes visitar</h4>
     <div class="cards-grid" id="todosDestinos"></div>
   </div>
   <div class="two-col-itin reveal" id="twoColItin"></div>
@@ -188,7 +190,7 @@
     <div class="page-header-content">
       <div class="ph-tag" data-i18n="gastronomiaTag">Sabores · Tradición</div>
       <h2 id="gastronomiaTitulo" data-i18n="gastronomiaTitulo">Gastronomía</h2>
-      <p id="gastronomiaDesc" data-i18n="gastronomiaDesc">Ingredientes nativos y técnicas ancestrales.</p>
+      <p id="gastronomiaDesc" data-i18n="gastronomiaDesc">La cocina como expresión de la identidad cultural.</p>
     </div>
   </div>
   <div class="food-grid reveal" id="foodGrid"></div>
@@ -210,7 +212,7 @@
   <div class="sec-title reveal">
     <div class="sec-tag-line" data-i18n="seleccionEditorial">Selección editorial</div>
     <h3 data-i18n="experienciasAventura">Experiencias que definen la aventura</h3>
-    <p data-i18n="descAventura">De buceo en arrecifes a expediciones de selva.</p>
+    <p data-i18n="descAventura">Actividades para todos los niveles de adrenalina.</p>
   </div>
   <div class="act-list reveal" id="actList"></div>
   <div class="dark-band reveal" id="aventuraDarkBand"></div>
@@ -224,14 +226,14 @@
     <div class="page-header-content">
       <div class="ph-tag" data-i18n="practicaTag">Viaje inteligente</div>
       <h2 id="practicaTitulo" data-i18n="practicaTitulo">Información Práctica</h2>
-      <p id="practicaDesc" data-i18n="practicaDesc">Todo lo que necesitas antes de viajar.</p>
+      <p id="practicaDesc" data-i18n="practicaDesc">Todo lo que necesitas saber antes de viajar.</p>
     </div>
   </div>
   <div class="info-grid reveal" id="infoGrid"></div>
   <div class="two-col reveal" id="practicaTwoCol"></div>
   <div class="quote-bar reveal">
-    <blockquote id="quotePractica">Viajar es descubrir que los mejores destinos no siempre son los más conocidos.</blockquote>
-    <cite id="citePractica">KAVARI · Guía 2025</cite>
+    <blockquote id="quotePractica" data-i18n="quotePractica">Los mejores destinos no siempre son los más conocidos.</blockquote>
+    <cite id="citePractica" data-i18n="citePractica">KAVARI · Guía 2025</cite>
   </div>
 </div>
 
@@ -243,7 +245,7 @@
     <div class="page-header-content">
       <div class="ph-tag" data-i18n="aerolineasTag">Vuelos · Conexiones internacionales</div>
       <h2 id="aerolineasTitulo" data-i18n="aerolineasTitulo">Aerolíneas disponibles</h2>
-      <p id="aerolineasDesc" data-i18n="aerolineasDesc">Las mejores opciones de vuelo hacia este destino.</p>
+      <p id="aerolineasDesc" data-i18n="aerolineasDesc">Las mejores opciones de vuelo hacia tu destino.</p>
     </div>
   </div>
   <div class="airline-section reveal">

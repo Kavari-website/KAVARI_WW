@@ -193,7 +193,7 @@
   "poblacion": "paisPanama_poblacion",
   "zona_horaria": "paisPanama_zona_horaria",
   "codigo_telefonico": "paisPanama_codigo_telefonico",
-  "hero_img": "img/panama/bannerpanama2.jpeg",
+  "hero_img": "img/banners/bannerdepanama.jpeg",
   "page_header_img": "img/panama/header.jpg",
   "stats": [
     { "numero": "75,517", "label": "paisPanama_stats_0_label" },
@@ -959,7 +959,7 @@
   "poblacion": "paisCostaRica_poblacion",
   "zona_horaria": "paisCostaRica_zona_horaria",
   "codigo_telefonico": "paisCostaRica_codigo_telefonico",
-  "hero_img": "img/costa-rica/costa-rica.jpeg",
+  "hero_img": "img/banners/bannerdecostarica.jpeg",
   "page_header_img": "img/costa-rica/costa-rica.jpeg",
   "stats": [
     { "numero": "51,100", "label": "paisCostaRica_stats_0_label" },
@@ -1315,7 +1315,7 @@
   "poblacion": "paisColombia_poblacion",
   "zona_horaria": "paisColombia_zona_horaria",
   "codigo_telefonico": "paisColombia_codigo_telefonico",
-  "hero_img": "img/colombia/colombia.jpeg",
+  "hero_img": "img/banners/bannerdecolombia.jpeg",
   "page_header_img": "img/colombia/colombia.jpeg",
   "stats": [
     { "numero": "1,141,748", "label": "paisColombia_stats_0_label" },
@@ -2091,7 +2091,7 @@
       "nombre": "paisMexico_destinos_chichen_nombre",
       "tag": "paisMexico_destinos_chichen_tag",
       "descripcion": "paisMexico_destinos_chichen_descripcion",
-      "imagen": "img/mexico/chichenitza.jpg",
+      "imagen": "img/mexico/Chichenitza.jpg",
       "detalle": "paisMexico_destinos_chichen_detalle",
       "precio_entrada": "500 MXN",
       "horario": "8:00 AM - 5:00 PM",
@@ -2113,7 +2113,7 @@
       "nombre": "paisMexico_destinos_cancun_nombre",
       "tag": "paisMexico_destinos_cancun_tag",
       "descripcion": "paisMexico_destinos_cancun_descripcion",
-      "imagen": "img/mexico/cancun.jpg",
+      "imagen": "img/mexico/cancun.webp",
       "detalle": "paisMexico_destinos_cancun_detalle",
       "precio_entrada": "Gratuito (playas)",
       "horario": "24 horas",
@@ -2124,7 +2124,7 @@
       "nombre": "paisMexico_destinos_coyoacan_nombre",
       "tag": "paisMexico_destinos_coyoacan_tag",
       "descripcion": "paisMexico_destinos_coyoacan_descripcion",
-      "imagen": "img/mexico/coyoacan.jpg",
+      "imagen": "img/mexico/Coyoacan.jpg",
       "detalle": "paisMexico_destinos_coyoacan_detalle",
       "precio_entrada": "Museos desde 35 MXN",
       "horario": "10:00 AM - 6:00 PM",
@@ -2135,7 +2135,7 @@
       "nombre": "paisMexico_destinos_angel_nombre",
       "tag": "paisMexico_destinos_angel_tag",
       "descripcion": "paisMexico_destinos_angel_descripcion",
-      "imagen": "img/mexico/angelindependencia.jpg",
+      "imagen": "img/mexico/monumentoalaindependencia.webp",
       "detalle": "paisMexico_destinos_angel_detalle",
       "precio_entrada": "Gratuito (exterior)",
       "horario": "24 horas",
@@ -2146,7 +2146,7 @@
       "nombre": "paisMexico_destinos_sumidero_nombre",
       "tag": "paisMexico_destinos_sumidero_tag",
       "descripcion": "paisMexico_destinos_sumidero_descripcion",
-      "imagen": "img/mexico/sumidero.jpg",
+      "imagen": "img/mexico/parquenacionaldelsumidero.jpg",
       "detalle": "paisMexico_destinos_sumidero_detalle",
       "precio_entrada": "50 MXN + lancha 250-300 MXN",
       "horario": "8:00 AM - 5:00 PM",
@@ -2157,7 +2157,7 @@
       "nombre": "paisMexico_destinos_holbox_nombre",
       "tag": "paisMexico_destinos_holbox_tag",
       "descripcion": "paisMexico_destinos_holbox_descripcion",
-      "imagen": "img/mexico/holbox.jpg",
+      "imagen": "img/mexico/islaholbox.webp",
       "detalle": "paisMexico_destinos_holbox_detalle",
       "precio_entrada": "Transporte marítimo: 150-250 MXN",
       "horario": "24 horas",
@@ -2168,7 +2168,7 @@
       "nombre": "paisMexico_destinos_sierragorda_nombre",
       "tag": "paisMexico_destinos_sierragorda_tag",
       "descripcion": "paisMexico_destinos_sierragorda_descripcion",
-      "imagen": "img/mexico/sierragorda.jpg",
+      "imagen": "img/mexico/sierragordadequerétaro.jpg",
       "detalle": "paisMexico_destinos_sierragorda_detalle",
       "precio_entrada": "Gratuito",
       "horario": "24 horas",
@@ -2191,7 +2191,7 @@
         "nombre": "paisMexico_cultura_items_diademuertos_nombre",
         "tag": "paisMexico_cultura_items_diademuertos_tag",
         "descripcion": "paisMexico_cultura_items_diademuertos_descripcion",
-        "imagen": "img/mexico/diademuertos.jpg",
+        "imagen": "img/mexico/Diademuertos.jpg",
         "detalle": "paisMexico_cultura_items_diademuertos_detalle"
       },
       {
@@ -2199,7 +2199,7 @@
         "nombre": "paisMexico_cultura_items_barro_nombre",
         "tag": "paisMexico_cultura_items_barro_tag",
         "descripcion": "paisMexico_cultura_items_barro_descripcion",
-        "imagen": "img/mexico/barro-negro.jpg",
+        "imagen": "img/mexico/ArtePopularOaxaqueño.jpg",
         "detalle": "paisMexico_cultura_items_barro_detalle"
       },
       {
@@ -2207,7 +2207,7 @@
         "nombre": "paisMexico_cultura_items_chinela_nombre",
         "tag": "paisMexico_cultura_items_chinela_tag",
         "descripcion": "paisMexico_cultura_items_chinela_descripcion",
-        "imagen": "img/mexico/chinapoblana.jpg",
+        "imagen": "img/mexico/trajedechinapoblada.jpg",
         "detalle": "paisMexico_cultura_items_chinela_detalle"
       },
       {
@@ -2215,7 +2215,7 @@
         "nombre": "paisMexico_cultura_items_raramuri_nombre",
         "tag": "paisMexico_cultura_items_raramuri_tag",
         "descripcion": "paisMexico_cultura_items_raramuri_descripcion",
-        "imagen": "img/mexico/raramuri.jpg",
+        "imagen": "img/mexico/Pueblorarámuri.png",
         "detalle": "paisMexico_cultura_items_raramuri_detalle"
       }
     ],
@@ -2239,21 +2239,21 @@
         "nombre": "paisMexico_gastronomia_platos_0_nombre",
         "categoria": "paisMexico_gastronomia_platos_0_categoria",
         "descripcion": "paisMexico_gastronomia_platos_0_descripcion",
-        "imagen": "img/mexico/tacos-al-pastor.jpg",
+        "imagen": "img/mexico/tacosalpastor.jpg",
         "nota": "paisMexico_gastronomia_platos_0_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_1_nombre",
         "categoria": "paisMexico_gastronomia_platos_1_categoria",
         "descripcion": "paisMexico_gastronomia_platos_1_descripcion",
-        "imagen": "img/mexico/mole-negro.jpg",
+        "imagen": "img/mexico/molenegro.jpg",
         "nota": "paisMexico_gastronomia_platos_1_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_2_nombre",
         "categoria": "paisMexico_gastronomia_platos_2_categoria",
         "descripcion": "paisMexico_gastronomia_platos_2_descripcion",
-        "imagen": "img/mexico/chiles-nogada.jpg",
+        "imagen": "img/mexico/chilesennogada.jpg",
         "nota": "paisMexico_gastronomia_platos_2_nota"
       },
       {
@@ -2267,42 +2267,42 @@
         "nombre": "paisMexico_gastronomia_platos_4_nombre",
         "categoria": "paisMexico_gastronomia_platos_4_categoria",
         "descripcion": "paisMexico_gastronomia_platos_4_descripcion",
-        "imagen": "img/mexico/tacos-canasta.jpg",
+        "imagen": "img/mexico/tacosdecanasta.jpg",
         "nota": "paisMexico_gastronomia_platos_4_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_5_nombre",
         "categoria": "paisMexico_gastronomia_platos_5_categoria",
         "descripcion": "paisMexico_gastronomia_platos_5_descripcion",
-        "imagen": "img/mexico/tamales.jpg",
+        "imagen": "img/mexico/Tamales.jpg",
         "nota": "paisMexico_gastronomia_platos_5_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_6_nombre",
         "categoria": "paisMexico_gastronomia_platos_6_categoria",
         "descripcion": "paisMexico_gastronomia_platos_6_descripcion",
-        "imagen": "img/mexico/ceviche.jpg",
+        "imagen": "img/mexico/cevichemexicano.webp",
         "nota": "paisMexico_gastronomia_platos_6_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_7_nombre",
         "categoria": "paisMexico_gastronomia_platos_7_categoria",
         "descripcion": "paisMexico_gastronomia_platos_7_descripcion",
-        "imagen": "img/mexico/elotes.jpg",
+        "imagen": "img/mexico/Equitesyelotes.jpg",
         "nota": "paisMexico_gastronomia_platos_7_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_8_nombre",
         "categoria": "paisMexico_gastronomia_platos_8_categoria",
         "descripcion": "paisMexico_gastronomia_platos_8_descripcion",
-        "imagen": "img/mexico/tortas-chilaquil.jpg",
+        "imagen": "img/mexico/tortadechilaquiles.jpg",
         "nota": "paisMexico_gastronomia_platos_8_nota"
       },
       {
         "nombre": "paisMexico_gastronomia_platos_9_nombre",
         "categoria": "paisMexico_gastronomia_platos_9_categoria",
         "descripcion": "paisMexico_gastronomia_platos_9_descripcion",
-        "imagen": "img/mexico/churros.jpg",
+        "imagen": "img/mexico/Churros.jpg",
         "nota": "paisMexico_gastronomia_platos_9_nota"
       }
     ]
@@ -2810,7 +2810,7 @@
   "poblacion": "paisPeru_poblacion",
   "zona_horaria": "paisPeru_zona_horaria",
   "codigo_telefonico": "paisPeru_codigo_telefonico",
-  "hero_img": "img/peru/peru.jpeg",
+  "hero_img": "img/banners/bannerdeperu.jpeg",
   "page_header_img": "img/peru/peru.jpeg",
   "stats": [
     { "numero": "1,285,215", "label": "paisPeru_stats_0_label" },
@@ -2840,7 +2840,7 @@
       "nombre": "paisPeru_destinos_machupicchu_nombre",
       "tag": "paisPeru_destinos_machupicchu_tag",
       "descripcion": "paisPeru_destinos_machupicchu_descripcion",
-      "imagen": "img/peru/machupicchu.jpg",
+      "imagen": "img/peru/Machupicchu.jpg",
       "detalle": "paisPeru_destinos_machupicchu_detalle",
       "precio_entrada": "152 PEN (40 USD) aprox.",
       "horario": "6:00 AM - 5:30 PM",
@@ -2851,7 +2851,7 @@
       "nombre": "paisPeru_destinos_cusco_nombre",
       "tag": "paisPeru_destinos_cusco_tag",
       "descripcion": "paisPeru_destinos_cusco_descripcion",
-      "imagen": "img/peru/cusco.jpg",
+      "imagen": "img/peru/Cusco.jpg",
       "detalle": "paisPeru_destinos_cusco_detalle",
       "precio_entrada": "Boleto Turístico: 70-130 PEN",
       "horario": "7:00 AM - 6:00 PM",
@@ -2873,7 +2873,7 @@
       "nombre": "paisPeru_destinos_lima_nombre",
       "tag": "paisPeru_destinos_lima_tag",
       "descripcion": "paisPeru_destinos_lima_descripcion",
-      "imagen": "img/peru/lima.jpg",
+      "imagen": "img/peru/Limaperu.jpg",
       "detalle": "paisPeru_destinos_lima_detalle",
       "precio_entrada": "Museos desde 10 PEN",
       "horario": "9:00 AM - 5:00 PM",
@@ -2895,7 +2895,7 @@
       "nombre": "paisPeru_destinos_titicaca_nombre",
       "tag": "paisPeru_destinos_titicaca_tag",
       "descripcion": "paisPeru_destinos_titicaca_descripcion",
-      "imagen": "img/peru/titicaca.jpg",
+      "imagen": "img/peru/Lagotiticaca.jpg",
       "detalle": "paisPeru_destinos_titicaca_detalle",
       "precio_entrada": "Paseo en bote: 50-80 PEN",
       "horario": "7:00 AM - 5:00 PM",
@@ -2906,7 +2906,7 @@
       "nombre": "paisPeru_destinos_amazonas_nombre",
       "tag": "paisPeru_destinos_amazonas_tag",
       "descripcion": "paisPeru_destinos_amazonas_descripcion",
-      "imagen": "img/peru/amazonas.jpg",
+      "imagen": "img/peru/Amazoniaperuana.jpg",
       "detalle": "paisPeru_destinos_amazonas_detalle",
       "precio_entrada": "Desde 200 PEN por día (tour)",
       "horario": "Actividades al amanecer y atardecer",
@@ -2917,7 +2917,7 @@
       "nombre": "paisPeru_destinos_colca_nombre",
       "tag": "paisPeru_destinos_colca_tag",
       "descripcion": "paisPeru_destinos_colca_descripcion",
-      "imagen": "img/peru/colca.jpg",
+      "imagen": "img/peru/cañondelcolca.jpg",
       "detalle": "paisPeru_destinos_colca_detalle",
       "precio_entrada": "70 PEN (ingreso)",
       "horario": "6:00 AM - 5:00 PM",
@@ -2940,7 +2940,7 @@
         "nombre": "paisPeru_cultura_items_danzatijeras_nombre",
         "tag": "paisPeru_cultura_items_danzatijeras_tag",
         "descripcion": "paisPeru_cultura_items_danzatijeras_descripcion",
-        "imagen": "img/peru/danzatijeras.jpg",
+        "imagen": "img/peru/danzadetijeras.jpg",
         "detalle": "paisPeru_cultura_items_danzatijeras_detalle"
       },
       {
@@ -2948,7 +2948,7 @@
         "nombre": "paisPeru_cultura_items_intiraymi_nombre",
         "tag": "paisPeru_cultura_items_intiraymi_tag",
         "descripcion": "paisPeru_cultura_items_intiraymi_descripcion",
-        "imagen": "img/peru/intiraymi.jpg",
+        "imagen": "img/peru/intiramy.jpg",
         "detalle": "paisPeru_cultura_items_intiraymi_detalle"
       },
       {
@@ -2995,35 +2995,35 @@
         "nombre": "paisPeru_gastronomia_platos_1_nombre",
         "categoria": "paisPeru_gastronomia_platos_1_categoria",
         "descripcion": "paisPeru_gastronomia_platos_1_descripcion",
-        "imagen": "img/peru/lomosaltado.jpg",
+        "imagen": "img/peru/lomosalteado.webp",
         "nota": "paisPeru_gastronomia_platos_1_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_2_nombre",
         "categoria": "paisPeru_gastronomia_platos_2_categoria",
         "descripcion": "paisPeru_gastronomia_platos_2_descripcion",
-        "imagen": "img/peru/ajigallina.jpg",
+        "imagen": "img/peru/ajídegallina.jpg",
         "nota": "paisPeru_gastronomia_platos_2_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_3_nombre",
         "categoria": "paisPeru_gastronomia_platos_3_categoria",
         "descripcion": "paisPeru_gastronomia_platos_3_descripcion",
-        "imagen": "img/peru/anticuchos.jpg",
+        "imagen": "img/peru/antichucos.avif",
         "nota": "paisPeru_gastronomia_platos_3_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_4_nombre",
         "categoria": "paisPeru_gastronomia_platos_4_categoria",
         "descripcion": "paisPeru_gastronomia_platos_4_descripcion",
-        "imagen": "img/peru/pachamanca.jpg",
+        "imagen": "img/peru/Pachamanca.jpg",
         "nota": "paisPeru_gastronomia_platos_4_nota"
       },
       {
         "nombre": "paisPeru_gastronomia_platos_5_nombre",
         "categoria": "paisPeru_gastronomia_platos_5_categoria",
         "descripcion": "paisPeru_gastronomia_platos_5_descripcion",
-        "imagen": "img/peru/causa.jpg",
+        "imagen": "img/peru/causalimeña.jpg",
         "nota": "paisPeru_gastronomia_platos_5_nota"
       },
       {
@@ -3051,7 +3051,7 @@
         "nombre": "paisPeru_gastronomia_platos_9_nombre",
         "categoria": "paisPeru_gastronomia_platos_9_categoria",
         "descripcion": "paisPeru_gastronomia_platos_9_descripcion",
-        "imagen": "img/peru/suspiro.jpg",
+        "imagen": "img/peru/suspiroalalimeña.jpg",
         "nota": "paisPeru_gastronomia_platos_9_nota"
       }
     ]
@@ -3277,7 +3277,7 @@
           "nombre": "paisPeru_souvenirs_0_productos_0_nombre",
           "descripcion": "paisPeru_souvenirs_0_productos_0_descripcion",
           "precio": "15-40 USD",
-          "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400"
+          "img": "MercadoSanPedroCusco.png"
         },
         {
           "nombre": "paisPeru_souvenirs_0_productos_1_nombre",
@@ -5816,7 +5816,7 @@
   "poblacion": "paisChile_poblacion",
   "zona_horaria": "paisChile_zona_horaria",
   "codigo_telefonico": "paisChile_codigo_telefonico",
-  "hero_img": "img/chile/bannerchile2.jpeg",
+  "hero_img": "img/banners/bannerdechile.jpeg",
   "page_header_img": "img/chile/header.jpg",
   "stats": [
     { "numero": "756,700", "label": "paisChile_stats_0_label" },
@@ -6571,7 +6571,7 @@
   "poblacion": "paisEcuador_poblacion",
   "zona_horaria": "paisEcuador_zona_horaria",
   "codigo_telefonico": "paisEcuador_codigo_telefonico",
-  "hero_img": "img/ecuador/bannerecuador2.jpeg",
+  "hero_img": "img/banners/bannerdeecuador.jpeg",
   "page_header_img": "img/ecuador/header.jpg",
   "stats": [
     { "numero": "283,561", "label": "paisEcuador_stats_0_label" },
@@ -7320,7 +7320,7 @@
   "poblacion": "paisCuba_poblacion",
   "zona_horaria": "paisCuba_zona_horaria",
   "codigo_telefonico": "paisCuba_codigo_telefonico",
-  "hero_img": "img/cuba/bannercuba2.jpeg",
+  "hero_img": "img/banners/bannerdecuba.jpeg",
   "page_header_img": "img/cuba/header.jpg",
   "stats": [
     { "numero": "109,880", "label": "paisCuba_stats_0_label" },
@@ -8068,7 +8068,7 @@
   "poblacion": "paisGuatemala_poblacion",
   "zona_horaria": "paisGuatemala_zona_horaria",
   "codigo_telefonico": "paisGuatemala_codigo_telefonico",
-  "hero_img": "img/guatemala/bannerguatemala2.jpeg",
+  "hero_img": "img/banners/bannerdeguatemala.jpeg",
   "page_header_img": "img/guatemala/header.jpg",
   "stats": [
     { "numero": "108,889", "label": "paisGuatemala_stats_0_label" },
@@ -8816,7 +8816,7 @@
   "poblacion": "paisBolivia_poblacion",
   "zona_horaria": "paisBolivia_zona_horaria",
   "codigo_telefonico": "paisBolivia_codigo_telefonico",
-  "hero_img": "img/bolivia/bannerbolivia2.jpeg",
+  "hero_img": "img/banners/bannerdebolivia.jpeg",
   "page_header_img": "img/bolivia/header.jpg",
   "stats": [
     { "numero": "1,098,581", "label": "paisBolivia_stats_0_label" },
@@ -10310,7 +10310,7 @@
   "poblacion": "paisUruguay_poblacion",
   "zona_horaria": "paisUruguay_zona_horaria",
   "codigo_telefonico": "paisUruguay_codigo_telefonico",
-  "hero_img": "img/uruguay/banneruruguay2.jpeg",
+  "hero_img": "img/banners/bannerdeuruguay.jpeg",
   "page_header_img": "img/uruguay/header.jpg",
   "stats": [
     { "numero": "176,215", "label": "paisUruguay_stats_0_label" },
@@ -11062,7 +11062,7 @@
   "poblacion": "paisParaguay_poblacion",
   "zona_horaria": "paisParaguay_zona_horaria",
   "codigo_telefonico": "paisParaguay_codigo_telefonico",
-  "hero_img": "img/paraguay/bannerparaguay2.jpeg",
+  "hero_img": "img/banners/bannerdeparaguay.jpeg",
   "page_header_img": "img/paraguay/header.jpg",
   "stats": [
     { "numero": "406,752", "label": "paisParaguay_stats_0_label" },
@@ -11815,7 +11815,7 @@
   "poblacion": "paisHonduras_poblacion",
   "zona_horaria": "paisHonduras_zona_horaria",
   "codigo_telefonico": "paisHonduras_codigo_telefonico",
-  "hero_img": "img/honduras/bannerhonduras2.jpeg",
+  "hero_img": "img/banners/bannerdehonduras.jpeg",
   "page_header_img": "img/honduras/header.jpg",
   "stats": [
     { "numero": "112,492", "label": "paisHonduras_stats_0_label" },
@@ -12567,7 +12567,7 @@
   "poblacion": "paisNicaragua_poblacion",
   "zona_horaria": "paisNicaragua_zona_horaria",
   "codigo_telefonico": "paisNicaragua_codigo_telefonico",
-  "hero_img": "img/nicaragua/bannernicaragua2.jpeg",
+  "hero_img": "img/banners/bannerdenicaragua.jpeg",
   "page_header_img": "img/nicaragua/header.jpg",
   "stats": [
     { "numero": "130,373", "label": "paisNicaragua_stats_0_label" },
@@ -13314,7 +13314,7 @@
   "poblacion": "paisElSalvador_poblacion",
   "zona_horaria": "paisElSalvador_zona_horaria",
   "codigo_telefonico": "paisElSalvador_codigo_telefonico",
-  "hero_img": "img/el-salvador/bannerelsalvador2.jpeg",
+  "hero_img": "img/banners/bannerdelsalvador.jpeg",
   "page_header_img": "img/el-salvador/header.jpg",
   "stats": [
     { "numero": "21,040", "label": "paisElSalvador_stats_0_label" },
@@ -14061,7 +14061,7 @@
   "poblacion": "paisBelice_poblacion",
   "zona_horaria": "paisBelice_zona_horaria",
   "codigo_telefonico": "paisBelice_codigo_telefonico",
-  "hero_img": "img/belice/bannerbelice2.jpeg",
+  "hero_img": "img/banners/bannerdebelice.jpeg",
   "page_header_img": "img/belice/header.jpg",
   "stats": [
     { "numero": "22,966", "label": "paisBelice_stats_0_label" },
@@ -14805,7 +14805,7 @@
   "poblacion": "paisGuyana_poblacion",
   "zona_horaria": "paisGuyana_zona_horaria",
   "codigo_telefonico": "paisGuyana_codigo_telefonico",
-  "hero_img": "img/guyana/bannerguyana2.jpeg",
+  "hero_img": "img/banners/bannerdeguyana.jpeg",
   "page_header_img": "img/guyana/header.jpg",
   "stats": [
     { "numero": "214,969", "label": "paisGuyana_stats_0_label" },
@@ -15557,7 +15557,7 @@
                               "poblacion":  "1,400,000",
                               "zona_horaria":  "UTC-4",
                               "codigo_telefonico":  "+1 868",
-                              "hero_img":  "img/trinidad-y-tobago/bannertt2.jpeg",
+                              "hero_img":  "img/banners/bannerdetrinidad.jpeg",
                               "page_header_img":  "img/trinidad-y-tobago/header.jpg",
                               "stats":  [
                                             {
@@ -16083,7 +16083,7 @@
                     "poblacion":  "2,800,000",
                     "zona_horaria":  "UTC-5",
                     "codigo_telefonico":  "+1 876",
-                    "hero_img":  "img/jamaica/bannerjamaica2.jpeg",
+                    "hero_img":  "img/banners/bannerdejamaica.jpeg",
                     "page_header_img":  "img/jamaica/header.jpg",
                     "stats":  [
                                   {
@@ -16609,7 +16609,7 @@
                         "poblacion":  "3,200,000",
                         "zona_horaria":  "UTC-4",
                         "codigo_telefonico":  "+1 787, +1 939",
-                        "hero_img":  "img/puerto-rico/bannerpr2.jpeg",
+                        "hero_img":  "img/banners/bannerdepuertorico.jpeg",
                         "page_header_img":  "img/puerto-rico/header.jpg",
                         "stats":  [
                                       {
@@ -17144,7 +17144,7 @@
                     "poblacion":  "400,000",
                     "zona_horaria":  "UTC-5",
                     "codigo_telefonico":  "+1 242",
-                    "hero_img":  "img/bahamas/bannerbahamas2.jpeg",
+                    "hero_img":  "img/banners/bannerdebahamas.jpeg",
                     "page_header_img":  "img/bahamas/header.jpg",
                     "stats":  [
                                   {
@@ -17670,7 +17670,7 @@
                   "poblacion":  "11,700,000",
                   "zona_horaria":  "UTC-5",
                   "codigo_telefonico":  "+509",
-                  "hero_img":  "img/haiti/bannerhaiti2.jpeg",
+                  "hero_img":  "img/banners/bannerdehaiti.jpeg",
                   "page_header_img":  "img/haiti/header.jpg",
                   "stats":  [
                                 {

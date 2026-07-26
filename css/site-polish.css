@@ -6,6 +6,16 @@
 body:not(.page-destino) .navbar:not(.nav-glass), body:not(.page-destino) .navbar:not(.nav-glass).scrolled { min-height:78px !important; padding:16px 0 !important; background:linear-gradient(135deg,rgba(14,33,67,.72),rgba(29,71,120,.54)) !important; border:0 !important; box-shadow:0 14px 35px rgba(8,26,56,.22),inset 0 1px 0 rgba(255,255,255,.28) !important; backdrop-filter:blur(22px) saturate(155%); -webkit-backdrop-filter:blur(22px) saturate(155%); }
 body:not(.page-destino) .navbar:not(.nav-glass).scrolled .nav-logo, body:not(.page-destino) .navbar:not(.nav-glass).scrolled .nav-links a { color:#fff; }
 .page-destino .navbar, .page-destino .navbar.scrolled { height:78px; background:rgba(255,255,255,.94); border-bottom:1px solid rgba(148,163,184,.28); box-shadow:0 8px 24px rgba(13,31,60,.10); }
+
+[data-theme="dark"] .nav-glass, [data-theme="dark"] .nav-glass.scrolled,
+[data-theme="dark"] body:not(.page-destino) .navbar:not(.nav-glass), [data-theme="dark"] body:not(.page-destino) .navbar:not(.nav-glass).scrolled,
+[data-theme="dark"] .page-destino .navbar, [data-theme="dark"] .page-destino .navbar.scrolled {
+  background: rgba(22, 27, 34, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.4) !important;
+  border-bottom-color: #58a6ff !important;
+  box-shadow: none !important;
+}
 @media (min-width:901px) { .nav-glass .hamburger { display:none !important; } }
 @media (max-width:900px) { .nav-glass, .nav-glass.scrolled { min-height:70px !important; padding:10px 14px !important; }.nav-glass .nav-links { display:none !important; }.nav-glass .nav-links.open { display:flex !important; }.nav-glass .hamburger { display:flex !important; }.page-destino .navbar, .page-destino .navbar.scrolled { height:70px; } }
 
