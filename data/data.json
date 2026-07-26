@@ -1,4 +1,4 @@
-{
+﻿{
     "top10": {
         "obelisco": {
             "img": "img/Obelisco.jpg",
@@ -80,18 +80,6 @@
             "facts": ["50M visitantes/año", "Capital del entretenimiento", "Broadway", "Año Nuevo icónico"],
             "pais": "panama"
         }
-    },
-    "banners": {
-        "argentina": "img/Argentina.jpg",
-        "francia": "img/Francia.png",
-        "brasil": "img/Brasil.jpg",
-        "chile": "img/Chile.webp",
-        "colombia": "img/Colombia.webp",
-        "japon": "img/Japon.webp",
-        "peru": "img/Peru.webp",
-        "marruecos": "img/Marruecos.jpg",
-        "mexico": "img/Mexico.jpg",
-        "panama": "img/Panama.png"
     },
     "paquetes": {
         "francia": {

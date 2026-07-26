@@ -382,5 +382,7 @@ function endTutorial() {
 // ------------------ Escuchar cambios de idioma ------------------
 window.addEventListener('kavari:langchange', updateTutorialTexts);
 
-// Tutorial auto-start disabled; user can trigger manually via button
-
+// ------------------ Inicialización automática ------------------
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => startTutorial(false), 1200);
+});
