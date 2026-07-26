@@ -3633,7 +3633,7 @@
       "nombre": "paisRepublicaDominicana_destinos_jarabacoa_nombre",
       "tag": "paisRepublicaDominicana_destinos_jarabacoa_tag",
       "descripcion": "paisRepublicaDominicana_destinos_jarabacoa_descripcion",
-      "imagen": "img/republica-dominicana/jarabacoa.jpg",
+      "imagen": "img/Republica dominicana/jarabacoa.jpg",
       "detalle": "paisRepublicaDominicana_destinos_jarabacoa_detalle",
       "precio_entrada": "Parques: 100-200 DOP",
       "horario": "8:00-18:00",
@@ -3644,7 +3644,7 @@
       "nombre": "paisRepublicaDominicana_destinos_laromana_nombre",
       "tag": "paisRepublicaDominicana_destinos_laromana_tag",
       "descripcion": "paisRepublicaDominicana_destinos_laromana_descripcion",
-      "imagen": "img/republica-dominicana/laromana.jpg",
+      "imagen": "img/Republica dominicana/La Romana.jpg",
       "detalle": "paisRepublicaDominicana_destinos_laromana_detalle",
       "precio_entrada": "Altos de Chavón: 250 DOP",
       "horario": "9:00-18:00",
@@ -3655,7 +3655,7 @@
       "nombre": "paisRepublicaDominicana_destinos_bahiaaguilas_nombre",
       "tag": "paisRepublicaDominicana_destinos_bahiaaguilas_tag",
       "descripcion": "paisRepublicaDominicana_destinos_bahiaaguilas_descripcion",
-      "imagen": "img/republica-dominicana/bahiaaguilas.jpg",
+      "imagen": "img/Republica dominicana/Bahía de las Águilas.jpg",
       "detalle": "paisRepublicaDominicana_destinos_bahiaaguilas_detalle",
       "precio_entrada": "100 DOP + lancha 500-800 DOP",
       "horario": "8:00-17:00",
@@ -3666,7 +3666,7 @@
       "nombre": "paisRepublicaDominicana_destinos_constanza_nombre",
       "tag": "paisRepublicaDominicana_destinos_constanza_tag",
       "descripcion": "paisRepublicaDominicana_destinos_constanza_descripcion",
-      "imagen": "img/republica-dominicana/constanza.jpg",
+      "imagen": "img/Republica dominicana/constanza.avif",
       "detalle": "paisRepublicaDominicana_destinos_constanza_detalle",
       "precio_entrada": "Parques: gratuito",
       "horario": "24 horas",
@@ -3689,7 +3689,7 @@
         "nombre": "paisRepublicaDominicana_cultura_items_merengue_nombre",
         "tag": "paisRepublicaDominicana_cultura_items_merengue_tag",
         "descripcion": "paisRepublicaDominicana_cultura_items_merengue_descripcion",
-        "imagen": "img/republica-dominicana/merengue.jpg",
+        "imagen": "img/Republica dominicana/Merengue Dominicano.jpg",
         "detalle": "paisRepublicaDominicana_cultura_items_merengue_detalle"
       },
       {
@@ -3697,7 +3697,7 @@
         "nombre": "paisRepublicaDominicana_cultura_items_bachata_nombre",
         "tag": "paisRepublicaDominicana_cultura_items_bachata_tag",
         "descripcion": "paisRepublicaDominicana_cultura_items_bachata_descripcion",
-        "imagen": "img/republica-dominicana/bachata.jpg",
+        "imagen": "img/Republica dominicana/Bachata.jpg",
         "detalle": "paisRepublicaDominicana_cultura_items_bachata_detalle"
       },
       {
@@ -3705,7 +3705,7 @@
         "nombre": "paisRepublicaDominicana_cultura_items_carnaval_nombre",
         "tag": "paisRepublicaDominicana_cultura_items_carnaval_tag",
         "descripcion": "paisRepublicaDominicana_cultura_items_carnaval_descripcion",
-        "imagen": "img/republica-dominicana/carnaval.jpg",
+        "imagen": "img/Republica dominicana/carnaval Dominicano.jpeg",
         "detalle": "paisRepublicaDominicana_cultura_items_carnaval_detalle"
       },
       {
@@ -3713,7 +3713,7 @@
         "nombre": "paisRepublicaDominicana_cultura_items_arte_nombre",
         "tag": "paisRepublicaDominicana_cultura_items_arte_tag",
         "descripcion": "paisRepublicaDominicana_cultura_items_arte_descripcion",
-        "imagen": "img/republica-dominicana/artepopular.jpg",
+        "imagen": "img/Republica dominicana/Arte Popular Dominicano.jpg",
         "detalle": "paisRepublicaDominicana_cultura_items_arte_detalle"
       }
     ],
@@ -3736,70 +3736,70 @@
         "nombre": "paisRepublicaDominicana_gastronomia_platos_0_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_0_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_0_descripcion",
-        "imagen": "img/republica-dominicana/bandera.jpg",
+        "imagen": "img/Republica dominicana/La Bandera Dominicana.jpg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_0_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_1_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_1_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_1_descripcion",
-        "imagen": "img/republica-dominicana/mangu.jpg",
+        "imagen": "img/Republica dominicana/Mangú.jpg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_1_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_2_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_2_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_2_descripcion",
-        "imagen": "img/republica-dominicana/sancocho.jpg",
+        "imagen": "img/Republica dominicana/sancocho Dominicano.jpg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_2_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_3_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_3_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_3_descripcion",
-        "imagen": "img/republica-dominicana/mofongo.jpg",
+        "imagen": "img/Republica dominicana/mofongo.jpg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_3_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_4_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_4_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_4_descripcion",
-        "imagen": "img/republica-dominicana/tostones.jpg",
+        "imagen": "img/Republica dominicana/tostones.jpeg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_4_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_5_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_5_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_5_descripcion",
-        "imagen": "img/republica-dominicana/pescadococo.jpg",
+        "imagen": "img/Republica dominicana/pescado con coco.jpg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_5_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_6_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_6_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_6_descripcion",
-        "imagen": "img/republica-dominicana/chivoguisado.jpg",
+        "imagen": "img/Republica dominicana/chivo guisado.jpg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_6_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_7_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_7_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_7_descripcion",
-        "imagen": "img/republica-dominicana/yaniqueques.jpg",
+        "imagen": "img/Republica dominicana/yaniqueques.webp",
         "nota": "paisRepublicaDominicana_gastronomia_platos_7_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_8_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_8_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_8_descripcion",
-        "imagen": "img/republica-dominicana/habichuelasdulce.jpg",
+        "imagen": "img/Republica dominicana/Habichuelas con Dulce.webp",
         "nota": "paisRepublicaDominicana_gastronomia_platos_8_nota"
       },
       {
         "nombre": "paisRepublicaDominicana_gastronomia_platos_9_nombre",
         "categoria": "paisRepublicaDominicana_gastronomia_platos_9_categoria",
         "descripcion": "paisRepublicaDominicana_gastronomia_platos_9_descripcion",
-        "imagen": "img/republica-dominicana/casabe.jpg",
+        "imagen": "img/Republica dominicana/casabe.jpg",
         "nota": "paisRepublicaDominicana_gastronomia_platos_9_nota"
       }
     ]
