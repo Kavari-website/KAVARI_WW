@@ -156,7 +156,26 @@
             topFactsChichen: 'Ubicación: Yucatán, México|Altura: 30 m|Año: 600 d.C.|Visitantes: 2.5 millones/año',
             topFactsTimesSquare: 'Ubicación: Nueva York, EE.UU.|Visitantes: 50 millones/año|Teatros: 41|Pantallas: 46',
 
-            // ===== PAQUETES (index) =====
+           // ===== ENGLISH TRANSLATIONS =====
+en: {
+    navPaises: 'Countries',
+    navInicio: 'Home',
+    navCultura: 'Culture',
+    navDestinos2: 'Destinations',
+    navGastronomia: 'Gastronomy',
+    navAventura: 'Adventure',
+    navPractica: 'Practical Info',
+    navAerolineas: 'Airlines',
+    navHospedajes: 'Accommodations',
+    navSouvenirs: 'Souvenirs',
+    navGuias: 'Guides',
+    tutorialSaltar: 'Skip tutorial',
+    tutorialAnterior: 'Previous',
+    tutorialSiguiente: 'Next',
+    tutorialComenzar: 'Start',
+    tutorialPasoDe: 'Step {current} of {total}'
+},
+// ===== PAQUETES (index) =====
             paquetesTitulo: 'Paquetes De Viaje',
             tagPopular: 'Más popular',
             tagAventura: 'Aventura',
