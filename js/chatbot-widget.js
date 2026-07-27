@@ -263,16 +263,44 @@
   }
 
   /* ═══════════════════ envío y respuesta ═══════════════════ */
-  function handleQuestion(text) {
+  function lang() {
+    return (localStorage.getItem('kavari-idioma') || 'es') === 'en';
+  }
+
+  async function handleQuestion(text) {
     if (thinking || !text || !text.trim()) return;
     addUserMessage(text);
     setThinking(true);
     showTyping();
 
-    // Tiempo de "pensado" proporcional a la longitud, con tope, para que
-    // se sienta natural sin volverse lento.
-    const delay = Math.min(900, 350 + text.length * 6);
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+      const res = await fetch('http://localhost:3007/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: text,
+          context: { ...ctx, lang: lang() ? 'en' : 'es' }
+        }),
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        const data = await res.json();
+        hideTyping();
+        addBotMessage(data.reply);
+        setThinking(false);
+        const input = document.getElementById('kavari-chat-input');
+        if (input) input.focus({ preventScroll: true });
+        return;
+      }
+    } catch (_) {
+      // API no disponible, usamos el motor local
+    }
 
+    // Fallback al motor local (misma lógica que antes)
+    const delay = Math.min(900, 350 + text.length * 6);
     setTimeout(() => {
       let response;
       try {
@@ -282,10 +310,10 @@
         } else if (typeof generateGeneralResponse === 'function') {
           response = generateGeneralResponse(q);
         } else {
-          response = lang() === 'en' ? 'How can I help you?' : '¿En qué puedo ayudarte?';
+          response = lang() ? 'How can I help you?' : '¿En qué puedo ayudarte?';
         }
       } catch (err) {
-        response = lang() === 'en'
+        response = lang()
           ? 'Sorry, something went wrong answering that. Try rephrasing your question.'
           : 'Lo siento, algo falló al responder eso. Intenta reformular tu pregunta.';
       }

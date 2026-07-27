@@ -69,6 +69,7 @@
           <label>Nombre<input name="name" required minlength="2"></label>
           <label>Correo<input name="email" type="email" required></label>
           <label>País<select name="country" required><option value="">Cargando países…</option></select></label>
+          <div class="traveler-guides" id="travelerGuides" style="display:none;margin-top:-4px;margin-bottom:2px;padding:8px 12px;border-radius:10px;background:rgba(46,110,220,.06);font-size:.8rem;line-height:1.5"></div>
           <label>Plan<select name="plan"><option>Gratis</option><option>Premium · US$9.99/mes</option><option>OP · US$19.99/mes</option></select></label>
           <button class="traveler-submit" type="submit">Guardar registro</button>
           <p class="traveler-status" role="status" aria-live="polite"></p>
@@ -80,12 +81,29 @@
       m.addEventListener('click',e=>{if(e.target===m)close()});
       document.addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))close()});
 
+      function showGuidesForCountry(countryCode){
+        var guidesEl=m.querySelector('.traveler-guides');
+        if(!guidesEl)return;
+        if(!countryCode){guidesEl.style.display='none';return}
+        var stored;try{stored=JSON.parse(localStorage.getItem('kavariGuides'))||[]}catch(e){stored=[]}
+        var filtered=stored.filter(function(g){return g.country===countryCode});
+        if(!filtered.length){guidesEl.style.display='none';return}
+        guidesEl.style.display='block';
+        guidesEl.innerHTML='<strong style="display:block;margin-bottom:4px">Guías disponibles:</strong>'+
+          filtered.map(function(g){return '<span style="display:flex;align-items:center;gap:6px;padding:3px 0">'+
+            '<span style="width:6px;height:6px;border-radius:50%;background:#2e6edc;flex-shrink:0"></span>'+
+            esc(g.name)+' <span style="color:#64748b;font-size:.75rem">· '+esc(g.rank)+'</span></span>'
+          }).join('');
+      }
+
       fetch('data/data.json').then(r=>r.json()).then(data=>{
         const s=m.querySelector('[name=country]');
         s.innerHTML='<option value="">Selecciona un país</option>'+Object.entries(data)
           .filter(([,v])=>v&&v.nombre)
           .map(([k,v])=>`<option value="${esc(k)}">${esc(v.nombre)}</option>`).join('');
         s.value=localStorage.getItem('paisSeleccionado')||'';
+        s.addEventListener('change',function(){showGuidesForCountry(this.value)});
+        showGuidesForCountry(s.value);
       }).catch(()=>{
         m.querySelector('.traveler-status').textContent='No se pudo cargar la lista de países.';
         m.querySelector('.traveler-status').classList.add('is-error');

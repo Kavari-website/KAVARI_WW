@@ -552,5 +552,30 @@
 <script src="js/chatbot-widget.js"></script>
 <script src="js/account.js"></script>
 <script src="js/paises.js"></script>
+<script>
+(function(){
+  var guides;
+  try{guides=JSON.parse(localStorage.getItem('kavariGuides'))||[]}catch(e){guides=[]}
+  if(!guides.length)return;
+  var cards=document.querySelectorAll('.dest-card');
+  cards.forEach(function(card){
+    var btn=card.querySelector('.dest-btn');
+    if(!btn)return;
+    var m=btn.getAttribute('onclick')&&btn.getAttribute('onclick').match(/irAPais\('([^']+)'\)/);
+    if(!m)return;
+    var code=m[1];
+    var countryGuides=guides.filter(function(g){return g.country===code});
+    if(!countryGuides.length)return;
+    var badge=card.querySelector('.thumb-badge');
+    if(badge)badge.textContent=countryGuides.length+' guía'+(countryGuides.length>1?'s':'');
+    else{
+      var b=document.createElement('div');
+      b.className='thumb-badge';
+      b.textContent=countryGuides.length+' guía'+(countryGuides.length>1?'s':'');
+      card.querySelector('.dest-thumb')?.appendChild(b);
+    }
+  });
+})();
+</script>
 </body>
 </html>
