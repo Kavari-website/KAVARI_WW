@@ -11,8 +11,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/chatbot-widget.css">
   <link rel="stylesheet" href="css/ui-system.css">
-  <link rel="stylesheet" href="css/nav-glass.css">
-  <link rel="stylesheet" href="css/nav-unified.css">
   <link rel="stylesheet" href="css/site-polish.css">
   <link rel="stylesheet" href="css/traveler-registration.css">
   <link rel="stylesheet" href="css/ayuda.css">
@@ -24,32 +22,28 @@
 </head>
 <body>
 
-<nav class="navbar nav-glass" id="navbar">
-  <div class="nav-inner">
-    <a class="nav-logo" href="index.html">
-      KAVARI
-    </a>
+<nav class="navbar nav-glass home-nav" id="navbar">
+    <div class="logo">
+        <a href="index.html" style="color: inherit; text-decoration: none;">KAVARI</a>
+    </div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
-      <li><a href="paises.html" data-i18n="navDestinos">Destinos</a></li>
-      <li><a href="#registro-viajero" class="nav-register">Registrarme</a></li>
-      <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
-      <li><a href="ayuda.html" class="active" data-i18n="ayuda">Ayuda</a></li>
-      <li><a href="contacto.html" data-i18n="contacto">Contacto</a></li>
+        <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
+        <li><a href="paises.html" data-i18n="navDestinos">Destinos</a></li>
+        <li><a href="#registro-viajero" class="nav-register">Registrarme</a></li>
+        <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
+        <li><a href="ayuda.html" class="active" data-i18n="ayuda">Ayuda</a></li>
+        <li><a href="contacto.html" data-i18n="contacto">Contacto</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
-      <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma">
-        <span id="langLabel">ES</span>
-      </button>
-      <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro" data-i18n="modoOscuro">Oscuro</button>
-      <a class="nav-btn-plans" href="planes.html" data-i18n="planes">Planes</a>
-      <a class="nav-btn-auth" href="cuenta.html" data-i18n="ingresarUnirme">Ingresar / Unirme</a>
+        <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
+        <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma">
+            <span id="langLabel">ES</span>
+        </button>
+        <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro" data-i18n="modoOscuro">Oscuro</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menú">
-      <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
     </button>
-  </div>
 </nav>
 
 <div class="help-hero">
@@ -287,6 +281,19 @@
 
 <footer class="footer">
   <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-globe"></span> KAVARI
+    </div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="navInicio">Inicio</a>
+      <a href="paises.html" data-i18n="navDestinos">Destinos</a>
+      <a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a>
+      <a href="ayuda.html" data-i18n="ayuda">Ayuda</a>
+      <a href="contacto.html" data-i18n="contacto">Contacto</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/kavari.travel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">✈</a>
+    </div>
     <p class="textfooter" data-i18n="footerTexto">© 2025 Kavari — Fundación Emanuel González-Revilla · Supérate Promo 2027</p>
   </div>
 </footer>
