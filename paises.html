@@ -7,12 +7,11 @@
   <meta name="description" content="Explora 36 destinos turísticos con KAVARI: Latinoamérica, Europa, Asia y África. Información completa de cultura, gastronomía, hospedajes y guías certificados."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/paises.css"/>
   <link rel="stylesheet" href="css/chatbot-widget.css"/>
   <link rel="stylesheet" href="css/ui-system.css"/>
+  <link rel="stylesheet" href="css/nav-unified.css"/>
   <link rel="stylesheet" href="css/site-polish.css"/>
-  <link rel="stylesheet" href="css/traveler-registration.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/tutorial.css"/>
   <script src="js/idioma.js?v=3"></script>
@@ -21,27 +20,27 @@
 
 </head>
 <body>
-<nav class="navbar nav-glass home-nav" id="navbar">
-    <div class="logo">
-        <a href="index.html" style="color: inherit; text-decoration: none;">KAVARI</a>
-    </div>
+<nav class="navbar nav-glass" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="logo-globe">✈</span> KAVARI
+    </a>
     <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
-        <li><a href="paises.html" class="active" data-i18n="navDestinos">Destinos</a></li>
-        <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
-        <li><a href="ayuda.html" data-i18n="ayuda">Ayuda</a></li>
-        <li><a href="contacto.html" data-i18n="contacto">Contacto</a></li>
+      <li><a href="index.html" data-i18n="navInicio">Inicio</a></li>
+      <li><a href="paises.html" class="active" data-i18n="navDestinos">Destinos</a></li>
+      <li><a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a></li>
+      <li><a href="ayuda.html" data-i18n="ayuda">Ayuda</a></li>
+      <li><a href="contacto.html" data-i18n="contacto">Contacto</a></li>
     </ul>
     <div class="nav-actions">
-        <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
-        <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma">
-            <span id="langLabel">ES</span>
-        </button>
-        <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro" data-i18n="modoOscuro">Oscuro</button>
+      <button class="nav-btn-tutorial" id="btnTutorial" onclick="startTutorial(true)" aria-label="Tutorial" data-i18n="tutorial">Tutorial</button>
+      <button class="btn-lang-nav" id="btnLang" onclick="toggleLang()" aria-label="Cambiar idioma"><span id="langLabel">ES</span></button>
+      <button class="btn-theme-nav" id="btnTheme" onclick="toggleTheme()" aria-label="Modo oscuro">Oscuro</button>
     </div>
-    <button class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menú">
-        <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
     </button>
+  </div>
 </nav>
 
 <!-- Cabecera principal -->
@@ -180,7 +179,7 @@
     <!-- Chile -->
     <div class="dest-card" data-name="chile santiago patagonia atacama torres del paine isla de pascua">
       <div class="dest-thumb">
-         <img src="img/Chile.webp" alt="Torres del Paine Chile" loading="lazy" decoding="async"/>
+        <img src="img/Chile.webp" alt="Torres del Paine Chile" loading="lazy" decoding="async"/>
       </div>
       <div class="dest-info">
         <h3>Chile</h3>
@@ -351,17 +350,7 @@
     <div class="footer-logo">
       <span class="logo-globe"></span> KAVARI
     </div>
-    <div class="footer-links">
-      <a href="index.html" data-i18n="navInicio">Inicio</a>
-      <a href="paises.html" data-i18n="navDestinos">Destinos</a>
-      <a href="sobrenosotros.html" data-i18n="sobrenosotros">Sobre nosotros</a>
-      <a href="ayuda.html" data-i18n="ayuda">Ayuda</a>
-      <a href="contacto.html" data-i18n="contacto">Contacto</a>
-    </div>
-    <div class="footer-social">
-      <a href="https://www.instagram.com/kavari.travel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">✈</a>
-    </div>
-    <p class="textfooter" data-i18n="footerTexto">© 2025 Kavari — Fundación Emanuel González-Revilla · Supérate Promo 2027</p>
+    <p class="footer-copy" data-i18n="footerTexto">© 2025 Kavari — Fundación Emanuel González-Revilla · Supérate Promo 2027</p>
   </div>
 </footer>
 

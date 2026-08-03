@@ -343,7 +343,7 @@ function highlightElement(el) {
     border-radius: 10px;
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.55), 0 0 0 3px #00c2a8, 0 0 20px rgba(0,194,168,0.5);
     pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);will-change:transform,box-shadow;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
     z-index: 10001;
   `;
 }
