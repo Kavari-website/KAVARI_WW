@@ -5890,7 +5890,7 @@
       "nombre": "paisChile_destinos_islapascua_nombre",
       "tag": "paisChile_destinos_islapascua_tag",
       "descripcion": "paisChile_destinos_islapascua_descripcion",
-      "imagen": "img/chile/IslaPascua.avif",
+      "imagen": "img/chile/isla pascua.jpg",
       "detalle": "paisChile_destinos_islapascua_detalle",
       "precio_entrada": "80 USD (extranjeros)",
       "horario": "9:00 AM - 6:00 PM",
@@ -5901,7 +5901,7 @@
       "nombre": "paisChile_destinos_vinadelmar_nombre",
       "tag": "paisChile_destinos_vinadelmar_tag",
       "descripcion": "paisChile_destinos_vinadelmar_descripcion",
-      "imagen": "img/chile/Viñadelmar.jpg",
+      "imagen": "img/chile/viña del mar.jpg",
       "detalle": "paisChile_destinos_vinadelmar_detalle",
       "precio_entrada": "Playas: gratuitas",
       "horario": "24 horas",
@@ -5912,7 +5912,7 @@
       "nombre": "paisChile_destinos_chiloe_nombre",
       "tag": "paisChile_destinos_chiloe_tag",
       "descripcion": "paisChile_destinos_chiloe_descripcion",
-      "imagen": "img/chile/ArchipielagodeCholié.jpeg",
+      "imagen": "img/chile/chiloe.jpg",
       "detalle": "paisChile_destinos_chiloe_detalle",
       "precio_entrada": "Iglesias: gratuito",
       "horario": "Siempre accesible",
@@ -5923,7 +5923,7 @@
       "nombre": "paisChile_destinos_pucon_nombre",
       "tag": "paisChile_destinos_pucon_tag",
       "descripcion": "paisChile_destinos_pucon_descripcion",
-      "imagen": "img/chile/Villarica.jpeg",
+      "imagen": "img/chile/pucon.jpg",
       "detalle": "paisChile_destinos_pucon_detalle",
       "precio_entrada": "Ascenso: 40,000-60,000 CLP",
       "horario": "8:00 AM - 6:00 PM",
@@ -5946,7 +5946,7 @@
         "nombre": "paisChile_cultura_items_cueca_nombre",
         "tag": "paisChile_cultura_items_cueca_tag",
         "descripcion": "paisChile_cultura_items_cueca_descripcion",
-        "imagen": "img/chile/Cueca.avif",
+        "imagen": "img/chile/cueca.jpg",
         "detalle": "paisChile_cultura_items_cueca_detalle"
       },
       {
@@ -5954,7 +5954,7 @@
         "nombre": "paisChile_cultura_items_neruda_nombre",
         "tag": "paisChile_cultura_items_neruda_tag",
         "descripcion": "paisChile_cultura_items_neruda_descripcion",
-        "imagen": "img/chile/PabloNeruda.jpg",
+        "imagen": "img/chile/neruda.jpg",
         "detalle": "paisChile_cultura_items_neruda_detalle"
       },
       {
@@ -5962,7 +5962,7 @@
         "nombre": "paisChile_cultura_items_fiestaspatrias_nombre",
         "tag": "paisChile_cultura_items_fiestaspatrias_tag",
         "descripcion": "paisChile_cultura_items_fiestaspatrias_descripcion",
-        "imagen": "img/chile/Fiestaspatrias.jpg",
+        "imagen": "img/chile/fiestas patrias.jpg",
         "detalle": "paisChile_cultura_items_fiestaspatrias_detalle"
       },
       {
@@ -5970,7 +5970,7 @@
         "nombre": "paisChile_cultura_items_rapanui_nombre",
         "tag": "paisChile_cultura_items_rapanui_tag",
         "descripcion": "paisChile_cultura_items_rapanui_descripcion",
-        "imagen": "img/chile/RapaNui.jpg",
+        "imagen": "img/chile/rapa nui.jpg",
         "detalle": "paisChile_cultura_items_rapanui_detalle"
       }
     ],
@@ -5994,70 +5994,70 @@
         "nombre": "paisChile_gastronomia_platos_0_nombre",
         "categoria": "paisChile_gastronomia_platos_0_categoria",
         "descripcion": "paisChile_gastronomia_platos_0_descripcion",
-        "imagen": "img/chile/EmpanadasdeChile.webp",
+        "imagen": "img/chile/empanadas.jpg",
         "nota": "paisChile_gastronomia_platos_0_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_1_nombre",
         "categoria": "paisChile_gastronomia_platos_1_categoria",
         "descripcion": "paisChile_gastronomia_platos_1_descripcion",
-        "imagen": "img/chile/PastelChoclo.jpg",
+        "imagen": "img/chile/pastelchoclo.jpg",
         "nota": "paisChile_gastronomia_platos_1_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_2_nombre",
         "categoria": "paisChile_gastronomia_platos_2_categoria",
         "descripcion": "paisChile_gastronomia_platos_2_descripcion",
-        "imagen": "img/chile/Curanto.webp",
+        "imagen": "img/chile/curanto.jpg",
         "nota": "paisChile_gastronomia_platos_2_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_3_nombre",
         "categoria": "paisChile_gastronomia_platos_3_categoria",
         "descripcion": "paisChile_gastronomia_platos_3_descripcion",
-        "imagen": "img/chile/Cazuela.png",
+        "imagen": "img/chile/cazuela.jpg",
         "nota": "paisChile_gastronomia_platos_3_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_4_nombre",
         "categoria": "paisChile_gastronomia_platos_4_categoria",
         "descripcion": "paisChile_gastronomia_platos_4_descripcion",
-        "imagen": "img/chile/Completo.webp",
+        "imagen": "img/chile/completo.jpg",
         "nota": "paisChile_gastronomia_platos_4_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_5_nombre",
         "categoria": "paisChile_gastronomia_platos_5_categoria",
         "descripcion": "paisChile_gastronomia_platos_5_descripcion",
-        "imagen": "img/chile/Charquican.jpg",
+        "imagen": "img/chile/charquican.jpg",
         "nota": "paisChile_gastronomia_platos_5_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_6_nombre",
         "categoria": "paisChile_gastronomia_platos_6_categoria",
         "descripcion": "paisChile_gastronomia_platos_6_descripcion",
-        "imagen": "img/chile/Mariscal.jpg",
+        "imagen": "img/chile/mariscal.jpg",
         "nota": "paisChile_gastronomia_platos_6_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_7_nombre",
         "categoria": "paisChile_gastronomia_platos_7_categoria",
         "descripcion": "paisChile_gastronomia_platos_7_descripcion",
-        "imagen": "img/chile/Humitas.jpg",
+        "imagen": "img/chile/humitas.jpg",
         "nota": "paisChile_gastronomia_platos_7_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_8_nombre",
         "categoria": "paisChile_gastronomia_platos_8_categoria",
         "descripcion": "paisChile_gastronomia_platos_8_descripcion",
-        "imagen": "img/chile/Pebre.jpg",
+        "imagen": "img/chile/pebre.jpg",
         "nota": "paisChile_gastronomia_platos_8_nota"
       },
       {
         "nombre": "paisChile_gastronomia_platos_9_nombre",
         "categoria": "paisChile_gastronomia_platos_9_categoria",
         "descripcion": "paisChile_gastronomia_platos_9_descripcion",
-        "imagen": "img/chile/Sopaipillas.jpg",
+        "imagen": "img/chile/sopaipillas.jpg",
         "nota": "paisChile_gastronomia_platos_9_nota"
       }
     ]
